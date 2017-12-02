@@ -1,10 +1,9 @@
-@import url(//fonts.googleapis.com/css?family=Play:400,700);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 body {
     background-color: black;
     color: green;
     font-size: 80%;
-    font-family: monospace;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 .container {
@@ -55,7 +54,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Play', sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
@@ -103,7 +102,7 @@ a {
 
 h3 a,
 ul.nav-tabs a {
-    color: #2c3e50;
+    color: #000000;
 }
 
 pre {
@@ -357,7 +356,7 @@ table.status-messages>tbody>tr>td {
 }
 
 .paginator {
-    font-family: 'Play', sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
     font-size: 1.2em;
     text-align: center;
 }
