@@ -628,7 +628,7 @@
             defaultSeriesType: "line",
             ignoreHiddenSeries: !0,
             spacing: [10, 10, 15, 10],
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "#001800cb",
             plotBorderColor: "#C0C0C0",
             resetZoomButton: {
                 theme: {
@@ -776,7 +776,7 @@
             },
             style: {
                 position: "absolute",
-                backgroundColor: "white",
+                backgroundColor: "rgb(94, 7, 7)",
                 opacity: 0.5,
                 textAlign: "center"
             }
@@ -784,7 +784,7 @@
         tooltip: {
             enabled: !0,
             animation: ca,
-            backgroundColor: "rgba(249, 249, 249, .85)",
+            backgroundColor: "#001800cb",
             borderWidth: 1,
             borderRadius: 3,
             dateTimeLabelFormats: {
@@ -803,7 +803,7 @@
             shadow: !0,
             snap: Mb ? 25 : 10,
             style: {
-                color: "#333333",
+                color: "rgb(94, 7, 7)",
                 cursor: "default",
                 fontSize: "12px",
                 padding: "8px",
@@ -7720,41 +7720,41 @@
 Highcharts.theme = {
     chart: {
         style: {
-            fontFamily: "'Play', sans-serif"
+            fontFamily: "'Ubuntu Mono', monospace"
         }
     },
     title: {
         text: null
     },
     xAxis: {
-        gridLineColor: '#eee',
+        gridLineColor: '#161616cb',
         labels: {
             style: {
-                color: '#333',
+                color: '#248525',
                 fontSize: '1em'
             }
         },
-        lineColor: '#eee',
-        tickColor: '#eee',
+        lineColor: '#248525',
+        tickColor: '#248525',
         tickWidth: 1
     },
     yAxis: {
-        gridLineColor: '#eee',
+        gridLineColor: '#161616cb',
         labels: {
             style: {
-                color: '#333',
+                color: 'rgb(131, 0, 0)',
                 fontSize: '1em'
             }
         },
-        lineColor: '#eee',
-        tickColor: '#eee',
+        lineColor: 'rgb(131, 0, 0)',
+        tickColor: 'rgb(131, 0, 0)',
         tickWidth: 1
     },
     tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#eee',
+        backgroundColor: '#001800cb',
+        borderColor: '#248525',
         style: {
-            color: '#333'
+            color: 'rgb(131, 0, 0)'
         }
     },
     legend: {
