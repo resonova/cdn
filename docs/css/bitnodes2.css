@@ -28,7 +28,7 @@ html {
     box-sizing: border-box;
     box-shadow: 3px 3px 3px hsl(100, 50%, 20%);
     background-color: black;
-    border-color: #012c00cb;
+    border-color: #011f00cb;
     min-height: 525px;
     width: 100%;
 }
@@ -48,6 +48,14 @@ html {
 .output {
     color: green;
     position: relative;
+}
+
+.form-control {
+    background-color: #000e00cb;
+    color: green;
+    text-align: left;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 80%;
 }
 
 h1,
