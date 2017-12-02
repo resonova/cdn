@@ -623,13 +623,13 @@
             VMLRadialGradientURL: "http://code.highcharts.com/4.2.3/gfx/vml-radial-gradient.png"
         },
         chart: {
-            borderColor: "#4572A7",
+            borderColor: "#000000",
             borderRadius: 0,
             defaultSeriesType: "line",
             ignoreHiddenSeries: !0,
             spacing: [10, 10, 15, 10],
-            backgroundColor: "#001800cb",
-            plotBorderColor: "#C0C0C0",
+            backgroundColor: "rgb(0, 24, 0)",
+            plotBorderColor: "#000000",
             resetZoomButton: {
                 theme: {
                     zIndex: 20
@@ -784,7 +784,7 @@
         tooltip: {
             enabled: !0,
             animation: ca,
-            backgroundColor: "#001800cb",
+            backgroundColor: "rgb(0, 24, 0)",
             borderWidth: 1,
             borderRadius: 3,
             dateTimeLabelFormats: {
@@ -7727,10 +7727,10 @@ Highcharts.theme = {
         text: null
     },
     xAxis: {
-        gridLineColor: '#161616cb',
+        gridLineColor: '#161616',
         labels: {
             style: {
-                color: '#248525',
+                color: 'rgb(209, 0, 0)',
                 fontSize: '1em'
             }
         },
@@ -7739,22 +7739,22 @@ Highcharts.theme = {
         tickWidth: 1
     },
     yAxis: {
-        gridLineColor: '#161616cb',
+        gridLineColor: '#161616',
         labels: {
             style: {
-                color: 'rgb(131, 0, 0)',
+                color: 'rgb(209, 0, 0)',
                 fontSize: '1em'
             }
         },
-        lineColor: 'rgb(131, 0, 0)',
-        tickColor: 'rgb(131, 0, 0)',
+        lineColor: '#248525',
+        tickColor: '#248525',
         tickWidth: 1
     },
     tooltip: {
-        backgroundColor: '#001800cb',
-        borderColor: '#248525',
+        backgroundColor: 'rgb(0, 24, 0)',
+        borderColor: 'rgb(209, 0, 0)',
         style: {
-            color: 'rgb(131, 0, 0)'
+            color: 'rgb(209, 0, 0)'
         }
     },
     legend: {
