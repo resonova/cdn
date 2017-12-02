@@ -230,7 +230,8 @@ code {
 }
 
 #tps-chart {
-    height: 60px;
+    height: 100px;
+    background-color: #152b16;
 }
 
 #mempool-chart {
