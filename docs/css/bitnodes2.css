@@ -127,9 +127,10 @@ code {
 }
 
 .btn {
-    text-shadow: 0 0 5px #999;
+    text-shadow: 0 0 5px rgb(85, 85, 85);
     background: #000000;
     border: 1px solid rgb(17, 66, 16);
+    min-width: 100px;
 }
 
 .btn:hover {
@@ -193,7 +194,7 @@ code {
     top: 0;
     right: 0;
     background: rgb(0, 0, 0);
-    border: 1px solid rgb(23, 51, 141);
+    border: 1px solid rgb(52, 187, 48);
     border-radius: .3em;
     padding: .3em .5em;
 }
