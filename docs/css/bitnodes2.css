@@ -29,7 +29,7 @@ html {
     box-shadow: 3px 3px 3px hsl(100, 50%, 20%);
     background-color: black;
     border-color: #011f00cb;
-    min-height: 525px;
+    min-height: 150px;
     width: 100%;
 }
 
@@ -55,7 +55,6 @@ html {
     color: green;
     text-align: left;
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 80%;
 }
 
 h1,
@@ -226,16 +225,18 @@ code {
 }
 
 #latency-chart {
-    height: 180px;
+    height: 150px;
+    background-color: #152b16;
 }
 
 #tps-chart {
-    height: 100px;
+    height: 150px;
     background-color: #152b16;
 }
 
 #mempool-chart {
-    height: 140px;
+    height: 150px;
+    background-color: #152b16;
 }
 
 #tps {
@@ -342,6 +343,7 @@ code {
 span.label {
     font-size: 1.2em;
     font-weight: normal;
+    color: rgb(52, 187, 48);
 }
 
 span.label .fa {
@@ -354,7 +356,7 @@ span.label .fa {
 }
 
 .table-hover>tbody>tr:hover>td {
-    background: #152b16;
+    background: rgb(94, 7, 7);
 }
 
 td {
@@ -414,12 +416,14 @@ ul {
     position: absolute;
     top: 135px;
     left: 15px;
+    color: rgb(94, 7, 7);
 }
 
 .big i.fa-chevron-right {
     position: absolute;
     top: 135px;
     right: 15px;
+    color: rgb(94, 7, 7);
 }
 
 .close {
@@ -468,7 +472,7 @@ ul {
 table.paused td,
 h3.paused,
 #tps-chart.paused {
-    opacity: .5;
+    opacity: .7;
 }
 
 .progress {
@@ -480,11 +484,11 @@ h3.paused,
 }
 
 .progress-bar {
-    background: #2c3e50;
+    background: rgb(94, 7, 7);
     opacity: .2;
 }
 
 .progress-bar.fill {
-    background: #2c3e50;
+    background: rgb(94, 7, 7);
     opacity: .6;
 }
