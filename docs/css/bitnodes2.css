@@ -26,10 +26,9 @@ html {
 
 .card {
     box-sizing: border-box;
-    box-shadow: 3px 3px 3px 3px hsl(100, 100%, 20%);
-    background-color: black;
-    border-color: #011f00cb;
-    min-height: 150px;
+    background-color: #001800cb;
+    border-color: #035a00;
+    min-height: 130px;
     width: 100%;
 }
 
