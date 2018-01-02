@@ -36,6 +36,18 @@ html {
     margin-bottom: 10px;
 }
 
+.jumbotron {
+    box-sizing: border-box;
+    background-color: #001800cb;
+    border-color: #035a00;
+    min-height: 130px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .terminal-text {
     top: 0;
     right: 0;
@@ -121,6 +133,7 @@ pre {
     white-space: pre;
     font-size: .9em;
     line-height: 1.6em;
+    color: green;
 }
 
 code {
