@@ -8,7 +8,8 @@ body {
 
 .container {
     padding: 0 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     width: 100%;
 }
 
@@ -28,7 +29,7 @@ html {
 .card {
     box-sizing: border-box;
     background-color: #001800cb;
-    border-color: #035a00;
+    border-color: green;
     min-height: 200px;
     margin-left: 10px;
     margin-right: 10px;
@@ -39,7 +40,7 @@ html {
 .card-dark {
     box-sizing: border-box;
     background-color: #000000;
-    border-color: #000000;
+    border-color: green;
     min-height: 200px;
     margin-left: 10px;
     margin-right: 10px;
