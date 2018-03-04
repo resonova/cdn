@@ -153,12 +153,14 @@ code {
 .btn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
     background: #000000;
+    color: green;
     border: 1px solid rgb(17, 66, 16);
     min-width: 100px;
 }
 
 .btn:hover {
     border: 1px solid rgb(52, 187, 48);
+    color: red;
 }
 
 .btn:focus,
