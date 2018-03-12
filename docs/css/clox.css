@@ -1,18 +1,118 @@
+/* CLOX BUTTON STYLE TYPES */
+
+.btn {
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    background: #000000;
+    color: green;
+    border: 1px solid rgb(17, 66, 16);
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border: 1px solid rgb(52, 187, 48);
+    color: red;
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus {
+    background: #000000;
+    border: 1px solid rgb(52, 187, 48);
+    outline: none;
+}
+
+.btn[disabled],
+.btn[disabled]:hover {
+    text-shadow: none;
+    background: rgb(94, 7, 7);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(95, 56, 56);
+    opacity: 1;
+}
+
+.input-group-btn:last-child>.btn {
+    margin-left: 0;
+}
+
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-right: 0;
+}
+
+.btn-group>.btn:hover,
+.btn-group>.btn:active,
+.btn-group>.btn:focus,
+.btn-group>.btn:active:focus {
+    z-index: 0;
+}
+
+/* Blue */
+.info {
+    color: #2196F3;
+    background-color: black;
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid #2196F3;
+}
+.info:hover {
+    color: #0b7dda;
+    background: black;
+}
+/* Orange */
+.warning {
+    color: #ff9800;
+    background-color: black;
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid #ff9800;
+}
+.warning:hover {
+    color: #e68a00;
+    background: black;
+}
+/* Red */
+.danger {
+    color: #f44336;
+    background-color: black;
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid #f44336;
+}
+.danger:hover {
+    color: #da190b;
+    background: black;
+}
+/* Gray */
+.default {
+    color: #e7e7e7;
+    background-color: black;
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    min-width: 100px;
+    cursor: pointer;
+    border: 1px solid #e7e7e7;
+}
+.default:hover {
+    color: rgb(139, 139, 139);
+    background: black;
+}
+
 /* CUSTOM CLOX STYLES */
 
 * {
     box-sizing: border-box;
-    font-color: green;
 }
 
 .header {
-    background-color: #001800cb;
+    background-color: #001800de;
     color: green;
     padding: 5px;
 }
 
 .footer {
-    background-color: #001800cb;
+    background-color: #001800de;
     color: green;
     padding: 10px;
 }
@@ -46,12 +146,12 @@
 
 .fallout {
     color: green;
-    background-color: #001800cb;
+    background-color: #001800de;
 }
 
 .fallout-box {
     color: green;
-    background-color: #001800cb;
+    background-color: #001800de;
     border: green;
 }
 
@@ -71,7 +171,7 @@
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 2px 3px 4px #000000;
-    background-color: #001800cb;
+    background-color: #001800de;
     text-align: center;
 }
 
@@ -85,106 +185,41 @@ body {
 
 h1 {
     font-family: "Ubuntu";
-    margin: 10px;
 }
 
 h2 {
     font-family: "Ubuntu";
-    margin: 10px;
 }
 
 h3 {
     font-family: "Ubuntu";
-    margin: 10px;
 }
 
 h4 {
     font-family: "Ubuntu";
-    margin: 20px;
 }
 
 p {
     font-family: "Ubuntu";
 }
 
-.btn {
-    border: none;
-    color: green;
-    padding: 8px 8px;
-    margin: 10px;
-    max-width: 50%;
-    min-width: 180px;
-    font-size: 12px;
-    cursor: pointer;
-    box-sizing: border-box;
-    box-shadow: 2px 3px 4px #000000;
-}
-
-.success {
-    background-color: #4CAF50;
-}
-
-/* Green */
-
-.success:hover {
-    background-color: #2f6a31;
-}
-
-.info {
-    background-color: #2196F3;
-}
-
-/* Blue */
-
-.info:hover {
-    background: #0b7dda;
-}
-
-.warning {
-    background-color: #ff9800;
-}
-
-/* Orange */
-
-.warning:hover {
-    background: #e68a00;
-}
-
-.danger {
-    background-color: #f44336;
-}
-
-/* Red */
-
-.danger:hover {
-    background: #da190b;
-}
-
-.default {
-    background-color: #e7e7e7;
-    color: "black";
-}
-
-/* Gray */
-
-.default:hover {
-    background: #ddd;
-}
-
 /* Center the loader and define appearance */
 
 #loader {
     position: relative;
-    left: 48%;
     z-index: 1;
-    width: 100px;
-    height: 100px;
-    margin-top: 20%;
-    margin-bottom: 30%;
+    width: 80px;
+    height: 80px;
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-justify-content: center;
+    /* Safari 6.1+ */
+    display: flex;
+    justify-content: center;
     border: 2px solid transparant;
     border-radius: 50%;
-    border-top: 16px solid #367d39;
-    border-bottom: 16px solid #367d39;
+    border-top: 16px solid green;
+    border-bottom: 16px solid green;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 1s linear infinite;
 }
