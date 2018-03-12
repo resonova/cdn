@@ -1,5 +1,11 @@
 /* CLOX BUTTON STYLE TYPES */
 
+button {
+    min-width: 180px;
+    min-height: 35px;
+}
+
+.button,
 .btn {
     text-shadow: 0 0 5px rgb(85, 85, 85);
     background: #000000;
@@ -9,11 +15,15 @@
     cursor: pointer;
 }
 
+.button:hover,
 .btn:hover {
     border: 1px solid rgb(52, 187, 48);
     color: red;
 }
 
+.button:focus,
+.button:active,
+.button:active:focus,
 .btn:focus,
 .btn:active,
 .btn:active:focus {
@@ -22,6 +32,8 @@
     outline: none;
 }
 
+.button[disabled],
+.button[disabled]:hover,
 .btn[disabled],
 .btn[disabled]:hover {
     text-shadow: none;
@@ -47,6 +59,7 @@
 }
 
 /* Blue */
+
 .info {
     color: #2196F3;
     background-color: black;
@@ -55,11 +68,14 @@
     cursor: pointer;
     border: 1px solid #2196F3;
 }
+
 .info:hover {
     color: #0b7dda;
     background: black;
 }
+
 /* Orange */
+
 .warning {
     color: #ff9800;
     background-color: black;
@@ -68,11 +84,14 @@
     cursor: pointer;
     border: 1px solid #ff9800;
 }
+
 .warning:hover {
     color: #e68a00;
     background: black;
 }
+
 /* Red */
+
 .danger {
     color: #f44336;
     background-color: black;
@@ -81,11 +100,14 @@
     cursor: pointer;
     border: 1px solid #f44336;
 }
+
 .danger:hover {
     color: #da190b;
     background: black;
 }
+
 /* Gray */
+
 .default {
     color: #e7e7e7;
     background-color: black;
@@ -94,9 +116,18 @@
     cursor: pointer;
     border: 1px solid #e7e7e7;
 }
+
 .default:hover {
     color: rgb(139, 139, 139);
     background: black;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
 }
 
 /* CUSTOM CLOX STYLES */
@@ -134,14 +165,6 @@
 
 .content {
     width: 60%;
-}
-
-.white {
-    color: white;
-}
-
-.black {
-    color: black;
 }
 
 .fallout {
