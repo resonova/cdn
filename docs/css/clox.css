@@ -206,7 +206,7 @@ p {
 /* Center the loader and define appearance */
 
 #loader {
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 80px;
     height: 80px;
