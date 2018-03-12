@@ -6,13 +6,13 @@
 
 .header {
     background-color: #001800cb;
-    color: #green;
+    color: green;
     padding: 5px;
 }
 
 .footer {
     background-color: #001800cb;
-    color: #green;
+    color: green;
     padding: 10px;
 }
 
@@ -62,7 +62,7 @@
 
 .menu li {
     border: none;
-    color: #green;
+    color: green;
     padding: 8px 8px;
     margin: 8px;
     width: 95%;
@@ -108,7 +108,7 @@ p {
 
 .btn {
     border: none;
-    color: #green;
+    color: green;
     padding: 8px 8px;
     margin: 10px;
     max-width: 50%;
