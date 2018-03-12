@@ -6,15 +6,14 @@
 
 .header {
     background-color: black;
-    color: #4eda7f;
+    color: #4CAF50;
     padding: 5px;
 }
 
 .footer {
     background-color: black;
-    color: #00a315;
+    color: #4CAF50;
     padding: 10px;
-    font-color: #4eda7f;
 }
 
 .column {
