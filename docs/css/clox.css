@@ -70,7 +70,7 @@ button {
 }
 
 .info:hover {
-    color: #0b7dda;
+    color: #095a9c;
     background: black;
 }
 
@@ -199,7 +199,8 @@ button {
 }
 
 .menu li:hover {
-    background-color: #da190b;
+    color: #da190b;
+    background-color: black;
 }
 
 body {
@@ -208,22 +209,32 @@ body {
 
 h1 {
     font-family: "Ubuntu";
+    color: green;
 }
 
 h2 {
     font-family: "Ubuntu";
+    color: green;
 }
 
 h3 {
     font-family: "Ubuntu";
+    color: green;
 }
 
 h4 {
     font-family: "Ubuntu";
+    color: green;
 }
 
 p {
     font-family: "Ubuntu";
+    color: green;
+}
+
+a {
+    font-family: "Ubuntu";
+    color: #095a9c;
 }
 
 /* Center the loader and define appearance */
