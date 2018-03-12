@@ -5,14 +5,14 @@
 }
 
 .header {
-    background-color: black;
-    color: #4CAF50;
+    background-color: #001800cb;
+    color: #green;
     padding: 5px;
 }
 
 .footer {
-    background-color: black;
-    color: #4CAF50;
+    background-color: #001800cb;
+    color: #green;
     padding: 10px;
 }
 
@@ -39,8 +39,19 @@
     color: white;
 }
 
-.dark {
+.black {
     color: black;
+}
+
+.fallout {
+    color: green;
+    background-color: #001800cb;
+}
+
+.fallout-box {
+    color: green;
+    background-color: #001800cb;
+    border: green;
 }
 
 .menu ul {
@@ -51,7 +62,7 @@
 
 .menu li {
     border: none;
-    color: #ffffff;
+    color: #green;
     padding: 8px 8px;
     margin: 8px;
     width: 95%;
@@ -59,7 +70,7 @@
     cursor: pointer;
     box-sizing: border-box;
     box-shadow: 2px 3px 4px #000000;
-    background-color: #f44336;
+    background-color: #001800cb;
     text-align: center;
 }
 
@@ -97,7 +108,7 @@ p {
 
 .btn {
     border: none;
-    color: #ffffff;
+    color: #green;
     padding: 8px 8px;
     margin: 10px;
     max-width: 50%;
