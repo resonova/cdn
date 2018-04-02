@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+body {
+    background-color: black;
+    color: green;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.container {
+    padding: 0 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+.card {
+    box-sizing: border-box;
+    background-color: #001800cb;
+    border-color: green;
+    min-height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-dark {
+    box-sizing: border-box;
+    background-color: #000000;
+    border-color: green;
+    min-height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.jumbotron {
+    box-sizing: border-box;
+    background-color: #001800cb;
+    border-color: #035a00;
+    min-height: 100px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.terminal-text {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 90%;
+    position: relative;
+    padding-top: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.output {
+    color: green;
+    position: relative;
+}
+
+.form-control {
+    background-color: #001800cb;
+    color: green;
+    text-align: left;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Ubuntu Mono', monospace;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3,
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.logo {
+    background: url(http://h8rt3rmin8r.com/images/ms-icon-144x144.png) no-repeat;
+    background-size: contain;
+    width: 144px;
+    height: 144px;
+    display: block;
+    text-indent: -9999px;
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.logo {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        margin-top: 30px;
+    }
+}
+
+a {
+    color: #1e5d88;
+    text-decoration: none;
+}
+
+h3 a,
+ul.nav-tabs a {
+    color: #000000;
+}
+
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+    font-size: .8em;
+    color: green;
+}
+
+code {
+    background: none;
+    color: rgb(0, 113, 206);
+}
+
+.btn {
+    text-shadow: 0 0 5px rgb(85, 85, 85);
+    background: #000000;
+    color: green;
+    border: 1px solid rgb(17, 66, 16);
+    min-width: 100px;
+}
+
+.btn:hover {
+    border: 1px solid rgb(52, 187, 48);
+    color: red;
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus {
+    background: #000000;
+    border: 1px solid rgb(52, 187, 48);
+    outline: none;
+}
+
+.btn[disabled],
+.btn[disabled]:hover {
+    text-shadow: none;
+    background: rgb(94, 7, 7);
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(95, 56, 56);
+    opacity: 1;
+}
+
+.input-group-btn:last-child>.btn {
+    margin-left: 0;
+}
+
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-right: 0;
+}
+
+.btn-group>.btn:hover,
+.btn-group>.btn:active,
+.btn-group>.btn:focus,
+.btn-group>.btn:active:focus {
+    z-index: 0;
+}
+
+#check-node-status {
+    display: none;
+}
+
+#check-node-status.alert-success a {
+    color: #248525;
+}
+
+.chart {
+    position: relative;
+}
+
+.chart:nth-child(2) {
+    margin-top: 1em;
+}
+
+.annotated-chart {
+    padding-top: 2.4em;
+}
+
+.annotation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    border: 1px solid rgb(52, 187, 48);
+    border-radius: .3em;
+    padding: .3em .5em;
+}
+
+.value {
+    color: rgb(52, 187, 48);
+    margin-right: .5em;
+}
+
+.value:last-child {
+    margin-right: 0;
+}
+
+.field {
+    color: rgb(52, 187, 48);
+    font-size: .85em;
+    text-transform: uppercase;
+}
+
+#nodes-chart,
+#availability-chart,
+#user-agents-chart,
+#countries-chart,
+#heights-chart,
+#transactions-chart,
+#blocks-chart {
+    max-width: 1280px;
+    height: 360px;
+}
+
+#latency-chart {
+    height: 150px;
+    background-color: #152b16;
+}
+
+#tps-chart {
+    height: 150px;
+    background-color: #152b16;
+}
+
+#mempool-chart {
+    height: 150px;
+    background-color: #152b16;
+}
+
+#tps {
+    cursor: pointer;
+}
+
+#mempool-txs {
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+#mempool-txs a {
+    display: inline-block;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid rgb(94, 7, 7);
+    width: 6.25%;
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#mempool-txs a:hover {
+    text-decoration: underline;
+}
+
+#mempool-txs a .bytes {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(34, 34, 34);
+    height: 2px;
+}
+
+@media screen and (max-width: 1440px) {
+    #mempool-txs a {
+        width: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #mempool-txs a {
+        width: 12.5%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #mempool-txs a {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #mempool-txs a {
+        width: 25%;
+    }
+}
+
+.block {
+    display: inline-block;
+    background: #000000;
+    text-align: center;
+    border: 1px solid rgb(94, 7, 7);
+    padding: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.block .row {
+    margin: 0;
+}
+
+.block code {
+    display: block;
+    border-top: 1px solid #000000;
+    border-radius: 0;
+    font-size: .65em;
+    padding: 0;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.block code:last-child {
+    border-top: 0;
+    padding-top: 2px;
+    margin-top: 0;
+}
+
+.block p.field {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .block {
+        width: 100%;
+        background: none;
+        border: 0;
+        margin-bottom: 0;
+    }
+}
+
+span.label {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: rgb(52, 187, 48);
+}
+
+span.label .fa {
+    color: rgb(52, 187, 48);
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background: #000000;
+}
+
+.table-hover>tbody>tr:hover>td {
+    background: rgb(94, 7, 7);
+}
+
+td {
+    vertical-align: top;
+}
+
+table.status-messages>tbody>tr>td {
+    padding-left: 0;
+}
+
+.paginator {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+span.zero {
+    color: rgb(0, 0, 0);
+}
+
+#map-canvas {
+    border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    min-width: 240px;
+    height: 480px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.container-fluid {
+    line-height: 1.8em;
+}
+
+ul {
+    margin: 0;
+}
+
+.big h3 {
+    color: rgb(52, 187, 48);
+    font-size: 1.6em;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.big h4 {
+    color: rgb(52, 187, 48);
+    font-size: 1.2em;
+    text-transform: none;
+    margin-top: .5em;
+}
+
+.big h4:nth-child(1) {
+    margin-top: 0;
+}
+
+.big i.fa-chevron-left {
+    position: absolute;
+    top: 135px;
+    left: 15px;
+    color: rgb(94, 7, 7);
+}
+
+.big i.fa-chevron-right {
+    position: absolute;
+    top: 135px;
+    right: 15px;
+    color: rgb(94, 7, 7);
+}
+
+.close {
+    margin-top: -3px
+}
+
+.close:active {
+    outline: none;
+}
+
+.divider {
+    border-left: 1px solid rgb(94, 7, 7);
+    width: 1px;
+    height: 4em;
+    margin: 0 2.4em;
+}
+
+@media screen and (max-width: 480px) {
+    .divider {
+        margin: 0 1.2em;
+    }
+    @media screen and (max-width: 320px) {
+        .divider {
+            border: 0;
+            margin: 0 1em;
+        }
+    }
+}
+
+.delimiter {
+    margin: 0 .4em;
+}
+
+#stream {
+    width: 3em;
+}
+
+.fa-play {
+    display: none;
+}
+
+#shortlisted {
+    display: none;
+}
+
+table.paused td,
+h3.paused,
+#tps-chart.paused {
+    opacity: .7;
+}
+
+.progress {
+    height: 5px;
+    border-radius: 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: #1f1f1f;
+}
+
+.progress-bar {
+    background: rgb(94, 7, 7);
+    opacity: .2;
+}
+
+.progress-bar.fill {
+    background: rgb(94, 7, 7);
+    opacity: .6;
+}
