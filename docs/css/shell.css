@@ -1,6 +1,14 @@
 /* 
-SOURCE: https://guides.codechewing.com/mac-terminal-shell-css-html
- */
+
+###############################################################################
+#   SHELL.CSS   #
+#################
+
+By h8rt3rmin8r (161803398@email.tg)
+Adapted from source: https://guides.codechewing.com/mac-terminal-shell-css-html
+
+###############################################################################
+*/
 
 html,
 body {
@@ -9,6 +17,8 @@ body {
     font: 16px 'Andale Mono', Consolas, 'Courier New';
     height: 100%;
     background: url('https://resonova.github.io/google-scripts/assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .shell-wrap {
@@ -58,7 +68,6 @@ body {
     padding: 5px;
     list-style: none;
     background: rgba(0, 0, 0, 0.753);
-    color: #45D40C;
     font: 0.8em 'Andale Mono', Consolas, 'Courier New';
     line-height: 1.6em;
     -webkit-border-bottom-right-radius: 3px;
@@ -69,28 +78,73 @@ body {
     border-bottom-left-radius: 3px;
 }
 
+/* STYLE FOR INPUT LINES */
+
 .shell-body li:before {
     content: 'h8rt3rmin8r:~$';
     position: absolute;
     left: 0;
     top: 0;
+    color: #45D40C;
 }
 
 .shell-body li {
     word-wrap: break-word;
     position: relative;
     padding: 0 0 0 120px;
+    color: #45D40C;
 }
+
+/* STYLE FOR OUTPUT LINES */
 
 .shell-body-print li:before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
+    color: #45D40C;
 }
 
 .shell-body-print li {
     word-wrap: break-word;
     position: relative;
     padding: 0 0 0 2px;
+    color: #45D40C;
 }
+
+/* STYLE FOR PRINTED LINKS */
+
+.shell-body a {
+    word-wrap: break-word;
+    position: relative;
+    padding: 0 0 0 2px;
+    color: rgb(1, 90, 255);
+}
+
+.shell-body-link a {
+    word-wrap: break-word;
+    position: relative;
+    padding: 0 0 0 2px;
+    color: rgb(1, 90, 255);
+}
+
+.shell-body-print a {
+    word-wrap: break-word;
+    position: relative;
+    padding: 0 0 0 2px;
+    color: rgb(1, 90, 255);
+}
+
+/*
+ 
+ __         ______              __       ______                           __             ______            
+ |  \       /      \            |  \     /      \                         |  \           /      \           
+ | $$____  |  $$$$$$\  ______  _| $$_   |  $$$$$$\  ______   ______ ____   \$$ _______  |  $$$$$$\  ______  
+ | $$    \ | $$__/ $$ /      \|   $$ \   \$$__| $$ /      \ |      \    \ |  \|       \ | $$__/ $$ /      \ 
+ | $$$$$$$\ >$$    $$|  $$$$$$\\$$$$$$    |     $$|  $$$$$$\| $$$$$$\$$$$\| $$| $$$$$$$\ >$$    $$|  $$$$$$\
+ | $$  | $$|  $$$$$$ | $$   \$$ | $$ __  __\$$$$$\| $$   \$$| $$ | $$ | $$| $$| $$  | $$|  $$$$$$ | $$   \$$
+ | $$  | $$| $$__/ $$| $$       | $$|  \|  \__| $$| $$      | $$ | $$ | $$| $$| $$  | $$| $$__/ $$| $$      
+ | $$  | $$ \$$    $$| $$        \$$  $$ \$$    $$| $$      | $$ | $$ | $$| $$| $$  | $$ \$$    $$| $$      
+  \$$   \$$  \$$$$$$  \$$         \$$$$   \$$$$$$  \$$       \$$  \$$  \$$ \$$ \$$   \$$  \$$$$$$  \$$      
+ 
+ */
