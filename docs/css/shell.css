@@ -5,7 +5,7 @@ SOURCE: https://guides.codechewing.com/mac-terminal-shell-css-html
 html, body {
   margin: 0;
   padding: 0;
-  font: 16px Arial, sans-serif;
+  font: 16px 'Andale Mono', Consolas, 'Courier New';
   height: 100%;
   background: url('https://resonova.github.io/google-scripts/assets/bg.jpg');
 }
@@ -25,7 +25,7 @@ html, body {
     padding: 5px 0;
     margin: 0;
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-    font-size: 0.85em;
+    font: 0.85em 'Andale Mono', Consolas, 'Courier New';
     border: 1px solid #CCCCCC;
     border-bottom: none;
     -webkit-border-top-left-radius: 3px;
