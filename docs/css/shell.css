@@ -64,6 +64,8 @@ body {
     /* IE6-9 */
 }
 
+/* STYLE FOR INPUT LINES */
+
 .shell-body {
     margin: 0;
     padding: 5px;
@@ -78,8 +80,6 @@ body {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-
-/* STYLE FOR INPUT LINES */
 
 .shell-body li:before {
     content: 'h8rt3rmin8r:~$';
@@ -98,6 +98,21 @@ body {
 
 /* STYLE FOR OUTPUT LINES */
 
+.shell-body-print {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.829);
+    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+    line-height: 1.6em;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
 .shell-body-print li:before {
     content: '';
     position: absolute;
@@ -114,6 +129,21 @@ body {
 }
 
 /* STYLE FOR PRINTED LINKS */
+
+.shell-body-link {
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.829);
+    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
+    line-height: 1.6em;
+    -webkit-border-bottom-right-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
 
 .shell-body a {
     word-wrap: break-word;
