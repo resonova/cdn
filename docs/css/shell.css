@@ -86,14 +86,14 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    color: #45D40C;
+    color: rgb(64, 226, 0);
 }
 
 .shell-body li {
     word-wrap: break-word;
     position: relative;
     padding: 0 0 0 120px;
-    color: #45D40C;
+    color: rgb(64, 226, 0);
 }
 
 /* STYLE FOR OUTPUT LINES */
@@ -103,14 +103,14 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    color: #45D40C;
+    color: rgb(64, 226, 0);
 }
 
 .shell-body-print li {
     word-wrap: break-word;
     position: relative;
     padding: 0 0 0 2px;
-    color: #45D40C;
+    color: rgb(64, 226, 0);
 }
 
 /* STYLE FOR PRINTED LINKS */
