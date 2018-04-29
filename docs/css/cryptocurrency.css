@@ -106,20 +106,33 @@
 
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
+    margin-bottom: -3px;
 }
 
 body {
-    margin-bottom: 60px;
-    /* Footer height */
+    margin-bottom: 40px;
+}
+
+p {
+    min-height: 18px;
+    padding-top: 8px;
+}
+
+pre {
+    min-height: 18px;
+    padding-top: 8px;
+    font-size: 1.1em;
 }
 
 footer {
     position: absolute;
     bottom: 0;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     width: 100%;
+    margin-bottom: -1px;
+    padding-bottom: -3px;
 }
 
 .data-space-sm {
@@ -131,37 +144,12 @@ footer {
 .data-space-lg {
     min-height: 140px;
     text-align: center;
-    line-height: 70px;
-}
-
-#btc-header {
-    max-height: 220px;
-}
-
-#btc-header-text {
-    text-align: left;
-    font-size: 50px;
-    line-height: 72px;
-    padding-top: 10px;
-}
-
-#btc-footer {
-    border-top: 3px solid #ff9900;
-    border-left: 3px solid #ff9900;
-    border-right: 3px solid #ff9900;
-    border-radius: 3px;
-    background-color: #e7e7e7;
-    color: "black";
-    text-align: center;
-}
-
-#btc-footer-text {
-    bottom: 0;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .sidenote {
     text-align: center;
-    font-color: grey;
     color: grey;
     margin-bottom: -4px;
 }
@@ -198,6 +186,10 @@ footer {
     box-shadow: 2px 3px 4px black;
 }
 
+.jumbotron {
+    margin-top: -30px;
+}
+
 .container-shadow {
     border: 1px solid #f4f4f4;
     border-radius: 3px;
@@ -206,28 +198,30 @@ footer {
     box-shadow: 2px 3px 4px grey;
 }
 
+/* Vertical and Horrizontal Positioning */
+
 /*
-        .v-positioning-top {
-            height: 20%;
-            position: relative;
-        }
-        
-        .v-positioning-mid {
-            height: 60%;
-            position: relative;
-        }
-        
-        .v-positioning-btm {
-            height: 20%;
-            position: relative;
-        }
-        */
+.v-positioning-top {
+    height: 20%;
+    position: relative;
+}
+*/
+
+.v-positioning-mid {
+    height: 60%;
+    position: relative;
+}
+
+.v-positioning-btm {
+    height: 20%;
+    position: relative;
+}
 
 .h-positioning-lft {
     max-width: 73px;
     min-width: 72px;
-    max-height: 73px;
-    min-height: 72px;
+    max-height: 56px;
+    min-height: 55px;
 }
 
 .h-positioning-mid {
@@ -237,4 +231,43 @@ footer {
 .h-positioning-rit {
     text-align: left;
     min-width: 80%;
+}
+
+/* ID Tag Styles */
+
+#btc-header {
+    max-height: 190px;
+    border-bottom: 3px solid #ff9900;
+    border-left: 3px solid #ff9900;
+    border-right: 3px solid #ff9900;
+    border-radius: 3px;
+    background-color: #d8d8d8;
+    color: "black";
+    box-shadow: 2px 3px 4px grey;
+}
+
+#btc-header-text {
+    text-align: left;
+    font-size: 50px;
+    line-height: 52px;
+    padding-top: 8px;
+}
+
+#btc-header-img {
+    /* Only use with square images */
+    box-shadow: 2px 3px 4px grey;
+}
+
+#btc-footer {
+    border-top: 3px solid #ff9900;
+    border-left: 3px solid #ff9900;
+    border-right: 3px solid #ff9900;
+    border-radius: 3px;
+    background-color: #d8d8d8;
+    color: "black";
+    text-align: center;
+}
+
+#btc-footer-text {
+    bottom: 0;
 }
