@@ -1,0 +1,240 @@
+/* ---- COLOR STYLES AND EFFECTS ---- */
+
+.btn {
+    border: none;
+    color: #ffffff;
+    padding: 5px 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    max-width: 50%;
+    min-width: 230px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.shadow-btn {
+    border: none;
+    color: #ffffff;
+    padding: 5px 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    max-width: 50%;
+    min-width: 230px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 8px black;
+}
+
+/* Green */
+
+.card-success,
+.success {
+    background-color: #4CAF50;
+}
+
+.success:hover {
+    background-color: #46a049;
+}
+
+.border-success {
+    border: 2px solid #4CAF50;
+}
+
+/* Blue */
+
+.card-info,
+.info {
+    background-color: #2196F3;
+}
+
+.info:hover {
+    background: #0b7dda;
+}
+
+.border-info {
+    border: 2px solid #2196F3;
+}
+
+/* Orange */
+
+.card-warning,
+.warning {
+    background-color: #ff9800;
+}
+
+.warning:hover {
+    background: #e68a00;
+}
+
+.border-warning {
+    border: 2px solid #ff9800;
+}
+
+/* Red */
+
+.card-danger,
+.danger {
+    background-color: #f44336;
+}
+
+.danger:hover {
+    background: #da190b;
+}
+
+.border-danger {
+    border: 2px solid #f44336;
+}
+
+/* Gray */
+
+.card-default,
+.default {
+    background-color: #e7e7e7;
+    color: "black";
+}
+
+.default:hover {
+    background: #ddd;
+}
+
+.border-default {
+    border: 2px solid #e7e7e7;
+}
+
+/* ---- GENERAL STYLE CUSTOMIZATIONS ---- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    /* Footer height */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+}
+
+.data-space-sm {
+    min-height: 69px;
+    max-height: 70px;
+    text-align: center;
+}
+
+.data-space-lg {
+    min-height: 140px;
+    text-align: center;
+    line-height: 70px;
+}
+
+#btc-header {
+    max-height: 220px;
+}
+
+#btc-header-text {
+    text-align: left;
+    font-size: 50px;
+    line-height: 72px;
+    padding-top: 10px;
+}
+
+#btc-footer {
+    border-top: 3px solid #ff9900;
+    border-left: 3px solid #ff9900;
+    border-right: 3px solid #ff9900;
+    border-radius: 3px;
+    background-color: #e7e7e7;
+    color: "black";
+    text-align: center;
+}
+
+#btc-footer-text {
+    bottom: 0;
+}
+
+.sidenote {
+    text-align: center;
+    font-color: grey;
+    color: grey;
+    margin-bottom: -4px;
+}
+
+#timer {
+    display: none;
+}
+
+.btc-color {
+    background-color: #ff9900;
+    color: #ffffff;
+}
+
+.btc-color-invert {
+    background-color: white;
+    color: #ff9900;
+}
+
+.btc-border {
+    border: 3px solid #ff9900;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px grey;
+}
+
+.btc-border-dynamic {
+    border: 3px solid #ff9900;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px grey;
+}
+
+.btc-border-dynamic:hover {
+    border: 3px solid #dd8706;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px black;
+}
+
+.container-shadow {
+    border: 1px solid #f4f4f4;
+    border-radius: 3px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 4px grey;
+}
+
+/*
+        .v-positioning-top {
+            height: 20%;
+            position: relative;
+        }
+        
+        .v-positioning-mid {
+            height: 60%;
+            position: relative;
+        }
+        
+        .v-positioning-btm {
+            height: 20%;
+            position: relative;
+        }
+        */
+
+.h-positioning-lft {
+    max-width: 73px;
+    min-width: 72px;
+    max-height: 73px;
+    min-height: 72px;
+}
+
+.h-positioning-mid {
+    width: 8px;
+}
+
+.h-positioning-rit {
+    text-align: left;
+    min-width: 80%;
+}
