@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Clock</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 shrink-to-fit=no">
+
+    <!-- FAVICON BRANDING -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://resonova.github.io/favicons/spider/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://resonova.github.io/favicons/spider/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://resonova.github.io/favicons/spider/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://resonova.github.io/favicons/spider/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://resonova.github.io/favicons/spider/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://resonova.github.io/favicons/spider/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://resonova.github.io/favicons/spider/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://resonova.github.io/favicons/spider/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://resonova.github.io/favicons/spider/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://resonova.github.io/favicons/spider/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://resonova.github.io/favicons/spider/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://resonova.github.io/favicons/spider/favicon-16x16.png">
+    <link rel="manifest" href="https://resonova.github.io/favicons/spider/manifest.json">
+    <link rel="icon" sizes="192x192" href="https://resonova.github.io/favicons/spider/android-icon-192x192.png">
+    <link rel="apple-touch-icon-precomposed" href="https://resonova.github.io/favicons/spider/apple-icon-precomposed.png">
+    <link rel="shortcut icon" href="https://resonova.github.io/favicons/spider/favicon.ico">
+    <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#10871e">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://resonova.github.io/favicons/spider/ms-icon-144x144.png">
+    <meta name="theme-color" content="#10871e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Clock">
+
+    <!-- ****** STYLE ****** -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fonts-ubuntu.css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://resonova.github.io/cdn/css/fallout3.css" type="text/css">
+    <style type="text/css">
+        html {
+            background-color: black;
+        }
+        
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            font-size: 300%;
+        }
+
+        h2 {
+            font-size: 250%;
+        }
+
+        p {
+            font-size: 120%;
+        }
+
+        .card {
+            min-width: 300px;
+            max-width: 90%;
+        }
+
+        .center-block {
+            padding: 10px;
+        }
+    </style>
+
+    <!-- ****** SCRIPT ****** -->
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTimeA(m);
+            s = checkTimeA(s);
+            h = checkTimeB(h)
+            document.getElementById('clock').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTimeA(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+
+        function checkTimeB(j) {
+            if (j < 10) {
+                j = "0" + j
+            }; // add zero in front of numbers < 10
+            return j;
+        }
+    </script>
+
+</head>
+
+<body class="text-white" onload="startTime()">
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="center-block">
+                <div class="card text-center mb-3" style="min-height: 150px">
+                    <div class="card-header text-center">LOCAL TIME</div>
+
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <div id="clock"></div>
+                        </h2>
+                    </div>
+                    <br>
+
+                    <!--
+                        <div class="card-header text-center">WORLD TIMES</div>
+                    <div class="card-body">
+                        <h2 class="card-title">UTC</h2>
+                        <br>
+                        <div id="divUTC"></div>
+                        <br>
+                        <h2 class="card-title">LOCAL TIME</h2>
+                        <br>
+                        <div id="divLocal">
+                        </div>
+                        <br>
+                        <h2 class="card-title">BANGKOK</h2>
+                        <br>
+                        <div id="divThai">
+                        </div>
+                        <br>
+                        <h2 class="card-title">LOS ANGELES</h2>
+                        <br>
+                        <div id="divUsa">
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                            setInterval(function () {
+                                var divUtc = $('#divUTC');
+                                var divLocal = $('#divLocal');
+                                //put UTC time into divUTC  
+                                divUtc.text(moment.utc().format('YYYY-MM-DD HH:mm:ss'));
+
+                                //get text from divUTC and conver to local timezone  
+                                var localTime = moment.utc(divUtc.text()).toDate();
+                                localTime = moment(localTime).format('YYYY-MM-DD HH:mm:ss');
+                                divLocal.text(localTime);
+
+                                $('#divThai').text(moment.tz('Asia/Bangkok').format(
+                                    'YYYY-MM-DD HH:mm:ss'));
+                                $('#divUsa').text(moment.tz('America/Los_Angeles').format(
+                                    'YYYY-MM-DD HH:mm:ss'));
+                            }, 1000);
+                        });
+                    </script>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SITE SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+</body>
+
+</html>

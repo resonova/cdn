@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CoinCalendar</title>
+    <meta name="description" content="A global cryptocurrency and blockchain calendar of events">
+    <!-- ****** FAVICONS AND BRANDING ****** -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://h8rt3rmin8r.com/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://h8rt3rmin8r.com/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://h8rt3rmin8r.com/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://h8rt3rmin8r.com/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://h8rt3rmin8r.com/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://h8rt3rmin8r.com/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://h8rt3rmin8r.com/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://h8rt3rmin8r.com/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://h8rt3rmin8r.com/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://h8rt3rmin8r.com/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://h8rt3rmin8r.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://h8rt3rmin8r.com/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://h8rt3rmin8r.com/images/favicon-16x16.png">
+    <link rel="manifest" href="https://h8rt3rmin8r.com/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://h8rt3rmin8r.com/images/images/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CoinCalendar">
+    <link rel="apple-touch-icon-precomposed" href="https://h8rt3rmin8r.com/images/images/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="http://h8rt3rmin8r.com/images/images/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://h8rt3rmin8r.com/images/images/favicon.png">
+
+    <!--Site Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <style>
+        select {
+            padding: 4px;
+        }
+
+        option {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .card {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>CoinCalendar</h1>
+            <p class="lead">A global cryptocurrency and blockchain calendar of events</p>
+            <br>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-title">
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script type="text/javascript" src="http://www.coincalendar.info/wp-content/plugins/eventon-api/eventon.js?ver=1.0.1"></script>
+                <script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        $('#eventoncontent').evoCalendar({
+                            api: 'http://www.coincalendar.info/wp-json/eventon/calendar?event_type=3,1266,1267&number_of_months=1&event_count=20&show_et_ft_img=yes',
+                            calendar_url: '',
+                            new_window: true,
+                            loading_text: 'Loading Calendar...'
+                        });
+                    });
+                </script>
+                <div id="eventoncontent" style="height:100%; width:100%"></div>
+
+            </div>
+            <div class="card-text">
+                <div id="outputData">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

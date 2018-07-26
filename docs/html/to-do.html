@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TO-DO</title>
+  <!-- ****** META CONFIGURATIONS ****** -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="Stay focused and productive. Track your to-do list with this simple tool by ResoNova">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="productivity, to-do list, to-do app, to-do online, to-do, resonova">
+
+  <!-- ****** SITE BASE LOCATION ****** -->
+  <!-- <base href="http://apt-get.co/to-do"> -->
+  <!-- ****** BRANDING ****** -->
+  <link rel="apple-touch-icon" sizes="57x57" href="http://apt-get.co/to-do/images/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="http://apt-get.co/to-do/images/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://apt-get.co/to-do/images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://apt-get.co/to-do/images/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://apt-get.co/to-do/images/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="http://apt-get.co/to-do/images/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="http://apt-get.co/to-do/images/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="http://apt-get.co/to-do/images/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="http://apt-get.co/to-do/images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="http://apt-get.co/to-do/images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://apt-get.co/to-do/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="http://apt-get.co/to-do/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://apt-get.co/to-do/images/favicon-16x16.png">
+  <link rel="manifest" href="http://apt-get.co/to-do/images/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="http://apt-get.co/to-do/images/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="http://apt-get.co/to-do/images/android-icon-192x192.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="TO-DO">
+  <link rel="apple-touch-icon-precomposed" href="http://apt-get.co/to-do/images/apple-icon-precomposed.png">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="http://apt-get.co/to-do/images/ms-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <link rel="shortcut icon" href="http://apt-get.co/to-do/images/favicon.png">
+
+  <!-- ****** STYLE ****** -->
+  <link rel="stylesheet" href="http://apt-get.co/to-do/index.css">
+  <link rel="stylesheet" href="http://apt-get.co/to-do/bootstrap.min.css">
+  <style type="text/css">
+    .center-block {
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 300%;
+    }
+
+    h2 {
+      font-size: 250%;
+    }
+
+    p {
+      font-size: 120%;
+    }
+
+    .root {
+      width: 100%; 
+      text-align: center;
+    }
+  </style>
+
+  <!-- ****** SCRIPT ****** -->
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTimeA(m);
+      s = checkTimeA(s);
+      h = checkTimeB(h)
+      document.getElementById('clock').innerHTML =
+        h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+
+    function checkTimeA(i) {
+      if (i < 10) {
+        i = "0" + i
+      }; // add zero in front of numbers < 10
+      return i;
+    }
+    function checkTimeB(j) {
+      if (j < 10) {
+        j = "0" + j
+      }; // add zero in front of numbers < 10
+      return j;
+    }
+  </script>
+
+</head>
+
+<body class="bg-white" onload="startTime()">
+  <div class="jumbotron jumbotron-fluid bg-dark text-white">
+    <div class="container">
+      <h1 class="display-3">
+        <img src="http://apt-get.co/to-do/images/apple-icon-60x60.png" border="0" class="rounded-0 bg-light"/> TO-DO </h1>
+      <hr>
+      <p class="lead">Stay focused and get things done with this simple to-do list by ResoNova</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="center-block"><div class="card text-center bg-light mb-3" style="width: 75rem; min-height: 150px">
+        <div class="card-header">CURRENT TIME</div>
+        <div class="card-body">
+          <h2 class="card-title" style="text-align: center">
+            <div id="clock"></div></h2>
+          
+        </div></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center-block"><div class="card text-center bg-light mb-3" style="width: 75rem; min-height: 350px">
+        <div class="card-header">YOUR LIST</div>
+        <div class="card-body">
+          <div id="root"></div>
+          <script src="http://apt-get.co/to-do/index.js"></script>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+
+  <footer class="footer bg-dark fixed-bottom">
+    <div class="container bg-dark">
+      <span class="text-white bg-dark">© 2017
+        <a href="https://www.resonova.com" class="text-light">ResoNova.com </a>
+      </span>
+    </div>
+  </footer>
+
+
+
+  <!-- Bootstrap scripts added at the end to improve site performance -->
+  <script src="http://apt-get.co/to-do/slim.min.js"></script>
+  <script src="http://apt-get.co/to-do/popper.min.js"></script>
+  <script src="http://apt-get.co/to-do/bootstrap.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
+
