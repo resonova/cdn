@@ -107,7 +107,7 @@
 }
 
 #tabset-tabs li.selected {
-    background: #002203d5;
+    background: #000000d5;
     border-bottom: 1px solid #4b0000;
 }
 
@@ -116,7 +116,7 @@ input#uri {
 }
 
 input#uri.defaulted {
-    color: #002203d5;
+    color: #003105d5;
 }
 
 #upload {
