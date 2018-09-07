@@ -64,7 +64,7 @@
 #fields {
     background-color: #000000;
     border: 1px solid #4b0000;
-    clear: both
+    clear: both;
 }
 
 #tabset-tabs li {
@@ -93,17 +93,17 @@
 #tabset-tabs li a:link,
 #tabset-tabs li a:visited {
     text-decoration: none;
-    color: #132f6b;
+    color: #163f97;
     font-weight: bold
 }
 
 #tabset-tabs li a:hover {
-    color: #132f6b;
+    color: #1049c4;
 }
 
 #tabset-tabs li.selected a:link,
 #tabset-tabs li.selected a:visited {
-    color: #19346d;
+    color: #163f97;
 }
 
 #tabset-tabs li.selected {
