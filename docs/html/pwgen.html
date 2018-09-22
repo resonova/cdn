@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Strong Password Generator</title>
+	<title>Password Generator</title>
 	<meta name="description" content="A strong password generator to create secure passwords that are impossible to crack">
 	<meta name="keywords" content="Password Generator, Online Password Generator, Random Password Generator, Secure Password Generator, Create Password, Generate Password">
 	<!-- ****** FAVICONS AND BRANDING ****** -->
@@ -58,22 +58,52 @@
 			font-size: 13px;
 			background: #222222;
 		}
+		
+		h1, h2, h3, h4 {
+		    margin-top: 2px;
+		    margin-bottom: 2px;
+		    margin-left: 0px;
+		    margin-right: 0px;
+		    text-transform: uppercase;
+		    color: #008040;
+		}
+		
+		h1 {
+		    font-size: 24px;
+		}
+		
+		h2 {
+		    font-size: 22px;
+		}
+		
+		h3 {
+		    font-size: 20px;
+		}
+		
+		h4 {
+		    font-size: 18px;
+		}
 
 		.container {
-			margin: 12px auto;
+			margin: 4px auto;
+			margin-top: 8px;
 			background: #ffffff;
 			border: 1px solid #dfdfdf;
-			border-radius: 10px 10px;
+			border-radius: 2px 2px;
+			min-width: 277px;
+			max-width: 727px;
 		}
 
 		#Logo {
-			width: 80px;
+			width: 60px;
+			padding-top: 10px;
+			padding-bottom: 10px;
 			float: left;
 		}
 
 		#LogoText {
 			float: left;
-			padding: 12px;
+			padding: 6px;
 		}
 
 		#review {
@@ -84,30 +114,40 @@
 
 		#pgLength {
 			float: left;
-			width: 200px;
+			width: 100%;
+			max-width: 170px;
 			font-family: Arial, Helvetica, sans-serif;
-			font-size: 14px;
-			margin: 2px 0 0 4px;
+			font-size: 13px;
+			margin: 2px 0px 0px 0px;
 		}
 
 		.chboxl {
 			display: inline;
 			text-align: left;
 			float: left;
-			width: 220px;
+			width: 100%;
 			margin: 0;
 			padding: 0;
-			height: 27px;
+			font-size: 14px;
 		}
 
 		.chboxr {
 			display: inline;
 			text-align: left;
 			float: left;
-			width: 370px;
+			width: 100%;
 			margin: 0;
 			padding: 0;
-			height: 27px;
+			font-size: 12px;
+		}
+		
+		.chboxi {
+		    float: left;
+			width: 100%;
+			margin: 0;
+			padding-bottom: 2px;
+			padding-top: 2px;
+			height: 10px;
 		}
 
 		.Phoneticl {
@@ -116,46 +156,17 @@
 			font-size: 10px;
 			word-wrap: break-word;
 			float: left;
-			width: 130px;
-			height: 150px;
+			width: 100%;
 		}
 
 		.Phoneticr {
 			display: inline;
 		}
 
-		#genbtn:hover {
-			background-position: 0 -38px;
-		}
-
-		#genbtn:active {
-			background-position: 0 -76px;
-			position: relative;
-		}
-
-		#genbtn {
-			border: 0px;
-			cursor: pointer;
-			width: 298px;
-			height: 38px;
-			display: block;
-			color: #000000;
-			margin: 0 0 0 220px;
-			padding: 0 0 0 0;
-			background: url(images/button.png);
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 14px;
-			float: left;
-		}
-
 		#header {
-			height: 70px;
-			float: left;
-			margin: 0 0px 20px 40px;
+			margin: 0 0px 20px 20px;
 			text-align: left;
-			padding: 5px 5px 3px 5px;
-			font-size: 26px;
-			border-bottom: 1px solid #dfdfdf;
+			font-size: 24px;
 		}
 
 		.sec_blank {
@@ -166,10 +177,10 @@
 		}
 
 		#sec_options {
-			width: 800px;
+			min-width: 200px;
+			max-width: 800px;
 			float: left;
-			margin: 0 0 10px 0;
-			padding: 2px 50px 2px 50Px;
+			padding: 2px 20px 2px 20px;
 		}
 
 		#sec_pron {
@@ -181,16 +192,18 @@
 		#sec_btn {
 			margin: 0 0 0 0;
 			text-align: left;
-			padding: 0px 50px 5px 50px;
+			padding: 0px 0px 5px 20px;
 			float: left;
+			width: 80%;
 		}
 
 		#sec_password {
 			margin: 10px 0 0 0;
 			text-align: left;
-			padding: 0px 50px 10px 50px;
+			padding: 0px 20px 10px 20px;
 			float: left;
-			max-width: 80%;
+			max-width: 800px;
+			min-width: 200px;
 		}
 
 		p {
@@ -228,12 +241,16 @@
 		}
 
 		.GenerateBtn {
-			margin: 0 5px 5px 220px;
+			margin: 0px 5px 5px 20px;
 			padding: 0 0 0 0;
 			width: 185px;
 			height: 35px;
 			line-height: 35px;
 			font-size: 14px;
+		}
+		
+		.GenerateBtn:active {
+			margin: 1px 4px 4px 21px;
 		}
 
 		.button {
@@ -285,10 +302,6 @@
 			border: 1px #dadada solid;
 		}
 
-		.GenerateBtn:active {
-			margin: 1px 4px 4px 221px;
-		}
-
 		.LoadSettingsDIV {
 			visibility: hidden;
 			height: 0px;
@@ -314,7 +327,9 @@
 		}
 
 		#final_pass {
-			max-width: 80%;
+			max-width: 800px;
+			min-width: 200px;
+			width: 90%;
 		}
 	</style>
 	<script language="javascript" type="text/javascript">
@@ -487,9 +502,6 @@
 							if (b7) s_('final_pass');
 						}
 					};
-					c.open("GET", "//calc.php?Length=" + b + "&Symbols=" + a + "&Lowercase=" + g +
-						"&Uppercase=" + l + "&Numbers=" + p + "&Nosimilar=" + f + "&Last=" + m, true);
-					c.send()
 				}
 			}
 		}
@@ -570,28 +582,6 @@
 			}
 		}
 
-		function S7P(a) {
-			var c = document.getElementById("SaveSettings").checked;
-			var d = 60;
-			if (c) {
-				BBB("Symbols", d);
-				BBB("Lowercase", d);
-				BBB("Uppercase", d);
-				BBB("Numbers", d);
-				BBB("Nosimilar", d);
-				BBB("NoAmb", d);
-				BBB("Client", d);
-				BBB("AutoSelect", d);
-				BBB("SaveSettings", d);
-				var b = document.getElementById("pgLength").value;
-				Jx2("pgLength", b, d)
-			} else {
-				if (a) {
-					x2J()
-				}
-			}
-		};
-
 		function $(id) {
 			return document.getElementById(id);
 		}
@@ -642,22 +632,6 @@
 			else
 				OIU();
 		}
-
-		function newtab(strURL) {
-			var win = window.open(strURL, '_blank');
-			win.focus();
-		}
-
-		function scrollme() {
-			var bodyRect = document.body.getBoundingClientRect();
-			var elemRect = $("SecTipsDIV").getBoundingClientRect();
-			var offset2 = elemRect.top - bodyRect.top;
-			window.scrollTo(0, offset2);
-		}
-
-		function scroll2top() {
-			window.scrollTo(0, 0);
-		}
 	</script>
 
 </head>
@@ -666,60 +640,13 @@
 	<div class="container">
 		<br>
 		<div id="header">
-			<div id="Logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAC/VBMVEX////x8fHQ0dKxsrKfn5+b
-mpuYl5aioqKsq6vDw8PR0dHb293///7l5eVcW1tAPj9JSUpWVFViYWN0c3SMjIy4ubnX2NrHx8ba
-2tr29vdYWFoxLy8oJyc6NzhFRERvbm+vrq63trbf3+Dd3d1fXl5mZmeNjpC7vb66urulpaVPTU6Q
-kJBrbG77+/zo6OmAgIBSUVKCgoLq6uqFhYX9/f3h4uLJyszs7Oza2NCyr6JwaVeoqKjDxMbOz9G4
-s56onXacjVmdj16dlHWOin9wcHF6eXmCg4ShoqSYmpybnaC5u73j4+O6spajklaVh1iRiGmno5Ws
-rrG8vsDNzs+Lioitr7K4ubyqrK6ytLbn5+f4+PjbzqLgz5HDuJWqo4ylo52Sk5aGh4mpqqzBwsSK
-i42mqKq+wMGusLPKy818fHy8uK336r7v4Krp26rVx5bp5danqax+f4K0triysaz98s7h0ZvHtnz6
-+vrFx8kdGQ0zLR1paGe2uLu/wcLv7/Dl383w4rK9qmvRya/R09SlpqjExcfGyMqVlpialorNuHHt
-7u6zs7NMTE7Bw8XMzc6Jh4H07NLr1pLbxn9ZVEaSjXm1t7nV1datqJvCrWeKfVVhX1mIf2DT1NV3
-eHja0bTZwXKbilCrrbCxqY+wsrVraGDhynnIsmh7bDjBvrCvsbTIycm0oV9wYzZzak7TvHNjWDJx
-ZT7Nt2xdUi+dm5J4eXxlXDxWTCvz8/ORkZNeVjqnlVmSgkyejVNTTDWNfEV2aT5NRCl+ck6gjlKM
-fU1lYVa+qmR5bD+FdkNVTjetqqJ2akRsYT5mYE5QRy98fYC4p20sJRNdXmCmmWqunWFAOCGWl5qW
-hlBHPyNoaWt9e3N6dWXm0IZpXTaEd058dFuqmFrp2J19b0OZj2zAs4Xf0qeak3+foKLW19fm2ra3
-qnyZjWT89dyimHq8sIn99uL19fW+rXCrnW/f1739+u3CwLnRwIqIek3U0srx7uL///TEt4zx36Gi
-m4GyoWqKhXAwbim3AAAHpklEQVR4AZSRA5JDQRRF40bQjL5tY2zsf0tTGDun+Iw7+MRwNJ5MZwAi
-PB8uBgeznK4IoYwLCdZ4g7e7/WH1W4Womqbquk4MZk4RRpbtHFDvekRViR/AEKEoln7CzBTMwO7f
-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"
-				 alt="Secure Random Password Generator" border="0"></div>
-			<div id="LogoText">Password Generator</div>
+			<!--<div id="Logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAABGtJREFUaIHtml1MW2UYx3/n9DCgpT3FKR/iWClsbMPIQsIwMhDGBZmJiVlUNMsSMHPBEPViMRrmjCYibIIx6pb4keidV97MZGYXi3N+xOBAlhEZOjagQruygoWWUuiHF0AHtEBpTykk/JMm533P2+f5/3re5z09H7DJJSztMLxrSMpQZeckytJ+n09QxcNUKDktjp7h6wODlh8sY4AX8MMSgPJPDx3SZKR8q5LEtHiYXE1et2d8+Oehtuvn/vwCuAd4Ar9w2WeVVfIj8mVRFDTxs7iyRElMlI36SkktbR/psnYD4yqYnTZZOdm/bGTzC6XN1hXcvWY2Tdun+ySA9G07jEpPm/zE3UF9ve6/FYktJUvb5Fx96cTAxO8SQJKcUKhIZKBQ8xhaKYU3K98I2vfBpRZmVDNcc3RGnUdnkA1gypQAfDPRrzbGxBxKHjrA4b3VpGpSQ45prH4Lx5STC10X6Pyvi96pKI6IHxFQi5FHuK9MKYP6whPUFD23rPl5pSRpeKGkhvr9J9jhzYo4p38WQJQijrBAOpWO/MzdiML936P8VEXQuKtNVwAQBZHcdCNJE0k4XQ40mSkR5476CDwgptJ6+EzAvNPtpKyxAseUM+hTdLIYx5QTAEEQ+Ki2lTRXGk6zI34AuzR5ge071n5ebDuK0+1cdvwzzUe4ZekLtPdl7cF+2x4xRNQAb1c1Bra/vvwN/9qGVhw/6hjl3MXzgfY7Nafx+/wRQyhSxEooUogNAwCRQWwoAFg7xIYDgLVBrPk8oBdl0hPSQ+7LSTNQZCxaNUZeZt6i9sLvmMeGMY9ZAhDAiueJNQHoRZnj+S/xZH55yP11VbXUVdWuJSQAXzV8Htj+9eZvtHx3lqHRobAgwp5CCf4EGgpeWda8Uird8wSnnz+FrJaB1adT2AAqQcXjuSXKuFxFB3YVo05MDrRXgtiQRRxKy0Eo8mduvbSwJua1aY7AvOYhvG6PAJsQAGYhPJMzImxSAGDurlAMa2BkfIRXv3w90G451owhbafieWIGUP3eU4vaR848S2fbH4rnickUCnU5CVB0sljxXJu3Bua0BRBKTUffD9nfVveh4rliAlC27yCfHP94UV/zsSYqH61QPFfMVqGDe0tjsuos1VYNxFtbAPHWFkC8FTbAFFM0fP8aVrs1ln64N2Hj5fP1mMcsYY2XAETBH/S8OJQGvSbO/tRKeWZZFBZX1o83rtDR1xHGSEGAOYDxIUePNlsXVoJe3z90tHcGXZuutyYtzlHAJwKYbwwOeNzesO+opmRpkY1yzMytJp/X57Gb7FbApQJw3HJMqzPUkmzUV4QbZJsuEVEScI+5Y+VzWdl6bN22rpFOoH3+6aT/brvlpqSWtmuzdQVighjWU8v1hvB5fR5bj63bdKm/A+gE2hcWrwTkaHdqn5Zz9aU6g2zw+5AQgl8IWSqPa0bwTnpjuiRPWpyjdpPd6jJP9gN/AVeBO0vNScCDgBF4GEhm45wrfIALGAZuM/eyx/8Zgal7feTQ0AAAAABJRU5ErkJggg=="
+				 alt="Password Generator" border="0"></div>-->
+			<div id="LogoText"><h1>PASSWORD GENERATOR</h1></div>
 		</div>
 		<div id="sec_options">
-			<div class="chboxl"><b>Password Length:</b></div>
+		    <div class="chboxi"><hr></div>
+			<div class="chboxl"><p>Password Length</p></div>
 			<div class="chboxr">
 				<select id="pgLength" title="Select the length of your password." onclick="S7P( false );">
 					<optgroup label="Weak">
@@ -856,42 +783,44 @@ VYyGwsD3C1dnt3/96V5AdHNRlSaBh0LyZ6Ge//FWXdXf3vk/7Ku5zE64FfkAAAAASUVORK5CYII="
 						<option value="2048">2048</option>
 					</optgroup>
 				</select>
+				<br><br>
 			</div>
-			<br><br>
-			<div class="chboxl">Include Symbols:</div>
+			<div class="chboxi"></div>
+			<div class="chboxl">Symbols</div>
 			<div class="chboxr"><label><input name="Symbols" id="Symbols" onclick="S7P( false );" type="checkbox">( e.g. @#$% )</label></div>
-			<div class="chboxl">Include Numbers:</div>
-			<div class="chboxr"><label><input name="Numbers" id="Numbers" onclick="S7P( false );" type="checkbox">( e.g. 123456
-					)</label></div>
-			<div class="chboxl">Include Lowercase Characters:</div>
-			<div class="chboxr"><label><input name="Lowercase" id="Lowercase" onclick="S7P( false );" type="checkbox">( e.g.
-					abcdefgh )</label></div>
-			<div class="chboxl">Include Uppercase Characters:</div>
-			<div class="chboxr"><label><input name="Uppercase" id="Uppercase" onclick="S7P( false );" type="checkbox">( e.g.
-					ABCDEFGH )</label></div>
-			<div class="chboxl">Exclude Similar Characters:</div>
-			<div class="chboxr"><label><input name="Nosimilar" id="Nosimilar" onclick="S7P( false );" type="checkbox">( e.g. i,
-					l, 1, L, o, 0, O )</label></div>
-			<div class="chboxl">Exclude Ambiguous Characters:</div>
-			<div class="chboxr"><label><input name="NoAmb" id="NoAmb" onclick="S7P( false );" type="checkbox">( { } [ ] ( ) / \
-					' " ` ~ , ; : . &lt; &gt; )</label></div>
-			<div class="chboxl">Auto-Select:</div>
-			<div class="chboxr"><label><input name="AutoSelect" id="AutoSelect" onclick="S7P( false );" type="checkbox">( select
-					the password automatically )</label></div>
-			<div class="chboxr"><label><input name="SaveSettings" id="SaveSettings" onclick="S7P( true );" type="checkbox"></label></div>
-			<div class="chboxl"></div>
-			<div class="chboxl"></div>
-			<div class="chboxr"><label><input name="Client" id="Client" onclick="S7P( false );" type="checkbox"></label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">Numbers</div>
+			<div class="chboxr"><label><input name="Numbers" id="Numbers" onclick="S7P( false );" type="checkbox">( e.g. 123456 )</label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">Lowercase Letters</div>
+			<div class="chboxr"><label><input name="Lowercase" id="Lowercase" onclick="S7P( false );" type="checkbox">( e.g. abcdefgh )</label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">Uppercase Letters</div>
+			<div class="chboxr"><label><input name="Uppercase" id="Uppercase" onclick="S7P( false );" type="checkbox">( e.g. ABCDEFGH )</label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">No Similar Values</div>
+			<div class="chboxr"><label><input name="Nosimilar" id="Nosimilar" onclick="S7P( false );" type="checkbox">( e.g. i, l, 1, L, o, 0, O )</label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">No Ambiguous Values</div>
+			<div class="chboxr"><label><input name="NoAmb" id="NoAmb" onclick="S7P( false );" type="checkbox">( { } [ ] ( ) / \ ' " ` ~ , ; : . &lt; &gt; )</label></div>
+			<div class="chboxi"></div>
+			<div class="chboxl">Auto-Select</div>
+			<div class="chboxr"><label><input name="AutoSelect" id="AutoSelect" onclick="S7P( false );" type="checkbox">( select for copy and paste )</label></div>
+			<div class=""><label><input name="SaveSettings" id="SaveSettings" onclick="S7P( true );" type="checkbox"></label></div>
+			<div class=""></div>
+			<div class=""></div>
+			<div class=""><label><input name="Client" id="Client" onclick="S7P( false );" type="checkbox"></label></div>
 			<div class="LoadSettingsDIV" onclick="OpenMyURL();"></div>
 		</div>
 		<div id="sec_btn">
-			<div class="button GenerateBtn" onclick="d2O();">Generate Password </div>
+			<div class="button GenerateBtn" onclick="d2O();">Generate Password</div>
 		</div>
 		<div id="sec_password">
 			<br>
-			<hr><br>
+			<hr>
+			<div class="chboxi"></div>
 			<div class="chboxl">
-				<h3>Your New Password</h3>
+				<h2>New Password</h2>
 			</div>
 
 			<div id="sec_pron">
@@ -900,7 +829,7 @@ VYyGwsD3C1dnt3/96V5AdHNRlSaBh0LyZ6Ge//FWXdXf3vk/7Ku5zE64FfkAAAAASUVORK5CYII="
 					 onclick="s_('final_pass')" ;="" type="text">
 				</div>
 				<br><br><br>
-				<div class="Phoneticl"><label>Remember your password:</label></div>
+				<div class="Phoneticl"><label>Memory Help: </label></div>
 				<div class="Phoneticr"><label id="PhoneticPronunciation"></label></div>
 			</div>
 		</div>
