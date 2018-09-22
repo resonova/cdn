@@ -556,7 +556,6 @@
 		}
 
 		function OIU() {
-			if (window.top !== window.self) window.top.location.replace(window.self.location.href);
 			Q2S("Symbols");
 			Q2S("Lowercase");
 			Q2S("Uppercase");
@@ -648,7 +647,7 @@
 		    <div class="chboxi"><hr></div>
 			<div class="chboxl"><p>Password Length</p></div>
 			<div class="chboxr">
-				<select id="pgLength" title="Select the length of your password." onclick="S7P( false );">
+				<select id="pgLength" title="Select the length of your password.">
 					<optgroup label="Weak">
 						<option value="6">6</option>
 						<option value="7">7</option>
@@ -787,29 +786,29 @@
 			</div>
 			<div class="chboxi"></div>
 			<div class="chboxl">Symbols</div>
-			<div class="chboxr"><label><input name="Symbols" id="Symbols" onclick="S7P( false );" type="checkbox">( e.g. @#$% )</label></div>
+			<div class="chboxr"><label><input name="Symbols" id="Symbols" type="checkbox">( e.g. @#$% )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">Numbers</div>
-			<div class="chboxr"><label><input name="Numbers" id="Numbers" onclick="S7P( false );" type="checkbox">( e.g. 123456 )</label></div>
+			<div class="chboxr"><label><input name="Numbers" id="Numbers" type="checkbox">( e.g. 123456 )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">Lowercase Letters</div>
-			<div class="chboxr"><label><input name="Lowercase" id="Lowercase" onclick="S7P( false );" type="checkbox">( e.g. abcdefgh )</label></div>
+			<div class="chboxr"><label><input name="Lowercase" id="Lowercase" type="checkbox">( e.g. abcdefgh )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">Uppercase Letters</div>
-			<div class="chboxr"><label><input name="Uppercase" id="Uppercase" onclick="S7P( false );" type="checkbox">( e.g. ABCDEFGH )</label></div>
+			<div class="chboxr"><label><input name="Uppercase" id="Uppercase" type="checkbox">( e.g. ABCDEFGH )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">No Similar Values</div>
-			<div class="chboxr"><label><input name="Nosimilar" id="Nosimilar" onclick="S7P( false );" type="checkbox">( e.g. i, l, 1, L, o, 0, O )</label></div>
+			<div class="chboxr"><label><input name="Nosimilar" id="Nosimilar" type="checkbox">( e.g. i, l, 1, L, o, 0, O )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">No Ambiguous Values</div>
-			<div class="chboxr"><label><input name="NoAmb" id="NoAmb" onclick="S7P( false );" type="checkbox">( { } [ ] ( ) / \ ' " ` ~ , ; : . &lt; &gt; )</label></div>
+			<div class="chboxr"><label><input name="NoAmb" id="NoAmb" type="checkbox">( { } [ ] ( ) / \ ' " ` ~ , ; : . &lt; &gt; )</label></div>
 			<div class="chboxi"></div>
 			<div class="chboxl">Auto-Select</div>
-			<div class="chboxr"><label><input name="AutoSelect" id="AutoSelect" onclick="S7P( false );" type="checkbox">( select for copy and paste )</label></div>
-			<div class=""><label><input name="SaveSettings" id="SaveSettings" onclick="S7P( true );" type="checkbox"></label></div>
+			<div class="chboxr"><label><input name="AutoSelect" id="AutoSelect" type="checkbox">( select for copy and paste )</label></div>
+			<div class=""><label><input name="SaveSettings" id="SaveSettings" type="checkbox"></label></div>
 			<div class=""></div>
 			<div class=""></div>
-			<div class=""><label><input name="Client" id="Client" onclick="S7P( false );" type="checkbox"></label></div>
+			<div class=""><label><input name="Client" id="Client" type="checkbox"></label></div>
 			<div class="LoadSettingsDIV" onclick="OpenMyURL();"></div>
 		</div>
 		<div id="sec_btn">
