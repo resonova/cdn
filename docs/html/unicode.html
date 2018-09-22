@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>fromCharCode</title>
+	<style>
+    	@-ms-viewport {width: device-width;}
+		* {box-sizing: border-box;}
+		html {position: relative;min-height: 100%;}
+		body {font-family: Arial, Helvetica, sans-serif;font-size: 13px;background: #ffffff;}
+		textarea {width: 98%; height: 55px; padding: 2px; margin: 2px; background-color: #e3e3e3;}
+		button {width: 150px;}
+		.source {height: 75px; margin-bottom: 1px; line-height: 14px; text-transform: uppercase;}
+	</style>
+</head>
+<body>
+	<h1>fromCharCode()</h1>
+	<p class="source">Click the button to display the resulting unicode characters</p>
+	<button onclick="myFunction()">TRANSLATE</button>
+	<hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31</code>
+    </p>
+	<textarea id="output1"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47</code>
+    </p>
+	<textarea id="output2"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>48, 49, 50, 51, 52, 53, 54, 55, 56, 57</code>
+    </p>
+	<textarea id="output3"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>58, 59, 60, 61, 62, 63, 64</code>
+    </p>
+	<textarea id="output4"></textarea><br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90</code>
+    </p>
+	<textarea id="output5"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>91, 92, 93, 94, 95, 96</code>
+    </p>
+	<textarea id="output6"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122</code>
+    </p>
+	<textarea id="output7"></textarea>
+    <br><hr>
+
+	<p class="source">Unicode:&nbsp;
+    	<code>123, 124, 125, 126</code>
+    </p>
+	<textarea id="output8"></textarea>
+    <br><hr>
+
+<script>
+function myFunction() {
+
+    var res1 = String.fromCharCode(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31);
+    document.getElementById("output1").innerHTML = res1;
+    
+    var res2 = String.fromCharCode(32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47);
+    document.getElementById("output2").innerHTML = res2;
+    
+    var res3 = String.fromCharCode(48, 49, 50, 51, 52, 53, 54, 55, 56, 57);
+    document.getElementById("output3").innerHTML = res3;
+    
+    var res4 = String.fromCharCode(58, 59, 60, 61, 62, 63, 64);
+    document.getElementById("output4").innerHTML = res4;
+    
+    var res5 = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+    document.getElementById("output5").innerHTML = res5;
+    
+    var res6 = String.fromCharCode(91, 92, 93, 94, 95, 96);
+    document.getElementById("output6").innerHTML = res6;
+    
+    var res7 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122);
+    document.getElementById("output7").innerHTML = res7
+    
+    var res8 = String.fromCharCode(123, 124, 125, 126);
+    document.getElementById("output8").innerHTML = res8
+}
+</script>
+
+</body>
+</html>
