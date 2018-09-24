@@ -1,0 +1,8654 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Cryptocurrency Arbitrage</title>
+<link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://glitchpad.com/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+<meta name="apple-mobile-web-app-title" content="Arbitrage">
+<link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://resonova.github.io/cdn/css/fonts-ubuntu.css">
+<style>@-ms-viewport {width: device-width;} * {box-sizing: border-box;} html {position: relative; min-height: 100%;}</style>
+</head>
+<body><br><h1>Cryptocurrency Arbitrage</h1><br>
+<table class="table-arbitrage table table-striped table-hover table-fixed table-bordered">
+<thead>
+<tr>
+<th><h4>Currency</h4></th>
+<th class="text-center Cryptopia-column"><img height="40" class="logo-cryptopia" src="data:image/png;base64,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" /></th>
+<th class="text-center Bittrex-column"><img height="40" class="logo-bittrex" src="data:image/png;base64,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" /></th>
+<th class="text-center Bleutrade-column"><img height="40" class="logo-bleutrade" src="data:image/png;base64,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" /></th>
+<th class="text-center Poloniex-column"><img height="40" class="logo-poloniex" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAAApCAYAAACoTMKzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABNnSURBVHhe7Z3pW1VHEsbzYUBAAWVRQNkFRVbNJHGLxsQtrolGTcyCiTqZiYmK4r4D4g6IGygKCGjmr+x5q7urT51z+94LBtF5woff0+d0V1dXd723Tx/uNfngH4tr1Vulpu7/jyX17x++ON93fHr4i0yOYH3Bvkt8Cf+741und4lPR+Ng4oL1DT5V+BIxzeTiW/epwqe3CIkF63P6NvEt4DTvF768vU0imgwL1tdhsvEtwvtCbcP7jy/u9wVfvieZD3yVk4ZvUlOJL+F/N3zrMpX4dPEXmDzB+oJ9m/iSM82b4Vvft4lPP+PkzQXrC2Sy8S3uNFOLLy+TjU9fcRi/YH0DTSa+xZpK6hr/f/DFP5X48jeZ+PRnSSjYzPWbVN3jpxOm9uETVXH5mpq9Zbs/oMgCzNm5Sy26dVfVPX2uGgZfqsbhUdU0MuZoHHmlGodGVP3AkKp91KcW/OcPldK4LMYPUdZ6JhzPE4M38eNg1hcbVOW1DlXXP4DYhm1sr4L4XiI+1DU8H1a1GKe09aya8c9PvL7Sl6928UTJ3LjZ20dS09Mb0y9n9x7Xno31DrXbNUhtWOrWp6TlVHh93oDMjV9qX4vvdXvbifzvfvDnXvCfcxfUfcTpY99vfxi7iCZjBSscZm/aoppe/amWvvovMGUTXY/hGtB10xjdUz3b2XuqRx0JLWP1WrdgkvQVq50v7V+X7N/0Jz/ku8na6dLeF/37t1BCiYrLbWZs64Pto3bJmLHsI9XwYtj6sjHYcc0aGN9mDUxsJj4z9sKOTpVS3xTymbHqU2sXxMcl+Za2PhoGBsWYZty8fftd+5wdu1w9x0RlKn24rU35hctuPDO+iUHf81xofnqOPB9jb/ivyvpym85fCvw1jb7WdXpMaidb6yPto+UhPUkat+1QY7AZRZ+x1yjBGK5HX/+phsdee/uEBesx0IIdpSAQFEHXFKC+p3q65zpxr69l3WuVRruOEGvm+o2uXyNsCerbaO3DPqiNrvk+oLil1SWDoJ09akNIm2SkfbxS1ZNYeS621LHJmHRc9trNm3mtqm93qZQGiIWEC9IhWG5vJPvIPOc1H/TGw9SzYB2vYwRr1i+MFGwZBMvjUZuZk0FeB3OikuxtH8CCJeb+dMCN6ca25ZLeR8YuoquZiOcFNrIRCHQEtiRaw2tN0ao1MX2YD3yVTBYE24hgGQo8WjLSrnEktq7s9Fk3Sfpk1vYNhG3QJ3rdJOsEYd+vVPonq1xCyi9d9dpxe1IgrMqOG0EMwoeGjif2OqbNQy4JigW7ek2sDY1jx6p7PqRSl37o7KPUPXsR6kvj5+39zsU+Z8fXoXZGH5+sTdn5y16beNAYPE++loKlXC662yPscVyy10TBoV+drQa6OtN+HUJ9bYDNS5QE3Te3nIzRoSSxYHFWaaAEASo1L1+pvO9+VLnf7FU5FrrO/Wafmtv8i6q6cdvZEY045+l7nPM4aDqzcruz1f5hi+vapy9U1Z0uVXXzLrijluBMzPaNODOaPlTi/Ii6Kpx/XUIuXnG2QRxjrt0nBEn6yk+Nb/YhoLnQzluNBFXdRmwYt+b+Q7SRPZ21bT87Lq3bkr5n6h90hiTf2Dn0HF1cZGv6ct2CYy0xMTG1dMbXttYeyA/EnO1fOT8BY2HBnrto6n1xWJ/cL8DUaR3gPmtzIFiCnhz12DHNXLgv+xnVRz+2XYYP1TDshiHs4dEx9VKXAL57+56q9AbMxaNFJqFg6XBNQqsnEEQ9Bm8YHsPj/WNjI4KWFONgT7a6D+ypP/mhTyO1l+DFSNdbn8ZuVC3BIy916T9NAlhgFnq0Fp85bxZD9tX+A0GWasGaOjkGJzUZOV/v0f4DHxTfqKpDQigxLD5JCuryv//JxmbmyutGvlLsnEiw5Ev7tqUZx6wBJbd+aFSlfbIyZgyCnkrGrxmHytx92GFt+2wIVvuluLmEnRRsKQRr1oXGZF+IEf1pHuMhmm+CdlK5XrrU12Oqpvehs0tFDMNoH4Joh9A2JK5r8ESPajBKUsFSouqwiPQJYqLn0Sj0kkV9NMPoj8B1wu3L10LswnRPyTHt1u/HK9zCxmPJs+eBb2B8QJC2vfTCJVNPYwrfMvGJmH/kmLY38ZmSyMETxGevoSSCimudZkwbkylH1AyaF9pp/sanWU9nZ/vouaC++BSOT55xap480+3U19iOqhw6Etj2bBKs9gWohG+6T2myxwysT8nZ87Y9GJfuef0mjMj7YjwJzfgmNvZNFP77d2dXt3W7GoRQHehz5OwFrwajJBHsZlU3+FJTO4iBdfkyqWBTl36k7dieS1pQaq/uuq/vTdsIyhEI8YX59PoWRUCi4L5B/5dIitnFSiBY8mfagvE5qckoOQfBi35UEmn0WLPCjEf+z4esfbBWRMbaL3Q7nWG5nUqyqXsRHofrfbv54idP0Rb4pjJnjxTsTltv1lT7R+kEC+gppduHwmP61nrc2LyTLqJrL5m5dr2zPYqXvxeIgejDk1U/fT0ajJJYsBs2qyXPhw0vhlAakgmW/g5JdjUE9cO5j3zM3vm1nmB1zwPry/oGVTgLxiyEhwXHT2l/NaIv+Uq1SSHBcZyB3ZBLWEIgkLKr7bZvEN/i/ucqddlHTpjxmLNrj+lrx2QyPvtct9ORQK8Fg7YaJKv8Woe9D9oqOu/E+F/0qM/YMLDL2fOtiz97205bH8RONlKwC06fR30QG9v61nrCIPd5Px7Q/ij3ZowgnuoHT8yf+mCXiU3t/uM+NTA4rMrXBUL26VCSVLC0oIYhtdheJxNsGl5cyD7A9Jv5xUY9sYXd90W9KStvIEHRBfAwF2cl6sOxUEmwYIvxaAn8BnDCYoiIovRKm/XJfQfVIuxsOukR2yhZ23Zoe46Lr6VgTZvxy6QtX61q8IThe9N3SKV/ui7kvxqP3GBOxiZnT3BUyYJg5bhsFxbsWVcvffnW+o3AGAtv3xP+g5Jim4/3G9ZJ49Yd6iDeZ6R2NB4tMkkEu0ktxhv7YizmIrD4GQZFqb/JiQ4imAWhG3uA/nytRYVJLcSRQLcBaiPKO2/GTt4DCZb9LaLYbHxOsHjkcZ3GXnPCHEIIktLLbZHYB1XVg8de2xB4scncCsHIce3YGetwJEB7+qq1JmbUyTFSsZ5FraeDvppBVY0dVY5BcXAb+87ZG+ywWrCoc+tjkYKdD4EYH8LG+tJwfChD9bZOr4UnL5K0lWvUIjyV2BeVi57ig2/v+V0mIR49EgkFOwuCre4f0INXP32OAQd0OePDj/2DAPqGqKzjJmxhj366ry15QpX3uoVP017WcSM06XjkH/yXtqe4qL+5xiPbJmX+6XP6nsc2DLiEaYQIopRcuqbnKftX0h/APbYkQgkJluOhflymf8aCNYkMxzegBUv+qvpoXDu2ndvsXXvdeJX3H7k27j+HjgTUjnllYceiOo6BkYItOnnG1fMY2p++xpraNl2vS1PHY1b2jOPoBh3Qed5px5WGhRB9vK/WHR49EokFu36TXsRqzTMN3Ze231Cl166DDlO2oWy7rkVXhV2hSttJBlTFvftuQuX0N1bUcTv5LW3vDE86Dlqwuo+Jif07weINW8bKtpwwjRWAj+KLV1xM7KOSztceW69gYc8xccmCTYNg2S/7ppIFm/N9s+hn2iu6etxxpAJiCdqMj6hgTf/w2krBFp48bes5r8EacV9ZRyX7Iiq6e715CQHB0UtUJYQp+xqf5jr3h+ZYkUo8eiQSCxZnzoWPn1r6xfVTVSmuDf2iTl6b+6yt292EynHGCdoMJRB+aNJxyPvlsHccFmxh61nnU8bMCXOw6CLMP3850r/fJMljG4IEu2WH7ROMXYlSCtbEK9ey3wk2ZemHEOUD0W7KnO8P6Payrl7RZpgt/tyWuWW7aA/spGALWlpdfdhO+vVdm7JcbDxxgeAKjhyLaMBAdWXYsFKiAo3i0SORVLAVD/tUBXbNSlDxCAKhEnWVBO51nbMJrrlP5cN+VYw3bzmhslt3XF+NxyYeeQcOOb8yFhZsAR55HIezwT0nLAYpOlB07rLty/PoV+U4c0ftfMz6cruNDVBp+6evNS9Paas+1XM1cdHcjQ0Llpi9e59uM/1t/L2PVSqOYWUQS6gN4+gjg50LCdaNbedA11HBSt/Gpl8VHDuhCo6fRAmOt+pyHt3ba1OPOgjRlxcHxDbz8412DAHHBeSXD17herTIJBQsvdWX482UqSAeMH2hOm1j27ikHSH/cOS7ZEyq9MbtkB2VC3C8iJm8h9zmg7oPo31gbE5KwYlTzq+OzcbFCUsIFrLo3MWQf+pfhh1Wf1tlRRWPWV9uc+Nxf7qWguU2t6a4loIlSjtvuf5sm3vgsCq92xOqJ7J37XHxZ27ZZn0iN2yDeylYEqGL0Y5PpW+tJwzyS2fTsu4Hzi/HSVBs9GLIWtjS/LM6h6Ok0wbh0aEkiWA3qDJ8usvx0lGuy8f6fva+/Spr916Vjd0gwN7jEZX99TdI0ufhQATF12/CD/kEOOeQ3+Lx/lnryFEbxyMbm4mPkzKv5VSonq85YckoOHHa9rPxoW9Z14Nx/R0266vdtp9ZJy7TWLArIViqx5ypXoPrqGDpLMz9pa+S212RukdY60Cw9IEJ+pk4qJSCnYud1PTndooBL5WetR43Ird6w7B+A8xYBTg/s13JmnWqu/eh6nn4SK39dr+p92gwSkLBZny+QZXioB+FHk888JtQdPmaKiNfeJnR4LoEj7vxfNNViDNmac+jUDwEt8/FDqLrhG/dbhOWjPzfjro+hI4TpC1f5bXXWKHNwYuEHFOD+xnLzbdWJFj2J+30ekZ8Frd1Bj7YnvuIMvurb1wfEizblwl7J1isT/4fLYEP9gN4/SaMyCt90GRsBM+3+OYdxIGnFOzSsBbXcE+CJbruP1Bz6fcTHg1GSSrYEmzvpYBKDV4K9G5DNiLYiTCv9Yz243xa9I8+fIsiKMYuw/HIuLh9Ls5auo782zHIjpOajNn7fwz6U4njAJGZ6LcEFvow8Xhyfvzjl7QVq1ydJHVZrGBnrFgdsnFzFfMisoRgZ27e5uol8scveX8cD/VnuH1ceHKa0vihKsamI+OU+ckQ32b9jE3lHkQqOd+OI2FEfz6SCxbn0BK8dBRrejVOsIwIfDzkHvyX88XQGLTLut1GLhDuadELzlywttzPxiX+1JKHR570y3FTf01TfHTSN27BAgf9JOnrNpjd1ApEg3vym/OLb06m1IKBLQnWtesxDD7BEoWXrtq1D2wl5D8TxxC2n7l5K+qxjqIP2ejxeX1+P65teN2kTUJonhbtK5LTggtXtB85LpN7MHiPqVq/Ud3t6dXci5Q7fjkU1pWHJIJdrz81UWIEy4gJJCJj/SbtZ4Hwqa+xiFQuwMtFYccNVXDtuioE82/dE7Y9xsbeU0lJcAk52uJ8MmzPfWS9LGknpF9W0fjanuMRNlQWdd62sXUitrvOHyPtCy+3OUGRYLlNEk+wKVhntvGNQWXmjl1u7iRYtud2KklwbJP7+7GY9miZqJ2g/Ml8Zu39zrWx7QKbp8LIS1VKbb26ebdb3em+r7lrS6Z0zWd+bVkS/hMZ2sZ18iLEFaxEBBkDFq7wSrvXd5T5nrpQPRZGJoQEqxdL2gji+SP0o5t8HEFSPe2J+hqQqEjdTPqNpxXgDBx5grbAln7dxvFHyf31NzsfY88xcJm5w/ygiJi5CYK19ZKQYPHS6trgNzqn2DmGxyUy6DchNpczcLaff6fbtFl/Ad14cuH8HNFGNfrf6epRtz1c7bylUsl3pA+T8B8hpkOw8+906YA0t02ZugyJFXbjgsVqSftkBfwJ36DIkuheX9s4iCx6S7bJ0AnBGY3bonh9CViwKRBQAXZPn008fLa59BtQEquNjQRLdkVYU2mvf7RubaLQXxB4nagf92FmhQS7JdTGY0jB5uClkuuLxDpKexmbj3Qn2EZVcLU9pp370wfIqwWw+/Cv6ta9bi/NR/HE9PQhfSb8Z95asDQpWjBQZMs3EqzEipbOQ1oYduF0It04ZkGDe1uSna3Xu5f1xeTgeMDt7EPGbq6tXx5P++zCbhAIh2Kbd/ZiYBuyt2X0Wtxn7/8pJFZCC1baWhIJlpjdfND65XkFfTO3RwRL9ZH49LmT1wcfIs6pXAdTF+s/DLUHgp1z8LDryzZ8TR8Mb+4t9NXt2bZ2HA+61M17QJcQLJXYmRfSD4bINqLJhIJNW7la5R1vDZHf0qpS8UYYDeCvMAO77RwczAsuXtVnw4J2nF87boZp71TzrrSp3GMnVIb9d/E+svGWn4cYJ0r+iVNIbLATMfRIy/6hGeK9hN0kXmw3EFu7yj95Ws3aiZegiA+Gdsu8llMx6Memx54hwdHLZNAniFueJ9PWfBFqIyhf/BtUIuvbH2JsJgp9xUwayKdYIvrQ4Fg2nh9kz1u+Uh2CPx8H4MOnyYSCTYgngEnHLvI07xBfXiYbn77i8OaCjeIL5G3iW9xp3gzf+r5NfPoZJ5MnWB++YKcSX3L+bvjWZSrx6eIvMP0fNJb4Ev6+4Yv7fcGX70lm+j8ZP83E8OXtbRLR5PT/lGOaML51nyp8eoswccH68A3+LvEl4u+Ob53eJT4dJaVW/Q+cXxQd0NNN+AAAAABJRU5ErkJggg==" /></th>
+</tr>
+</thead><tbody>
+<tr class="main-row">
+<td>
+<span class="search-data">Ark(ARK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00011000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00011277</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010704</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>455.44063942</td>
+<td>ARK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.05097729</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ARK_BTC" target="_blank">Cryptopia ARK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010883</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010966</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010893</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>161524.54691314</td>
+<td>ARK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>17.98076198</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ARK" target="_blank">Bittrex ARK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">ArtByte(ABY)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000042</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000042</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000041</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>64758.79743155</td>
+<td>ABY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02792681</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ABY_BTC" target="_blank">Cryptopia ABY/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000042</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000042</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000041</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1604058.41619142</td>
+<td>ABY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.66790463</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ABY" target="_blank">Bittrex ABY/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">AudioCoin(ADC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000012</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000012</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000011</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>103672.44438862</td>
+<td>ADC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01061714</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ADC_BTC" target="_blank">Cryptopia ADC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000011</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000013</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000011</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>15783.82332628</td>
+<td>ADC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00181184</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/ADC/BTC" target="_blank">Bleutrade ADC/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Augur Reputation(REP)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00203000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00204234</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00199509</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>22.66017295</td>
+<td>REP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.04563072</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=REP_BTC" target="_blank">Cryptopia REP/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00201668</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00203398</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00201418</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8663.92925008</td>
+<td>REP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>17.54921579</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-REP" target="_blank">Bittrex REP/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00201799</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00203472</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00201449</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3329.82204147</td>
+<td>REP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>6.77244539</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_REP" target="_blank">Poloniex REP/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">AuroraCoin(AUR)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00004845</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005546</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00004847</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>296.33685602</td>
+<td>AUR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01400037</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=AUR_BTC" target="_blank">Cryptopia AUR/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005298</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005298</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005223</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>39592.58561171</td>
+<td>AUR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.05044719</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-AUR" target="_blank">Bittrex AUR/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BCash(BCH)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.07191560</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.07203509</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.07191560</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>46.74135061</td>
+<td>BCH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.41478062</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BCH_BTC" target="_blank">Cryptopia BCH/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.07163101</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.07179500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.07163101</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1425.99123809</td>
+<td>BCH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>104.72394237</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BCH" target="_blank">Bittrex BCH/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.07460000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.07459999</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.07100133</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>0.10316343</td>
+<td>BCH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00746318</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/BCH/BTC" target="_blank">Bleutrade BCH/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.07181186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.07181186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.07166149</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1887.89639870</td>
+<td>BCH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>137.82408454</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_BCH" target="_blank">Poloniex BCH/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BitBay(BAY)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000279</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000278</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000272</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3324.04181185</td>
+<td>BAY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00919394</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BAY_BTC" target="_blank">Cryptopia BAY/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000273</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000277</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000273</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1550555.84381517</td>
+<td>BAY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.27080343</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BAY" target="_blank">Bittrex BAY/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BitcoinPlus(XBC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00082233</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00086611</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00082261</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2000.21357610</td>
+<td>XBC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.80213692</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XBC_BTC" target="_blank">Cryptopia XBC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00080002</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00083799</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00080002</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3623.12419514</td>
+<td>XBC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.18107046</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_XBC" target="_blank">Poloniex XBC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BitSend(BSD)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002450</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002495</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002395</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>67127.02872583</td>
+<td>BSD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.73318742</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BSD_BTC" target="_blank">Cryptopia BSD/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002442</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002491</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002442</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>328251.14195922</td>
+<td>BSD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>8.44992935</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BSD" target="_blank">Bittrex BSD/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BlackCoin(BLK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001252</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001308</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001246</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>9051.68249899</td>
+<td>BLK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.11524537</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BLK_BTC" target="_blank">Cryptopia BLK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001248</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001248</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001204</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>186667.49156048</td>
+<td>BLK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.38015426</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BLK" target="_blank">Bittrex BLK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001271</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001281</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001204</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6263.13834667</td>
+<td>BLK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.07930013</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/BLK/BTC" target="_blank">Bleutrade BLK/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">BlockMason(BCPT)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001277</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001362</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001277</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1388.71251205</td>
+<td>BCPT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01792372</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BCPT_BTC" target="_blank">Cryptopia BCPT/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001275</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001278</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001270</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>93540.59501308</td>
+<td>BCPT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.24113883</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BCPT" target="_blank">Bittrex BCPT/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Blocknet(BLOCK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00061944</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00061940</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00058425</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>0.00000000</td>
+<td>BLOCK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00000000</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=BLOCK_BTC" target="_blank">Cryptopia BLOCK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00060300</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00060752</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00060300</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>4602.78525971</td>
+<td>BLOCK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.75451044</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-BLOCK" target="_blank">Bittrex BLOCK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Blocktix(TIX)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002455</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002800</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002422</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>0.00000000</td>
+<td>TIX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00000000</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=TIX_BTC" target="_blank">Cryptopia TIX/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002475</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002560</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002470</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>116658.21075039</td>
+<td>TIX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.92833081</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-TIX" target="_blank">Bittrex TIX/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Byteball Bytes(GBYTE)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00892346</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00988458</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00900000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3.43856641</td>
+<td>GBYTE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.03234248</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GBYTE_BTC" target="_blank">Cryptopia GBYTE/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00874472</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00874473</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00874472</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>649.66249282</td>
+<td>GBYTE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>5.66357001</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GBYTE" target="_blank">Bittrex GBYTE/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Canada eCoin(CDN)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000084</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000079</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000065</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>45065.21523809</td>
+<td>CDN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.03480277</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=CDN_BTC" target="_blank">Cryptopia CDN/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000073</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000073</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000064</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6984.51600178</td>
+<td>CDN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00495975</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/CDN/BTC" target="_blank">Bleutrade CDN/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Cannabiscoin(CANN)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000219</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000220</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000219</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>46134.31347173</td>
+<td>CANN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.10129090</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=CANN_BTC" target="_blank">Cryptopia CANN/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000221</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000222</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000221</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>237725.01483942</td>
+<td>CANN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.53155962</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-CANN" target="_blank">Bittrex CANN/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Cardano(ADA)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001319</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001328</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001319</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>610844.35061493</td>
+<td>ADA</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>8.23229955</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ADA_BTC" target="_blank">Cryptopia ADA/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001325</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001328</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001325</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>46888428.98758840</td>
+<td>ADA</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>626.17753427</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ADA" target="_blank">Bittrex ADA/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">ClamCoin(CLAM)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00024000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00025772</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00023500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>76.90414246</td>
+<td>CLAM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01917064</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=CLAM_BTC" target="_blank">Cryptopia CLAM/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00024999</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00025000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00023015</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2898.68292000</td>
+<td>CLAM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.72887500</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-CLAM" target="_blank">Bittrex CLAM/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00031510</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00031705</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00031510</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2606.63069819</td>
+<td>CLAM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.84300294</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_CLAM" target="_blank">Poloniex CLAM/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">CloakCoin(CLOAK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00030284</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00031608</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00030298</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>603.33020042</td>
+<td>CLOAK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.18824841</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=CLOAK_BTC" target="_blank">Cryptopia CLOAK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00031785</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00031555</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00031013</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>26701.77982274</td>
+<td>CLOAK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>8.27752212</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-CLOAK" target="_blank">Bittrex CLOAK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Dash(DASH)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03056502</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03042323</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03031877</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>34.63094483</td>
+<td>DASH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.06224419</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DASH_BTC" target="_blank">Cryptopia DASH/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03030000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03030000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03020488</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>913.71292891</td>
+<td>DASH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>28.11154347</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-DASH" target="_blank">Bittrex DASH/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03129769</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03129718</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03051186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>623.58370557</td>
+<td>DASH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>19.52010637</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/DASH/BTC" target="_blank">Bleutrade DASH/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03033403</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03033403</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03030700</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3566.76043724</td>
+<td>DASH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>109.46009731</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_DASH" target="_blank">Poloniex DASH/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Decred(DCR)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00589657</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00588135</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00578003</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>37.56644785</td>
+<td>DCR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.21885252</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DCR_BTC" target="_blank">Cryptopia DCR/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00576704</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00583912</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00576634</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6834.80756365</td>
+<td>DCR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>39.54429903</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-DCR" target="_blank">Bittrex DCR/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00599961</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00609148</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00575169</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>409.52084096</td>
+<td>DCR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.64572111</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/DCR/BTC" target="_blank">Bleutrade DCR/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00586123</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00586123</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00581200</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>897.38430628</td>
+<td>DCR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>5.23204889</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_DCR" target="_blank">Poloniex DCR/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">DigiByte(DGB)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000388</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000391</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000388</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>4551958.67330712</td>
+<td>DGB</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>17.57918705</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DGB_BTC" target="_blank">Cryptopia DGB/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000390</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000390</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000387</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>32775292.90903100</td>
+<td>DGB</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>125.85243647</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-DGB" target="_blank">Bittrex DGB/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000388</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000389</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000387</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>14583194.18051105</td>
+<td>DGB</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>56.27180170</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_DGB" target="_blank">Poloniex DGB/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Divi Exchange Token(DIVX)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00017999</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00017400</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00016783</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>15428.30962203</td>
+<td>DIVX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.30750985</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DIVX_BTC" target="_blank">Cryptopia DIVX/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00016975</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00018800</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00015105</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>603.94773919</td>
+<td>DIVX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.08984989</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/DIVX/BTC" target="_blank">Bleutrade DIVX/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Dogecoin(DOGE)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000087</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>12052271.37889980</td>
+<td>DOGE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>10.58310021</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DOGE_BTC" target="_blank">Cryptopia DOGE/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000087</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000087</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>94099485.90291280</td>
+<td>DOGE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>83.14780700</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-DOGE" target="_blank">Bittrex DOGE/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000089</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>4798526.03157527</td>
+<td>DOGE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.19586542</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/DOGE/BTC" target="_blank">Bleutrade DOGE/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000087</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000088</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000087</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>185338978.66084808</td>
+<td>DOGE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>164.08697348</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_DOGE" target="_blank">Poloniex DOGE/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">DopeCoin(DOPE)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000183</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000196</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000183</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>493.85970430</td>
+<td>DOPE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00090376</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=DOPE_BTC" target="_blank">Cryptopia DOPE/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000191</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000191</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000187</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>79801.64330362</td>
+<td>DOPE</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14980454</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-DOPE" target="_blank">Bittrex DOPE/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">E-Gulden(EFL)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000846</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000842</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000768</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>231.28605042</td>
+<td>EFL</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00195668</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EFL_BTC" target="_blank">Cryptopia EFL/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000789</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000789</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000787</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>23276.05787667</td>
+<td>EFL</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.18779409</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-EFL" target="_blank">Bittrex EFL/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Einsteinium(EMC2)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000685</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000695</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000685</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>213753.28340007</td>
+<td>EMC2</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.45278687</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EMC2_BTC" target="_blank">Cryptopia EMC2/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000991</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000981</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000974</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>680451.09527702</td>
+<td>EMC2</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>6.70440830</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-EMC2" target="_blank">Bittrex EMC2/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000678</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000680</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000678</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1119700.54509490</td>
+<td>EMC2</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>7.69548273</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_EMC2" target="_blank">Poloniex EMC2/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">EmerCoin(EMC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00017793</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00019309</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00017793</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>133.84302110</td>
+<td>EMC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02480521</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EMC_BTC" target="_blank">Cryptopia EMC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00018053</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00018222</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00017988</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>71141.73664066</td>
+<td>EMC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>13.37184452</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-EMC" target="_blank">Bittrex EMC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Enjin Coin(ENJ)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000642</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000642</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000631</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>11083.50033100</td>
+<td>ENJ</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.07036019</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ENJ_BTC" target="_blank">Cryptopia ENJ/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000657</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000665</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000657</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>161797.01007630</td>
+<td>ENJ</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.07565054</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ENJ" target="_blank">Bittrex ENJ/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">EOS(EOS)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00086983</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00088208</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00087008</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1344.54482385</td>
+<td>EOS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.19856316</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EOS_BTC" target="_blank">Cryptopia EOS/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00087875</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00087855</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00087252</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>31807.99162967</td>
+<td>EOS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>28.38435400</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_EOS" target="_blank">Poloniex EOS/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Ethereum(ETH)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03586518</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03585738</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03582735</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>560.27143235</td>
+<td>ETH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>20.32348938</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ETH_BTC" target="_blank">Cryptopia ETH/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03589001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03593495</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03589001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>5529.92134149</td>
+<td>ETH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>200.49365865</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ETH" target="_blank">Bittrex ETH/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03561057</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03604297</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03561057</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>7.68350004</td>
+<td>ETH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.28024228</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/ETH/BTC" target="_blank">Bleutrade ETH/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.03585186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.03585186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.03581700</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>13034.16207867</td>
+<td>ETH</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>473.24165201</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_ETH" target="_blank">Poloniex ETH/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Ethereum Classic(ETC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00170126</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00170387</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00170127</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1948.08983844</td>
+<td>ETC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.35397123</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ETC_BTC" target="_blank">Cryptopia ETC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00169630</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00170126</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00169631</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>37288.38504488</td>
+<td>ETC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>64.22029399</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ETC" target="_blank">Bittrex ETC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00169800</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00169850</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00169800</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>18936.64425522</td>
+<td>ETC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>32.65740765</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_ETC" target="_blank">Poloniex ETC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">EverGreenCoin(EGC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000832</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000908</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000830</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>21624.50964231</td>
+<td>EGC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.18132676</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EGC_BTC" target="_blank">Cryptopia EGC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000849</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000848</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000820</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>18221.78241031</td>
+<td>EGC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.15046289</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-EGC" target="_blank">Bittrex EGC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Expanse(EXP)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005782</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005777</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005375</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1032.65280747</td>
+<td>EXP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.05614333</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=EXP_BTC" target="_blank">Cryptopia EXP/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005475</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005574</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005501</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>31024.20060419</td>
+<td>EXP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.72353438</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-EXP" target="_blank">Bittrex EXP/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005576</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005680</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005580</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>9738.13033194</td>
+<td>EXP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.54597674</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_EXP" target="_blank">Poloniex EXP/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Factom(FCT)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00078447</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00083314</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00076911</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>65.67556531</td>
+<td>FCT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.05246915</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=FCT_BTC" target="_blank">Cryptopia FCT/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00078230</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00079134</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00078258</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3611.81563638</td>
+<td>FCT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.83839373</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-FCT" target="_blank">Bittrex FCT/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00078920</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00078920</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00078919</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>17878.04501845</td>
+<td>FCT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>14.08606471</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_FCT" target="_blank">Poloniex FCT/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Feathercoin(FTC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000722</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000725</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000719</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>27127.71724071</td>
+<td>FTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.19485329</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=FTC_BTC" target="_blank">Cryptopia FTC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000717</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000719</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000717</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>117915.88833037</td>
+<td>FTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.85040562</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-FTC" target="_blank">Bittrex FTC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">FujiCoin(FJC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000004</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000005</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000004</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>496726.64180005</td>
+<td>FJC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01986907</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=FJC_BTC" target="_blank">Cryptopia FJC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000004</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000005</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000004</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>405963.06485533</td>
+<td>FJC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01735626</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/FJC/BTC" target="_blank">Bleutrade FJC/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">GameCredits(GAME)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003091</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003191</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003084</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>13954.85163971</td>
+<td>GAME</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.44500141</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GAME_BTC" target="_blank">Cryptopia GAME/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003132</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003124</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003096</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2404386.71263650</td>
+<td>GAME</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>80.39621829</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GAME" target="_blank">Bittrex GAME/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003125</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003127</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003126</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>801916.87494329</td>
+<td>GAME</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>25.58732496</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_GAME" target="_blank">Poloniex GAME/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">GeoCoin(GEO)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00009014</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00009418</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008560</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>603.81857265</td>
+<td>GEO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.05402905</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GEO_BTC" target="_blank">Cryptopia GEO/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00008555</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00008999</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008802</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8862.27504322</td>
+<td>GEO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.77389161</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GEO" target="_blank">Bittrex GEO/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Gnosis(GNO)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00390002</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00448092</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00390111</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>226.36960361</td>
+<td>GNO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.26265744</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GNO_BTC" target="_blank">Cryptopia GNO/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00408947</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00411219</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00408947</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>189.84917562</td>
+<td>GNO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.76806793</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GNO" target="_blank">Bittrex GNO/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00406011</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00406011</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00403072</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>496.24319115</td>
+<td>GNO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.01896520</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_GNO" target="_blank">Poloniex GNO/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">GoldCoin(GLD)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000382</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000416</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000380</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>0.00000000</td>
+<td>GLD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00000000</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GLD_BTC" target="_blank">Cryptopia GLD/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000560</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000559</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000546</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>38692.58822886</td>
+<td>GLD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.20949200</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GLD" target="_blank">Bittrex GLD/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Golem(GNT)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002200</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002215</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002172</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8800.45940957</td>
+<td>GNT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.19460348</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GNT_BTC" target="_blank">Cryptopia GNT/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002195</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002195</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002179</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>528781.38172446</td>
+<td>GNT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>11.57450589</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GNT" target="_blank">Bittrex GNT/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002190</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002202</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002190</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>650984.50244327</td>
+<td>GNT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>14.37872670</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_GNT" target="_blank">Poloniex GNT/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Groestlcoin(GRS)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00008794</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00008792</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008704</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1400.71330667</td>
+<td>GRS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.12264201</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=GRS_BTC" target="_blank">Cryptopia GRS/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00008710</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00008791</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008712</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>191629.71806706</td>
+<td>GRS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>16.93581872</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-GRS" target="_blank">Bittrex GRS/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Horizen(ZEN)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00248000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00248401</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00244026</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>510.97020459</td>
+<td>ZEN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.26071380</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ZEN_BTC" target="_blank">Cryptopia ZEN/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00248500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00248500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00246849</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8185.15604589</td>
+<td>ZEN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>20.35728059</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ZEN" target="_blank">Bittrex ZEN/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Komodo(KMD)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00017501</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00017768</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00017500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3490.67980773</td>
+<td>KMD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.64932475</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=KMD_BTC" target="_blank">Cryptopia KMD/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00017508</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00017627</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00017508</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>57074.50768325</td>
+<td>KMD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>10.04704953</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-KMD" target="_blank">Bittrex KMD/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">KyberNetworkCrystal(KNC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005867</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005945</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005604</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1663.47190115</td>
+<td>KNC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.09688569</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=KNC_BTC" target="_blank">Cryptopia KNC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005914</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00006037</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005914</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>79509.42282428</td>
+<td>KNC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.77102590</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_KNC" target="_blank">Poloniex KNC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">LBRY Credits(LBC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000787</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000825</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000788</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>11235.89990135</td>
+<td>LBC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.09245398</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=LBC_BTC" target="_blank">Cryptopia LBC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000816</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000818</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000816</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>552778.47246554</td>
+<td>LBC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.60795288</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-LBC" target="_blank">Bittrex LBC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000822</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000822</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000811</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>306925.37909772</td>
+<td>LBC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.54008358</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_LBC" target="_blank">Poloniex LBC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">LindaCoin(LINDA)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000017</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000017</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000016</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>46795069.08803180</td>
+<td>LINDA</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>7.65922657</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=LINDA_BTC" target="_blank">Cryptopia LINDA/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000016</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000017</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000016</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2469665.24068444</td>
+<td>LINDA</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.41688331</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/LINDA/BTC" target="_blank">Bleutrade LINDA/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Lisk(LSK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00051494</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00052365</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00051000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>675.83764886</td>
+<td>LSK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.34701622</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=LSK_BTC" target="_blank">Cryptopia LSK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00051831</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00051813</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00051500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>55771.32747751</td>
+<td>LSK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>28.66906146</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-LSK" target="_blank">Bittrex LSK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00051781</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00051787</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00051578</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>38840.57939970</td>
+<td>LSK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>19.92722601</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_LSK" target="_blank">Poloniex LSK/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Litecoin(LTC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00896590</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00896590</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00896133</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2610.72045284</td>
+<td>LTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>23.85371738</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=LTC_BTC" target="_blank">Cryptopia LTC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00892140</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00892000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00891621</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>11076.71310221</td>
+<td>LTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>101.48344389</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-LTC" target="_blank">Bittrex LTC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00885786</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00900349</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00885795</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>50.77606911</td>
+<td>LTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.46551837</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/LTC/BTC" target="_blank">Bleutrade LTC/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00893697</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00893697</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00893012</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>14576.54671565</td>
+<td>LTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>134.08891063</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_LTC" target="_blank">Poloniex LTC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Magi(XMG)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001100</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001155</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001051</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>5720.35368929</td>
+<td>XMG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.06149601</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XMG_BTC" target="_blank">Cryptopia XMG/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001102</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001102</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001058</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>66474.57829781</td>
+<td>XMG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.73522223</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XMG" target="_blank">Bittrex XMG/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">MaidSafeCoin(MAID)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003717</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003875</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003653</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2320.87200175</td>
+<td>MAID</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.08647735</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=MAID_BTC" target="_blank">Cryptopia MAID/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003776</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003783</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003766</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>903150.88353690</td>
+<td>MAID</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>33.74314313</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_MAID" target="_blank">Poloniex MAID/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Monero(XMR)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01802337</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01813870</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01805279</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>211.19848153</td>
+<td>XMR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.88023547</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XMR_BTC" target="_blank">Cryptopia XMR/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01804730</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01809697</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01804730</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2961.50819475</td>
+<td>XMR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>54.39992063</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XMR" target="_blank">Bittrex XMR/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01810001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01810500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01810001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>9542.22458447</td>
+<td>XMR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>176.71448201</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_XMR" target="_blank">Poloniex XMR/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Musicoin(MUSIC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000056</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000056</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>562734.18654963</td>
+<td>MUSIC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.31398256</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=MUSIC_BTC" target="_blank">Cryptopia MUSIC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000057</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3465605.92752313</td>
+<td>MUSIC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.92133004</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-MUSIC" target="_blank">Bittrex MUSIC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Myriad(XMY)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000046</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000047</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000044</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>318029.56744862</td>
+<td>XMY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14601864</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XMY_BTC" target="_blank">Cryptopia XMY/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000045</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000046</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000045</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3117401.22480300</td>
+<td>XMY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.41280903</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XMY" target="_blank">Bittrex XMY/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">NameCoin(NMC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010575</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010568</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010271</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1321.85963450</td>
+<td>NMC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14007365</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=NMC_BTC" target="_blank">Cryptopia NMC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010498</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00011250</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010498</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1692.65521742</td>
+<td>NMC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.17766076</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/NMC/BTC" target="_blank">Bleutrade NMC/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010407</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010454</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010299</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>12879.32954935</td>
+<td>NMC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.36271744</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_NMC" target="_blank">Poloniex NMC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">NavCoin(NAV)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005633</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005722</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005620</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>19712.02466883</td>
+<td>NAV</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.27371779</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=NAV_BTC" target="_blank">Cryptopia NAV/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005739</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005723</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005675</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>689190.97845195</td>
+<td>NAV</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>43.72953117</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-NAV" target="_blank">Bittrex NAV/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005727</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005722</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005655</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>474088.55313334</td>
+<td>NAV</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>30.49491064</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_NAV" target="_blank">Poloniex NAV/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">NEM(XEM)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001485</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001484</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001470</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>122293.23053623</td>
+<td>XEM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.83684513</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XEM_BTC" target="_blank">Cryptopia XEM/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001470</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001481</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001470</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>7995007.15942963</td>
+<td>XEM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>120.06383266</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XEM" target="_blank">Bittrex XEM/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001482</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001482</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001477</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6275616.46487956</td>
+<td>XEM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>94.32867677</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_XEM" target="_blank">Poloniex XEM/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Neo(NEO)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00282760</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00283610</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00282760</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>831.31330764</td>
+<td>NEO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.44417253</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=NEO_BTC" target="_blank">Cryptopia NEO/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00281492</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00283006</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00281492</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>32142.66777130</td>
+<td>NEO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>94.41488392</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-NEO" target="_blank">Bittrex NEO/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Nexus(NXS)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00013040</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00013524</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00013150</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>227.94652207</td>
+<td>NXS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.03003727</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=NXS_BTC" target="_blank">Cryptopia NXS/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00013280</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00013399</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00013280</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>50262.22815546</td>
+<td>NXS</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>6.63259710</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-NXS" target="_blank">Bittrex NXS/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">NoLimitCoin(NLC2)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000244</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000244</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000243</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>832020.73978409</td>
+<td>NLC2</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.19834998</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=NLC2_BTC" target="_blank">Cryptopia NLC2/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000248</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000248</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000244</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1267455.31654704</td>
+<td>NLC2</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.26486466</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-NLC2" target="_blank">Bittrex NLC2/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">OKCash(OK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000543</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000549</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000510</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>5207.44563528</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02667977</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=OK_BTC" target="_blank">Cryptopia OK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000539</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000540</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000539</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>500907.11527462</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.64758440</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-OK" target="_blank">Bittrex OK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000515</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000563</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000516</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>927.47861848</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00476454</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/OK/BTC" target="_blank">Bleutrade OK/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">OmiseGo(OMG)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00054237</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00054364</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00053500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>316.74624678</td>
+<td>OMG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.17323904</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=OMG_BTC" target="_blank">Cryptopia OMG/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00053555</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00053555</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00053500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>40996.96225382</td>
+<td>OMG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>22.23016894</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-OMG" target="_blank">Bittrex OMG/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00053801</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00053831</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00053747</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>12120.71293165</td>
+<td>OMG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>6.56570487</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_OMG" target="_blank">Poloniex OMG/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PeerCoin(PPC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00016115</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00016698</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00016129</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1549.32431919</td>
+<td>PPC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.25452031</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=PPC_BTC" target="_blank">Cryptopia PPC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00016337</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00016337</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00016259</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>15241.26946036</td>
+<td>PPC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.50338797</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-PPC" target="_blank">Bittrex PPC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00016494</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00016492</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00016238</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3091.06474975</td>
+<td>PPC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.50893349</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_PPC" target="_blank">Poloniex PPC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PesetaCoin(PTC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000302</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000338</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000302</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>986.85627713</td>
+<td>PTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00298031</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=PTC_BTC" target="_blank">Cryptopia PTC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000307</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000304</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000294</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>154052.24404290</td>
+<td>PTC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.46926065</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-PTC" target="_blank">Bittrex PTC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PinkCoin(PINK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000084</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000084</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000082</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>13493.81126988</td>
+<td>PINK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01132100</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=PINK_BTC" target="_blank">Cryptopia PINK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000083</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000085</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000083</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>465697.52060948</td>
+<td>PINK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.38241274</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-PINK" target="_blank">Bittrex PINK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PIVX(PIVX)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00014537</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00014790</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00014252</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2221.84678146</td>
+<td>PIVX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.32669291</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=PIVX_BTC" target="_blank">Cryptopia PIVX/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00014473</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00014445</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00014390</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>140521.37411805</td>
+<td>PIVX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>20.79942125</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-PIVX" target="_blank">Bittrex PIVX/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Potcoin(POT)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000405</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000406</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000400</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>115554.11358211</td>
+<td>POT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.44318824</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=POT_BTC" target="_blank">Cryptopia POT/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000406</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000406</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000403</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1208669.13324768</td>
+<td>POT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.67193150</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-POT" target="_blank">Bittrex POT/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000381</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000447</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000384</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8828.92129814</td>
+<td>POT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.03378028</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/POT/BTC" target="_blank">Bleutrade POT/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000378</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000380</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000339</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>0.00000000</td>
+<td>POT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00000000</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_POT" target="_blank">Poloniex POT/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PowerLedger(POWR)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002714</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002782</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002716</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>11039.00049625</td>
+<td>POWR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.30574624</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=POWR_BTC" target="_blank">Cryptopia POWR/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002699</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002705</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002689</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>797852.05628074</td>
+<td>POWR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>22.00920196</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-POWR" target="_blank">Bittrex POWR/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">PrimeCoin(XPM)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00009482</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00009899</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00009647</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>26735.36854727</td>
+<td>XPM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.36027528</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XPM_BTC" target="_blank">Cryptopia XPM/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00009643</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00011546</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008910</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1102.48778519</td>
+<td>XPM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.10067541</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/XPM/BTC" target="_blank">Bleutrade XPM/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00009900</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00009950</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00009900</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>213636.00754165</td>
+<td>XPM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>18.91612462</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_XPM" target="_blank">Poloniex XPM/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Qtum(QTUM)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00060200</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00062892</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00059031</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>323.66047811</td>
+<td>QTUM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.19340847</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=QTUM_BTC" target="_blank">Cryptopia QTUM/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00059600</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00059601</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00059300</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>112928.38974168</td>
+<td>QTUM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>69.83041710</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-QTUM" target="_blank">Bittrex QTUM/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00060873</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00060872</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00056616</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>5.56000000</td>
+<td>QTUM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00338454</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/QTUM/BTC" target="_blank">Bleutrade QTUM/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00060050</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00060022</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00058786</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>28208.90017369</td>
+<td>QTUM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>17.33205980</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_QTUM" target="_blank">Poloniex QTUM/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Qwark(QWARK)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000358</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000400</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000364</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2000.00000000</td>
+<td>QWARK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00752000</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=QWARK_BTC" target="_blank">Cryptopia QWARK/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000380</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000387</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000380</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>38539.24917742</td>
+<td>QWARK</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14773405</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-QWARK" target="_blank">Bittrex QWARK/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Reddcoin(RDD)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000054</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6766880.23159747</td>
+<td>RDD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.54566367</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=RDD_BTC" target="_blank">Cryptopia RDD/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000054</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000054</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000053</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>191070969.52036000</td>
+<td>RDD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>100.17452546</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-RDD" target="_blank">Bittrex RDD/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000054</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000055</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000052</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>65859.03558922</td>
+<td>RDD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.03489762</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/RDD/BTC" target="_blank">Bleutrade RDD/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">RubyCoin(RBY)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005475</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005990</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005264</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>72.36907559</td>
+<td>RBY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00396401</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=RBY_BTC" target="_blank">Cryptopia RBY/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00005714</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00005715</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00005516</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3971.47439899</td>
+<td>RBY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.22743840</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-RBY" target="_blank">Bittrex RBY/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">SiberianChervonets(SIB)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003599</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003714</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003365</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>30205.10086783</td>
+<td>SIB</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.98795002</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=SIB_BTC" target="_blank">Cryptopia SIB/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002645</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002650</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002566</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>30520.00857171</td>
+<td>SIB</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.81275211</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-SIB" target="_blank">Bittrex SIB/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Sirin Labs Token(SRN)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001150</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001150</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001139</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>7068.89426898</td>
+<td>SRN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.08419715</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=SRN_BTC" target="_blank">Cryptopia SRN/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001122</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001132</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001122</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1137127.43254184</td>
+<td>SRN</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>12.92509032</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-SRN" target="_blank">Bittrex SRN/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">SmartCash(SMART)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000409</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000420</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000410</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>180611.79855505</td>
+<td>SMART</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.76018556</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=SMART_BTC" target="_blank">Cryptopia SMART/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000476</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000462</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000406</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3129.71201905</td>
+<td>SMART</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01398052</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/SMART/BTC" target="_blank">Bleutrade SMART/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">SpreadCoin(SPR)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001526</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001612</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001526</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1886.18376590</td>
+<td>SPR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02836845</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=SPR_BTC" target="_blank">Cryptopia SPR/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001513</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001486</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>29189.43769670</td>
+<td>SPR</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.44670781</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-SPR" target="_blank">Bittrex SPR/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Stealth(XST)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002327</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002442</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002221</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6142.28993679</td>
+<td>XST</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14703507</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XST_BTC" target="_blank">Cryptopia XST/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00002304</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00002327</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00002227</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>13927.86076521</td>
+<td>XST</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.31192782</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XST" target="_blank">Bittrex XST/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Stratis(STRAT)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00024060</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00023648</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00023310</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2640.87249311</td>
+<td>STRAT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.62018359</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=STRAT_BTC" target="_blank">Cryptopia STRAT/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00023432</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00023500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00023432</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>196101.40009604</td>
+<td>STRAT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>46.00688221</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-STRAT" target="_blank">Bittrex STRAT/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00023608</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00023633</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00023608</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>64827.31078775</td>
+<td>STRAT</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>15.24276996</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_STRAT" target="_blank">Poloniex STRAT/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Syndicate(SYNX)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000895</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000883</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000805</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>8217.53811711</td>
+<td>SYNX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.06681660</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=SYNX_BTC" target="_blank">Cryptopia SYNX/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000837</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000863</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000837</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>677601.78501690</td>
+<td>SYNX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>5.70074622</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-SYNX" target="_blank">Bittrex SYNX/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Synereo AMP(AMP)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000938</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001117</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000945</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2133.76885609</td>
+<td>AMP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.01999585</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=AMP_BTC" target="_blank">Cryptopia AMP/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000981</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000981</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000970</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>189310.73903222</td>
+<td>AMP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.84182671</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-AMP" target="_blank">Bittrex AMP/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000986</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000987</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000982</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>119971.32131884</td>
+<td>AMP</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.17438704</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_AMP" target="_blank">Poloniex AMP/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">TenX(PAY)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010621</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010916</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010451</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1288.25207836</td>
+<td>PAY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.13654726</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=PAY_BTC" target="_blank">Cryptopia PAY/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010771</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010771</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010690</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>90676.45010151</td>
+<td>PAY</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>9.69360522</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-PAY" target="_blank">Bittrex PAY/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">TransferCoin(TX)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003321</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003711</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003282</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1283.71414857</td>
+<td>TX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.04329987</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=TX_BTC" target="_blank">Cryptopia TX/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00003344</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00003398</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00003343</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>114516.26957182</td>
+<td>TX</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>3.82594459</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-TX" target="_blank">Bittrex TX/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">TrueUSD(TUSD)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00014803</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00015037</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00014894</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3192.50751971</td>
+<td>TUSD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.47281901</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=TUSD_BTC" target="_blank">Cryptopia TUSD/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00014920</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00015008</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00014946</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>164187.97011086</td>
+<td>TUSD</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>24.47197029</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-TUSD" target="_blank">Bittrex TUSD/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Ubiq(UBQ)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00007956</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00008109</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00007956</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1802.69024910</td>
+<td>UBQ</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.14352478</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=UBQ_BTC" target="_blank">Cryptopia UBQ/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00008180</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00008180</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00008034</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>54385.42260901</td>
+<td>UBQ</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.36211745</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-UBQ" target="_blank">Bittrex UBQ/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Unobtanium(UNO)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01308655</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01312582</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01308656</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>170.39866522</td>
+<td>UNO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>2.23675692</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=UNO_BTC" target="_blank">Cryptopia UNO/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01340000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01339997</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01320000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>7.30382777</td>
+<td>UNO</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.09766246</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/UNO/BTC" target="_blank">Bleutrade UNO/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Verge(XVG)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000225</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000225</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000223</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>4579747.78928644</td>
+<td>XVG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>10.50868752</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XVG_BTC" target="_blank">Cryptopia XVG/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00000222</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00000224</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00000223</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>57054312.20127940</td>
+<td>XVG</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>130.63994818</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XVG" target="_blank">Bittrex XVG/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">VeriCoin(VRC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001815</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001848</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001763</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>1133.50268339</td>
+<td>VRC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02037810</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=VRC_BTC" target="_blank">Cryptopia VRC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001858</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001858</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001810</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>226009.06755326</td>
+<td>VRC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>4.10241324</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-VRC" target="_blank">Bittrex VRC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001750</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001997</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001721</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>69.11597164</td>
+<td>VRC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00120953</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bleutrade.com/exchange/VRC/BTC" target="_blank">Bleutrade VRC/BTC market</a></div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001824</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001824</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001803</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>55736.68757325</td>
+<td>VRC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.98848535</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_VRC" target="_blank">Poloniex VRC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Verium(VRM)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010451</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00011500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010502</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>219.47495654</td>
+<td>VRM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.02318603</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=VRM_BTC" target="_blank">Cryptopia VRM/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00010820</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00010820</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00010702</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>6305.27969794</td>
+<td>VRM</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.68717020</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-VRM" target="_blank">Bittrex VRM/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">WhiteCoin(XWC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001504</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001505</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001374</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>378.43730166</td>
+<td>XWC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.00554642</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XWC_BTC" target="_blank">Cryptopia XWC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00001473</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00001470</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00001418</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>45750.22435564</td>
+<td>XWC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.66942461</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XWC" target="_blank">Bittrex XWC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">ZCash(ZEC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01936186</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01952623</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01936007</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>98.44794730</td>
+<td>ZEC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>1.92947366</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ZEC_BTC" target="_blank">Cryptopia ZEC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01941514</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01956489</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01942001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>2896.31220621</td>
+<td>ZEC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>56.83853194</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ZEC" target="_blank">Bittrex ZEC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.01949500</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.01952000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.01950000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>3843.28342081</td>
+<td>ZEC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>75.14477503</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://poloniex.com/exchange#BTC_ZEC" target="_blank">Poloniex ZEC/BTC market</a></div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">Zclassic(ZCL)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00061990</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00062000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00061990</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>28679.17093821</td>
+<td>ZCL</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>15.75840443</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=ZCL_BTC" target="_blank">Cryptopia ZCL/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00062829</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00063000</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00062701</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>226431.91478343</td>
+<td>ZCL</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>129.64603125</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-ZCL" target="_blank">Bittrex ZCL/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+<tr class="main-row">
+<td>
+<span class="search-data">ZCoin(XZC)</span>
+</td>
+<td class="Cryptopia-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00139109</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00144996</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00139109</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>69.97905703</td>
+<td>XZC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>0.09885901</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://www.cryptopia.co.nz/Exchange?market=XZC_BTC" target="_blank">Cryptopia XZC/BTC market</a></div>
+</td>
+<td class="Bittrex-column">
+<div class="text-center">
+<table class="table-fixed text-left table-bordered" style="width: 100%;">
+<tr>
+<td>Last:</td>
+<td>0.00139001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Ask:</td>
+<td>0.00139164</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Bid:</td>
+<td>0.00139001</td>
+<td>BTC</td>
+</tr>
+<tr>
+<td>Volume:</td>
+<td>12839.27062309</td>
+<td>XZC</td>
+</tr>
+<tr>
+<td>Base Vol:</td>
+<td>18.17799730</td>
+<td>BTC</td>
+</tr>
+</table>
+</div>
+<div class="text-center"><a href="https://bittrex.com/Market/Index?MarketName=BTC-XZC" target="_blank">Bittrex XZC/BTC market</a></div>
+</td>
+<td class="Bleutrade-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+<td class="Poloniex-column">
+<div class="text-center">
+<i>No Data</i>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+$(document).ready(function () {
+$(".searcher").keyup(function () {
+var _this = $(this);
+$.each($(".table-arbitrage tbody").find(".main-row"), function () {
+if ($(this).find('.search-data').text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+$(this).hide();
+else
+$(this).show();
+});
+});
+});
+</script>
+<br><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script></body></html>
