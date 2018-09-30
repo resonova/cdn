@@ -1,5 +1,4 @@
-/* 
-
+ /* 
 ###############################################################################
 #   SHELL.CSS   #
 #################
@@ -10,172 +9,270 @@ Adapted from source: https://guides.codechewing.com/mac-terminal-shell-css-html
 ###############################################################################
 */
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    font: 16px 'Andale Mono', Consolas, 'Courier New';
-    height: 100%;
-    background: url('https://resonova.github.io/google-scripts/assets/bg.jpg');
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    background-repeat: repeat;
-}
+ html {
+     position: relative;
+     min-height: 100%;
+ }
 
-.shell-wrap {
-    width: 500px;
-    margin: 100px auto 0 auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
+ body {
+     margin: 0;
+     margin-bottom: 60px;
+     margin-top: 120px;
+     padding: 0;
+     font: 1em 'Andale Mono', Consolas, 'Courier New';
+     height: 100%;
+     background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QM6RXhpZgAASUkqAAgAAAAKAAsAAgANAAAAhgAAAAABCQABAAAAFAAAAAEBCQABAAAAFAAAABIBCQABAAAAAQAAABoBCQABAAAASAAAABsBCQABAAAASAAAACgBCQABAAAAAgAAADIBAgAUAAAAlAAAABMCCQABAAAAAQAAAGmHBAABAAAAqAAAAPYAAABnVGh1bWIgMy40LjMAADIwMTg6MDQ6MDQgMDU6Mzk6MjAABgAAkAcABAAAADAyMjEBkQcABAAAAAECAwAAoAcABAAAADAxMDABoAkAAQAAAAEAAAACoAkAAQAAABQAAAADoAkAAQAAABQAAAAAAAAABgADAQMAAQAAAAYAAAAaAQkAAQAAAEgAAAAbAQkAAQAAAEgAAAAoAQkAAQAAAAIAAAABAgQAAQAAAEQBAAACAgQAAQAAAO4BAAAAAAAA/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAMEAQIK/8QAJhAAAgICAgIBAwUAAAAAAAAAAQIDEQASBCETIkExYYEUMjNikf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDuuRuMYZyeMSwMWp87ALbPt1rRv8ZE0kRiCLEVqTb+QtdqB9NQb669sLOwilTSKnMdkxLY1JqurF331+M28i/pgTDCW85G2rKa8Y9fRkWtv6k31gXOK/GMKiXil2UsNvMydFi1ahDVFjjIk5JSKIJDAAUYm0LEnySCyWYm6AHZ+MYFaN28HIF/MPwL/c32zCcmYQmIMAhfy1pGfcx6k2yk9hQKuvtjGBdhmkkjXchtLRbROl2LV0o+hY/7jGMD/9n/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAMEAQIK/8QAJhAAAgICAgIBAwUAAAAAAAAAAQIDEQASBCETIkExYYEUMjNikf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDuuRuMYZyeMSwMWp87ALbPt1rRv8ZE0kRiCLEVqTb+QtdqB9NQb669sLOwilTSKnMdkxLY1JqurF331+M28i/pgTDCW85G2rKa8Y9fRkWtv6k31gXOK/GMKiXil2UsNvMydFi1ahDVFjjIk5JSKIJDAAUYm0LEnySCyWYm6AHZ+MYFaN28HIF/MPwL/c32zCcmYQmIMAhfy1pGfcx6k2yk9hQKuvtjGBdhmkkjXchtLRbROl2LV0o+hY/7jGMD/9k=');
+     /* background-repeat: no-repeat; */
+     /* background-attachment: fixed; */
+     background-repeat: repeat;
+     min-height: 400px;
+ }
 
-.shell-top-bar {
-    text-align: center;
-    color: #3b3b3b;
-    padding: 5px 0;
-    margin: 0;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-    font: 0.85em 'Andale Mono', Consolas, 'Courier New';
-    border: 1px solid #CCCCCC;
-    border-bottom: none;
-    -webkit-border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topleft: 3px;
-    -moz-border-radius-topright: 3px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background: #f7f7f7;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #B8B8B8));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #f7f7f7 0%, #B8B8B8 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#B8B8B8', GradientType=0);
-    /* IE6-9 */
-}
+ .header {
+     position: absolute;
+     padding-top: 15px;
+     top: 0;
+     width: 100%;
+     height: 120px;
+     line-height: 60px;
+     background-color: rgba(0, 0, 0, 0.829);
+     color: ;
+ }
 
-/* STYLE FOR INPUT LINES */
+ .footer {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+     background-color: rgba(0, 0, 0, 0.829);
+ }
 
-.shell-body {
-    margin: 0;
-    padding: 5px;
-    list-style: none;
-    background: rgba(0, 0, 0, 0.829);
-    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
-    line-height: 1.6em;
-    -webkit-border-bottom-right-radius: 3px;
-    -webkit-border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
-    -moz-border-radius-bottomleft: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
+ .container {
+     width: auto;
+     max-width: 700px;
+ }
 
-.shell-body li:before {
-    content: 'h8rt3rmin8r:~$';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: rgb(64, 226, 0);
-}
+ .shell-wrap {
+     max-width: 680px;
+     margin: 100px auto 0 auto;
+     box-shadow: 5px 10px 18px #888888;
+     -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+     border-radius: 3px;
+ }
 
-.shell-body li {
-    word-wrap: break-word;
-    position: relative;
-    padding: 0 0 0 120px;
-    color: rgb(64, 226, 0);
-}
+ .shell-top-bar {
+     text-align: center;
+     color: #000000;
+     padding: 8px 0;
+     margin: 0px;
+     margin-top: 40px;
+     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+     font: 0.9em 'Andale Mono', Consolas, 'Courier New';
+     border: 1px solid #CCCCCC;
+     border-bottom: none;
+     -webkit-border-top-left-radius: 3px;
+     -webkit-border-top-right-radius: 3px;
+     -moz-border-radius-topleft: 3px;
+     -moz-border-radius-topright: 3px;
+     border-top-left-radius: 3px;
+     border-top-right-radius: 3px;
+     background: #f7f7f7;
+     /* Old browsers */
+     background: -moz-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
+     /* FF3.6+ */
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #B8B8B8));
+     /* Chrome,Safari4+ */
+     background: -webkit-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
+     /* Chrome10+,Safari5.1+ */
+     background: -o-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
+     /* Opera 11.10+ */
+     background: -ms-linear-gradient(top, #f7f7f7 0%, #B8B8B8 100%);
+     /* IE10+ */
+     background: linear-gradient(to bottom, #f7f7f7 0%, #B8B8B8 100%);
+     /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#B8B8B8', GradientType=0);
+     /* IE6-9 */
+ }
 
-/* STYLE FOR OUTPUT LINES */
+ .shell-body {
+     margin: 0;
+     padding-top: 15px;
+     padding-bottom: 7px;
+     padding-left: 7px;
+     padding-right: 7px;
+     list-style: none;
+     background: rgba(0, 0, 0, 0.829);
+     font: 1em 'Andale Mono', Consolas, 'Courier New';
+     line-height: 1em;
+     -webkit-border-bottom-right-radius: 3px;
+     -webkit-border-bottom-left-radius: 3px;
+     -moz-border-radius-bottomright: 3px;
+     -moz-border-radius-bottomleft: 3px;
+     border-bottom-right-radius: 3px;
+     border-bottom-left-radius: 3px;
+ }
 
-.shell-body-print {
-    margin: 0;
-    padding: 5px;
-    list-style: none;
-    background: rgba(0, 0, 0, 0.829);
-    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
-    line-height: 1.6em;
-    -webkit-border-bottom-right-radius: 3px;
-    -webkit-border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
-    -moz-border-radius-bottomleft: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
+ .shell-body .input:before {
+     content: 'h8rt3rmin8r:~$';
+     position: absolute;
+     left: 0;
+     top: 0;
+     color: rgb(238, 61, 61);
+     font-weight: normal;
+ }
 
-.shell-body-print li:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: rgb(64, 226, 0);
-}
+ .shell-body .input {
+     word-wrap: break-word;
+     position: relative;
+     padding: 0 0 0 140px;
+     color: rgb(122, 255, 70);
+     font-weight: normal;
+ }
 
-.shell-body-print li {
-    word-wrap: break-word;
-    position: relative;
-    padding: 0 0 0 2px;
-    color: rgb(64, 226, 0);
-}
+ .shell-body .output:before {
+     content: '';
+     position: absolute;
+     left: 0;
+     top: 0;
+     color: rgb(238, 61, 61);
+     font-weight: normal;
+ }
 
-/* STYLE FOR PRINTED LINKS */
+ .shell-body .output {
+     word-wrap: break-word;
+     position: relative;
+     padding: 0 0 0 2px;
+     color: rgb(122, 255, 70);
+     font-weight: normal;
+ }
 
-.shell-body-link {
-    margin: 0;
-    padding: 5px;
-    list-style: none;
-    background: rgba(0, 0, 0, 0.829);
-    font: 0.8em 'Andale Mono', Consolas, 'Courier New';
-    line-height: 1.6em;
-    -webkit-border-bottom-right-radius: 3px;
-    -webkit-border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
-    -moz-border-radius-bottomleft: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-}
+ .shell-body a {
+     color: rgb(59, 128, 255);
+ }
 
-.shell-body a {
-    word-wrap: break-word;
-    position: relative;
-    padding: 0 0 0 2px;
-    color: rgb(1, 90, 255);
-}
+ .shell-body a:hover {
+     color: rgb(20, 101, 250);
+ }
 
-.shell-body-link a {
-    word-wrap: break-word;
-    position: relative;
-    padding: 0 0 0 2px;
-    color: rgb(1, 90, 255);
-}
+ /* RESPONSIVE DESIGN */
 
-.shell-body-print a {
-    word-wrap: break-word;
-    position: relative;
-    padding: 0 0 0 2px;
-    color: rgb(1, 90, 255);
-}
+ @media screen and (min-width: 736px) {
+     .header {
+         height: 140px;
+         line-height: 70px;
+     }
 
-/*
- 
- __         ______              __       ______                           __             ______            
- |  \       /      \            |  \     /      \                         |  \           /      \           
- | $$____  |  $$$$$$\  ______  _| $$_   |  $$$$$$\  ______   ______ ____   \$$ _______  |  $$$$$$\  ______  
- | $$    \ | $$__/ $$ /      \|   $$ \   \$$__| $$ /      \ |      \    \ |  \|       \ | $$__/ $$ /      \ 
- | $$$$$$$\ >$$    $$|  $$$$$$\\$$$$$$    |     $$|  $$$$$$\| $$$$$$\$$$$\| $$| $$$$$$$\ >$$    $$|  $$$$$$\
- | $$  | $$|  $$$$$$ | $$   \$$ | $$ __  __\$$$$$\| $$   \$$| $$ | $$ | $$| $$| $$  | $$|  $$$$$$ | $$   \$$
- | $$  | $$| $$__/ $$| $$       | $$|  \|  \__| $$| $$      | $$ | $$ | $$| $$| $$  | $$| $$__/ $$| $$      
- | $$  | $$ \$$    $$| $$        \$$  $$ \$$    $$| $$      | $$ | $$ | $$| $$| $$  | $$ \$$    $$| $$      
-  \$$   \$$  \$$$$$$  \$$         \$$$$   \$$$$$$  \$$       \$$  \$$  \$$ \$$ \$$   \$$  \$$$$$$  \$$      
- 
- */
+     h1 {
+         font-size: 45px;
+     }
+
+     h4 {
+         font-size: 1.2ev;
+     }
+
+     .shell-body {
+         font-size: 120%;
+     }
+
+     .shell-body .input {
+         padding: 0 0 0 170px;
+     }
+ }
+
+ @media screen and (max-width: 536px) {
+     h1 {
+         font-size: 43px;
+     }
+
+     h4 {
+         font-size: 1ev;
+     }
+
+     .shell-top-bar {
+         margin-top: 40px;
+     }
+
+     .shell-body {
+         font-size: 100%;
+     }
+ }
+
+ @media screen and (max-width: 536px) {
+     .shell-body {
+         font-size: 95%;
+     }
+
+     h1 {
+         font-size: 42px;
+     }
+
+     h4 {
+         font-size: 1ev;
+     }
+
+     .shell-top-bar {
+         margin-top: 40px;
+     }
+
+     .shell-body .input {
+         padding: 0 0 0 140px;
+     }
+
+     .footer {
+         font-size: 100%;
+     }
+ }
+
+ @media screen and (max-width: 535px) {
+     .shell-body {
+         font-size: 95%;
+     }
+
+     h1 {
+         font-size: 40px;
+     }
+
+     h4 {
+         font-size: 23px;
+     }
+
+     .shell-top-bar {
+         margin-top: 35px;
+     }
+
+     .shell-body .input {
+         padding: 0 0 0 135px;
+     }
+
+     .footer {
+         font-size: 90%;
+     }
+ }
+
+ @media screen and (max-width: 501px) {
+     .shell-body {
+         font-size: 85%;
+     }
+
+     h1 {
+         font-size: 38px;
+     }
+
+     h4 {
+         font-size: 20px;
+     }
+
+     .shell-top-bar {
+         margin-top: 22px;
+     }
+
+     .shell-body .input {
+         padding: 0 0 0 120px;
+     }
+
+     .footer {
+         font-size: 90%;
+     }
+ }
