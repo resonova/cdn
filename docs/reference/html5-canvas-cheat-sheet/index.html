@@ -2,107 +2,1125 @@
 <html lang="en">
 
 <head>
-    <title>HTML5 Canvas Cheat Sheet</title>
-    <meta name="viewport" content="width=device-width">
-    <link href="http://cheatsheetworld.com/css/normalize.css" rel="stylesheet" media="screen">
-    <link href="http://cheatsheetworld.com/css/main.css" rel="stylesheet">
+  <title>HTML5 Canvas Cheat Sheet</title>
+  <meta name="viewport" content="width=device-width">
+  <!-- Normalize.css -->
+  <style>
+    /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
 
-    <link href="http://cheatsheetworld.com/css/prettyprint.css" rel="stylesheet">
-    <style></style>
+    /* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+    /**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+
+    /**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+    }
+
+    /**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+
+    /**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+    [hidden] {
+      display: none;
+    }
+
+    /* ==========================================================================
+   Base
+   ========================================================================== */
+
+    /**
+ * 1. Prevent system color scheme's background color being used in Firefox, IE,
+ *    and Opera.
+ * 2. Prevent system color scheme's text color being used in Firefox, IE, and
+ *    Opera.
+ * 3. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 4. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+    html {
+      background: #fff;
+      /* 1 */
+      color: #000;
+      /* 2 */
+      font-size: 100%;
+      /* 3 */
+      -webkit-text-size-adjust: 100%;
+      /* 4 */
+      -ms-text-size-adjust: 100%;
+      /* 4 */
+    }
+
+    /**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+
+    html,
+    button,
+    input,
+    select,
+    textarea {
+      font-family: sans-serif;
+    }
+
+    /**
+ * Address margins handled incorrectly in IE 6/7.
+ */
+
+    body {
+      margin: 0;
+    }
+
+    /* ==========================================================================
+   Links
+   ========================================================================== */
+
+    /**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+    a:focus {
+      outline: thin dotted;
+    }
+
+    /**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+    a:active,
+    a:hover {
+      outline: 0;
+    }
+
+    /* ==========================================================================
+   Typography
+   ========================================================================== */
+
+    /**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin: 0.83em 0;
+    }
+
+    h3 {
+      font-size: 1.17em;
+      margin: 1em 0;
+    }
+
+    h4 {
+      font-size: 1em;
+      margin: 1.33em 0;
+    }
+
+    h5 {
+      font-size: 0.83em;
+      margin: 1.67em 0;
+    }
+
+    h6 {
+      font-size: 0.67em;
+      margin: 2.33em 0;
+    }
+
+    /**
+ * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+
+    abbr[title] {
+      border-bottom: 1px dotted;
+    }
+
+    /**
+ * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+
+    b,
+    strong {
+      font-weight: bold;
+    }
+
+    blockquote {
+      margin: 1em 40px;
+    }
+
+    /**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+    dfn {
+      font-style: italic;
+    }
+
+    /**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+
+    hr {
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    /**
+ * Address styling not present in IE 6/7/8/9.
+ */
+
+    mark {
+      background: #ff0;
+      color: #000;
+    }
+
+    /**
+ * Address margins set differently in IE 6/7.
+ */
+
+    p,
+    pre {
+      margin: 1em 0;
+    }
+
+    /**
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, serif;
+      _font-family: 'courier new', monospace;
+      font-size: 1em;
+    }
+
+    /**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /**
+ * Address CSS quotes not supported in IE 6/7.
+ */
+
+    q {
+      quotes: none;
+    }
+
+    /**
+ * Address `quotes` property not supported in Safari 4.
+ */
+
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+
+    /**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+    small {
+      font-size: 80%;
+    }
+
+    /**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    /* ==========================================================================
+   Lists
+   ========================================================================== */
+
+    /**
+ * Address margins set differently in IE 6/7.
+ */
+
+    dl,
+    menu,
+    ol,
+    ul {
+      margin: 1em 0;
+    }
+
+    dd {
+      margin: 0 0 0 40px;
+    }
+
+    /**
+ * Address paddings set differently in IE 6/7.
+ */
+
+    menu,
+    ol,
+    ul {
+      padding: 0 0 0 40px;
+    }
+
+    /**
+ * Correct list images handled incorrectly in IE 7.
+ */
+
+    nav ul,
+    nav ol {
+      list-style: none;
+      list-style-image: none;
+    }
+
+    /* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+    /**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+    img {
+      border: 0;
+      /* 1 */
+      -ms-interpolation-mode: bicubic;
+      /* 2 */
+    }
+
+    /**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+    svg:not(:root) {
+      overflow: hidden;
+    }
+
+    /* ==========================================================================
+   Figures
+   ========================================================================== */
+
+    /**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+    figure {
+      margin: 0;
+    }
+
+    /* ==========================================================================
+   Forms
+   ========================================================================== */
+
+    /**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+    form {
+      margin: 0;
+    }
+
+    /**
+ * Define consistent border, margin, and padding.
+ */
+
+    fieldset {
+      border: 1px solid #c0c0c0;
+      margin: 0 2px;
+      padding: 0.35em 0.625em 0.75em;
+    }
+
+    /**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+    legend {
+      border: 0;
+      /* 1 */
+      padding: 0;
+      white-space: normal;
+      /* 2 */
+      *margin-left: -7px;
+      /* 3 */
+    }
+
+    /**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+    button,
+    input,
+    select,
+    textarea {
+      font-size: 100%;
+      /* 1 */
+      margin: 0;
+      /* 2 */
+      vertical-align: baseline;
+      /* 3 */
+      *vertical-align: middle;
+      /* 3 */
+    }
+
+    /**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+    button,
+    input {
+      line-height: normal;
+    }
+
+    /**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    /**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+    button,
+    html input[type="button"],
+    /* 1 */
+    input[type="reset"],
+    input[type="submit"] {
+      -webkit-appearance: button;
+      /* 2 */
+      cursor: pointer;
+      /* 3 */
+      *overflow: visible;
+      /* 4 */
+    }
+
+    /**
+ * Re-set default cursor for disabled elements.
+ */
+
+    button[disabled],
+    html input[disabled] {
+      cursor: default;
+    }
+
+    /**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      box-sizing: border-box;
+      /* 1 */
+      padding: 0;
+      /* 2 */
+      *height: 13px;
+      /* 3 */
+      *width: 13px;
+      /* 3 */
+    }
+
+    /**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      -moz-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      /* 2 */
+      box-sizing: content-box;
+    }
+
+    /**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    /**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+    textarea {
+      overflow: auto;
+      /* 1 */
+      vertical-align: top;
+      /* 2 */
+    }
+
+    /* ==========================================================================
+   Tables
+   ========================================================================== */
+
+    /**
+ * Remove most spacing between table cells.
+ */
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  </style>
+  <!-- Main.css -->
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+
+      -webkit-box-sizing: border-box;
+      /* Safari/Crome, other WebKit */
+      -moz-box-sizing: border-box;
+      /* Firefox, other Gecko */
+      box-sizing: border-box;
+      /* Opera/IE 8+ */
+    }
+
+    body {
+      padding: 20px;
+      font-family: "Helvetica Neue", "Arial", "Lucida Grande", "Lucida Sans Unicode", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-width: 440px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      padding: 0;
+      font-family: 'PT Sans', sans-serif;
+      margin: 0;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 40px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    dl:nth-child(even) {
+      background-color: #eee;
+    }
+
+    dt,
+    dd {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      color: #555;
+    }
+
+    dd:before {
+      content: '\2014\00a0';
+    }
+
+    #items h2 {
+      color: #333;
+      padding: 5px 0;
+      text-transform: uppercase;
+      font-size: 20px;
+      border-bottom: 2px solid #999;
+      font-weight: bold;
+    }
+
+    #items h3 {
+      margin-top: 10px;
+      color: #333;
+      font-size: 16px;
+
+    }
+
+    ul,
+    ol,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .clearfix:after {
+      content: " ";
+      /* Older browser do not support empty content */
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+    }
+
+    /* ================================== */
+
+    #header {
+      background-color: #222;
+      width: 100%;
+      border-radius: 3px;
+      padding: 2px;
+
+      -webkit-box-sizing: border-box;
+      /* Safari/Crome, other WebKit */
+      -moz-box-sizing: border-box;
+      /* Firefox, other Gecko */
+      box-sizing: border-box;
+      /* Opera/IE 8+ */
+    }
+
+    #logo {
+      float: left;
+      font-size: 32px;
+      color: #ddd;
+      text-decoration: none;
+      text-transform: uppercase;
+      /*
+  background-image: url("../img/cheat-sheet-brain.png");
+  background-repeat: no-repeat;
+  */
+
+      display: inline-block;
+      /*padding-left: 110px;*/
+      padding: 20px;
+      overflow: hidden;
+
+      -webkit-box-sizing: border-box;
+      /* Safari/Crome, other WebKit */
+      -moz-box-sizing: border-box;
+      /* Firefox, other Gecko */
+      box-sizing: border-box;
+      /* Opera/IE 8+ */
+    }
+
+    #headerAd {
+      float: right;
+      display: inline-block;
+      height: 90px;
+    }
+
+    .crumbs {
+      margin-top: 10px;
+    }
+
+    .crumbs li {
+      float: left;
+    }
+
+    .crumbs a {
+      text-decoration: underline;
+      color: #888;
+    }
+
+    .crumbs li {
+      text-decoration: none;
+      color: #888;
+    }
+
+    .crumbs a:hover {
+      color: #333;
+    }
+
+    .crumbs li:before {
+      content: '\0000a0>\0000a0';
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #items pre.prettyprint {
+      background-color: #eee;
+      border: 0;
+      margin: 10px 0 10px 0;
+    }
+
+    #items {
+      margin-top: 20px;
+    }
+
+    .item {
+      width: 360px;
+      background-color: #f8f8f8;
+      margin-bottom: 20px;
+    }
+
+    /*
+.item h3:before {
+  content: '\2022\00a0'
+}
+
+*/
+
+    .item a {
+      text-decoration: underline;
+      color: #333;
+    }
+
+    .item img {
+      border-radius: 3px;
+    }
+
+    #edit {
+      height: 80px;
+      background-image: url('../img/edit.png');
+      background-repeat: no-repeat;
+      display: inline-block;
+      color: black;
+      text-decoration: none;
+      font-size: 30px;
+      line-height: 34px;
+      padding: 5px 0 0 90px;
+      opacity: 0.75;
+    }
+
+    #socialContainer {
+      display: inline-block;
+      float: right;
+      margin-top: 8px;
+      opacity: 0;
+
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s;
+    }
+
+    #socialContainer li {
+      float: left;
+      margin-right: 10px;
+    }
+
+    #twitterContainer {
+      min-width: 56px;
+    }
+
+    #facebookContainer {
+      min-width: 47px;
+    }
+
+    #googleContainer {
+      min-width: 50px;
+    }
+
+    #intro {
+      max-width: 960px;
+    }
+
+    #moreCheatSheets {
+      background-color: #eee;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+    }
+
+    #moreCheatSheets h2 {
+      font-size: 30px;
+    }
+
+    #moreCheatSheets ul {
+      margin-top: 10px;
+    }
+
+    #moreCheatSheets li {
+      display: inline-block;
+      float: left;
+      border: 2px solid #bbb;
+      padding: 4px;
+      background-color: white;
+      opacity: 0.9;
+      margin: 0 10px 10px 0;
+    }
+
+    #moreCheatSheets li:hover {
+      opacity: 1
+    }
+
+    #moreCheatSheets img {
+      float: left;
+    }
+
+    @media (max-width: 768px) {
+      #headerAd {
+        display: none;
+      }
+    }
+  </style>
+  <!-- PrettyPrint.css -->
+  <style>
+    /* Hemisu Light */
+    /* Original theme - http://noahfrederick.com/vim-color-scheme-hemisu/ */
+    /* Pretty printing styles. Used with prettify.js. */
+    /* SPAN elements with the classes below are added by prettyprint. */
+    /* plain text */
+    .pln {
+      color: #111111;
+    }
+
+    @media screen {
+
+      /* string content */
+      .str {
+        color: #739200;
+      }
+
+      /* a keyword */
+      .kwd {
+        color: #739200;
+      }
+
+      /* a comment */
+      .com {
+        color: #999999;
+      }
+
+      /* a type name */
+      .typ {
+        color: #ff0055;
+      }
+
+      /* a literal value */
+      .lit {
+        color: #538192;
+      }
+
+      /* punctuation */
+      .pun {
+        color: #111111;
+      }
+
+      /* lisp open bracket */
+      .opn {
+        color: #111111;
+      }
+
+      /* lisp close bracket */
+      .clo {
+        color: #111111;
+      }
+
+      /* a markup tag name */
+      .tag {
+        color: #111111;
+      }
+
+      /* a markup attribute name */
+      .atn {
+        color: #739200;
+      }
+
+      /* a markup attribute value */
+      .atv {
+        color: #ff0055;
+      }
+
+      /* a declaration */
+      .dec {
+        color: #111111;
+      }
+
+      /* a variable name */
+      .var {
+        color: #111111;
+      }
+
+      /* a function name */
+      .fun {
+        color: #538192;
+      }
+    }
+
+    /* Use higher contrast and text-weight for printable form. */
+    @media print,
+    projection {
+      .str {
+        color: #006600;
+      }
+
+      .kwd {
+        color: #006;
+        font-weight: bold;
+      }
+
+      .com {
+        color: #600;
+        font-style: italic;
+      }
+
+      .typ {
+        color: #404;
+        font-weight: bold;
+      }
+
+      .lit {
+        color: #004444;
+      }
+
+      .pun,
+      .opn,
+      .clo {
+        color: #444400;
+      }
+
+      .tag {
+        color: #006;
+        font-weight: bold;
+      }
+
+      .atn {
+        color: #440044;
+      }
+
+      .atv {
+        color: #006600;
+      }
+    }
+
+    /* Style */
+    pre.prettyprint {
+      background: white;
+      font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      border: 1px solid #cccccc;
+      padding: 10px;
+    }
+
+    /* Specify class=linenums on a pre to get line numbering */
+    ol.linenums {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    /* IE indents via margin-left */
+    li.L0,
+    li.L1,
+    li.L2,
+    li.L3,
+    li.L4,
+    li.L5,
+    li.L6,
+    li.L7,
+    li.L8,
+    li.L9 {
+      /* */
+    }
+
+    /* Alternate shading for lines */
+    li.L1,
+    li.L3,
+    li.L5,
+    li.L7,
+    li.L9 {
+      /* */
+    }
+  </style>
 </head>
 
 <body>
-    <div id="header" class="clearfix">
-        <h1 id="logo">HTML5 Canvas Cheat Sheet</h1>
-    </div>
-    <div class="content">
-        <p id="intro">
-            This cheat sheet summarizes the complete HTML5 Canvas API for the 2D context, based on to the <a href="http://www.w3.org/TR/2dcontext/" target="_blank">W3C HTML5 Canvas Spec</a>. It also provides techniques for handling common proceedures.
-        </p>
+  <div id="header" class="clearfix">
+    <h1 id="logo">HTML5 Canvas Cheat Sheet</h1>
+  </div>
+  <div class="content">
+    <p id="intro">
+      This cheat sheet summarizes the complete HTML5 Canvas API for the 2D context, based on to the <a href="http://www.w3.org/TR/2dcontext/"
+        target="_blank">W3C HTML5 Canvas Spec</a>. It also provides techniques for handling common proceedures.
+    </p>
 
-        <ul id="items" style="position: relative; height: 3468px;">
-            <!---------------------- ITEM ---------------------->
-            <li class="item" style="position: absolute; left: 0px; top: 0px;">
-                <h2>HTML5 Canvas Element</h2>
+    <ul id="items" style="position: relative; height: 3468px;">
+      <!---------------------- ITEM ---------------------->
+      <li class="item" style="position: absolute; left: 0px; top: 0px;">
+        <h2>HTML5 Canvas Element</h2>
 
-                <h3>Html5 canvas element</h3>
-                <pre class="prettyprint">&lt;canvas id="myCanvas" width="500" height="300"&gt;
+        <h3>Html5 canvas element</h3>
+        <pre class="prettyprint">&lt;canvas id="myCanvas" width="500" height="300"&gt;
 </pre>
 
-                <h3>Html5 canvas element with fallback content</h3>
-                <pre class="prettyprint">&lt;canvas id="myCanvas" width="500" height="300"&gt;
+        <h3>Html5 canvas element with fallback content</h3>
+        <pre class="prettyprint">&lt;canvas id="myCanvas" width="500" height="300"&gt;
   your browser doesn't support canvas!
 &lt;/canvas&gt;
 </pre>
 
-                <h3>2d context</h3>
-                <pre class="prettyprint">var context = canvas.getContext('2d');
+        <h3>2d context</h3>
+        <pre class="prettyprint">var context = canvas.getContext('2d');
 </pre>
 
-                <h3>Webgl context (3d)</h3>
-                <pre class="prettyprint">var context = canvas.getContext('webgl');
+        <h3>Webgl context (3d)</h3>
+        <pre class="prettyprint">var context = canvas.getContext('webgl');
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- SHAPES ---------------------->
-            <li class="item" style="position: absolute; left: 380px; top: 0px;">
-                <h2>Shapes</h2>
+      <!---------------------- SHAPES ---------------------->
+      <li class="item" style="position: absolute; left: 380px; top: 0px;">
+        <h2>Shapes</h2>
 
-                <h3>Draw rectangle</h3>
-                <pre class="prettyprint">context.rect(x, y, width, height);
+        <h3>Draw rectangle</h3>
+        <pre class="prettyprint">context.rect(x, y, width, height);
 context.fill();
 context.stroke();
 </pre>
 
-                <h3>Fill rectangle shorthand</h3>
-                <pre class="prettyprint">context.fillRect(x, y, width, height);
+        <h3>Fill rectangle shorthand</h3>
+        <pre class="prettyprint">context.fillRect(x, y, width, height);
 </pre>
 
-                <h3>Stroke rectangle shorthand</h3>
-                <pre class="prettyprint">context.strokeRect(x, y, width, height);
+        <h3>Stroke rectangle shorthand</h3>
+        <pre class="prettyprint">context.strokeRect(x, y, width, height);
 </pre>
 
-                <h3>Draw circle</h3>
-                <pre class="prettyprint">context.arc(x, y, radius, 0, Math.PI * 2);
+        <h3>Draw circle</h3>
+        <pre class="prettyprint">context.arc(x, y, radius, 0, Math.PI * 2);
 context.fill();
 context.stroke();
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- STYLES ---------------------->
-            <li class="item" style="position: absolute; left: 0px; top: 394px;">
-                <h2>Styles</h2>
+      <!---------------------- STYLES ---------------------->
+      <li class="item" style="position: absolute; left: 0px; top: 394px;">
+        <h2>Styles</h2>
 
-                <h3>Fill</h3>
-                <pre class="prettyprint">context.fillStyle = 'red';
+        <h3>Fill</h3>
+        <pre class="prettyprint">context.fillStyle = 'red';
 context.fill();
 </pre>
 
-                <h3>Stroke</h3>
-                <pre class="prettyprint">context.strokeStyle = 'red';
+        <h3>Stroke</h3>
+        <pre class="prettyprint">context.strokeStyle = 'red';
 context.stroke();
 </pre>
 
-                <h3>Linear gradient</h3>
-                <pre class="prettyprint">var grd = context.createLinearGradient(x1, y1, x2, y2);
+        <h3>Linear gradient</h3>
+        <pre class="prettyprint">var grd = context.createLinearGradient(x1, y1, x2, y2);
 grd.addColorStop(0, 'red');   
 grd.addColorStop(1, 'blue');
 context.fillStyle = grd;
 context.fill();
 </pre>
 
-                <h3>Radial gradient</h3>
-                <pre class="prettyprint">var grd = context.createRadialGradient(x1, y1, radius1, x2, y2, radius2);
+        <h3>Radial gradient</h3>
+        <pre class="prettyprint">var grd = context.createRadialGradient(x1, y1, radius1, x2, y2, radius2);
 grd.addColorStop(0, 'red');
 grd.addColorStop(1, 'blue');
 context.fillStyle = grd;
 context.fill();
 </pre>
 
-                <h3>Pattern</h3>
-                <pre class="prettyprint">var imageObj = new Image();
+        <h3>Pattern</h3>
+        <pre class="prettyprint">var imageObj = new Image();
 imageObj.onload = function() {
   var pattern = context.createPattern(imageObj, 'repeat');
   context.fillStyle = pattern;
@@ -111,225 +1129,225 @@ imageObj.onload = function() {
 imageObj.src = 'path/to/my/image.jpg';
 </pre>
 
-                <h3>Line Join</h3>
-                <pre class="prettyprint">context.lineJoin = 'miter|round|bevel';
+        <h3>Line Join</h3>
+        <pre class="prettyprint">context.lineJoin = 'miter|round|bevel';
 </pre>
 
-                <h3>Line Cap</h3>
-                <pre class="prettyprint">context.lineCap = 'butt|round|square';
+        <h3>Line Cap</h3>
+        <pre class="prettyprint">context.lineCap = 'butt|round|square';
 </pre>
 
-                <h3>Shadow</h3>
-                <pre class="prettyprint">context.shadowColor = 'black';
+        <h3>Shadow</h3>
+        <pre class="prettyprint">context.shadowColor = 'black';
 context.shadowBlur = 20;
 context.shadowOffsetX = 10;
 context.shadowOffsetY = 10;
 </pre>
 
-                <h3>Alpha (Opacity)</h3>
-                <pre class="prettyprint">context.globalAlpha = 0.5; // between 0 and 1
+        <h3>Alpha (Opacity)</h3>
+        <pre class="prettyprint">context.globalAlpha = 0.5; // between 0 and 1
 </pre>
 
-                <!---------------------- COLOR FORMATS ---------------------->
-            </li>
-            <li class="item" style="position: absolute; left: 380px; top: 430px;">
-                <h2>Color Formats</h2>
+        <!---------------------- COLOR FORMATS ---------------------->
+      </li>
+      <li class="item" style="position: absolute; left: 380px; top: 430px;">
+        <h2>Color Formats</h2>
 
-                <h3>String</h3>
-                <pre class="prettyprint">context.fillStyle = 'red';
+        <h3>String</h3>
+        <pre class="prettyprint">context.fillStyle = 'red';
 </pre>
 
-                <h3>Hex Long</h3>
-                <pre class="prettyprint">context.fillStyle = '#ff0000';
+        <h3>Hex Long</h3>
+        <pre class="prettyprint">context.fillStyle = '#ff0000';
 </pre>
 
-                <h3>Hex Short</h3>
-                <pre class="prettyprint">context.fillStyle = '#f00';
+        <h3>Hex Short</h3>
+        <pre class="prettyprint">context.fillStyle = '#f00';
 </pre>
 
-                <h3>RGB</h3>
-                <pre class="prettyprint">context.fillStyle = 'rgb(255,0,0)';
+        <h3>RGB</h3>
+        <pre class="prettyprint">context.fillStyle = 'rgb(255,0,0)';
 </pre>
 
-                <h3>RGBA</h3>
-                <pre class="prettyprint">context.fillStyle = 'rgba(255,0,0,1)';
+        <h3>RGBA</h3>
+        <pre class="prettyprint">context.fillStyle = 'rgba(255,0,0,1)';
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- PATHS ---------------------->
-            <li class="item" style="position: absolute; left: 380px; top: 862px;">
-                <h2>Paths</h2>
+      <!---------------------- PATHS ---------------------->
+      <li class="item" style="position: absolute; left: 380px; top: 862px;">
+        <h2>Paths</h2>
 
-                <h3>Begin Path</h3>
-                <pre class="prettyprint">context.beginPath();
+        <h3>Begin Path</h3>
+        <pre class="prettyprint">context.beginPath();
 </pre>
 
-                <h3>Line</h3>
-                <pre class="prettyprint">context.lineTo(x, y);
+        <h3>Line</h3>
+        <pre class="prettyprint">context.lineTo(x, y);
 </pre>
 
-                <h3>Arc</h3>
-                <pre class="prettyprint">context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        <h3>Arc</h3>
+        <pre class="prettyprint">context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
 </pre>
 
-                <h3>Quadratic curve</h3>
-                <pre class="prettyprint">context.quadraticCurveTo(cx, cy, x, y);
+        <h3>Quadratic curve</h3>
+        <pre class="prettyprint">context.quadraticCurveTo(cx, cy, x, y);
 </pre>
 
-                <h3>Bezier curve</h3>
-                <pre class="prettyprint">context.bezierCurveTo(cx1, cy1, cx2, cy2, x, y);
+        <h3>Bezier curve</h3>
+        <pre class="prettyprint">context.bezierCurveTo(cx1, cy1, cx2, cy2, x, y);
 </pre>
 
-                <h3>Close Path</h3>
-                <pre class="prettyprint">context.closePath();
+        <h3>Close Path</h3>
+        <pre class="prettyprint">context.closePath();
 </pre>
-            </li>
+      </li>
 
-            <!---------------------- IMAGES ---------------------->
-            <li class="item" style="position: absolute; left: 380px; top: 1404px;">
-                <h2>Images</h2>
+      <!---------------------- IMAGES ---------------------->
+      <li class="item" style="position: absolute; left: 380px; top: 1404px;">
+        <h2>Images</h2>
 
-                <h3>Draw Image with default size</h3>
-                <pre class="prettyprint">var imageObj = new Image();
+        <h3>Draw Image with default size</h3>
+        <pre class="prettyprint">var imageObj = new Image();
 imageObj.onload = function() {
   context.drawImage(imageObj, x, y);
 };
 imageObj.src = 'path/to/my/image.jpg';
 </pre>
 
-                <h3>Draw image and set size</h3>
-                <pre class="prettyprint">var imageObj = new Image();
+        <h3>Draw image and set size</h3>
+        <pre class="prettyprint">var imageObj = new Image();
 imageObj.onload = function() {
   context.drawImage(imageObj, x, y, width, height);
 };
 imageObj.src = 'path/to/my/image.jpg';
 </pre>
 
-                <h3>Crop image</h3>
-                <pre class="prettyprint">var imageObj = new Image();
+        <h3>Crop image</h3>
+        <pre class="prettyprint">var imageObj = new Image();
 imageObj.onload = function() {
   context.drawImage(imageObj, sx, sy, sw, sh, dx, dy, dw, dh);
 };
 imageObj.src = 'path/to/my/image.jpg';
 </pre>
 
-                <!---------------------- TEXT ---------------------->
-            </li>
-            <li class="item" style="position: absolute; left: 0px; top: 1518px;">
-                <h2>Text</h2>
+        <!---------------------- TEXT ---------------------->
+      </li>
+      <li class="item" style="position: absolute; left: 0px; top: 1518px;">
+        <h2>Text</h2>
 
-                <h3>Fill Text</h3>
-                <pre class="prettyprint">context.font = '40px Arial';
+        <h3>Fill Text</h3>
+        <pre class="prettyprint">context.font = '40px Arial';
 context.fillStyle = 'red';
 context.fillText('Hello World!', x, y);
 </pre>
 
-                <h3>Stroke Text</h3>
-                <pre class="prettyprint">context.font = '40pt Arial';
+        <h3>Stroke Text</h3>
+        <pre class="prettyprint">context.font = '40pt Arial';
 context.strokeStyle = 'red';
 context.strokeText('Hello World!', x, y);
 </pre>
 
-                <h3>Bold Text</h3>
-                <pre class="prettyprint">context.font = 'bold 40px Arial';
+        <h3>Bold Text</h3>
+        <pre class="prettyprint">context.font = 'bold 40px Arial';
 </pre>
 
-                <h3>Italic Text</h3>
-                <pre class="prettyprint">context.font = 'italic 40px Arial';
+        <h3>Italic Text</h3>
+        <pre class="prettyprint">context.font = 'italic 40px Arial';
 </pre>
 
-                <h3>Text Align</h3>
-                <pre class="prettyprint">context.textAlign = 'start|end|left|center|right';
+        <h3>Text Align</h3>
+        <pre class="prettyprint">context.textAlign = 'start|end|left|center|right';
 </pre>
 
-                <h3>Text Baseline</h3>
-                <pre class="prettyprint">context.textBaseline = 'top|hanging|middle|alphabetic|ideographic
+        <h3>Text Baseline</h3>
+        <pre class="prettyprint">context.textBaseline = 'top|hanging|middle|alphabetic|ideographic
 |bottom';
 </pre>
 
-                <h3>Get Text Width</h3>
-                <pre class="prettyprint">var width = context.measureText('Hello world').width;
+        <h3>Get Text Width</h3>
+        <pre class="prettyprint">var width = context.measureText('Hello world').width;
 </pre>
 
-                <!---------------------- TRANSFORMS ---------------------->
-            </li>
-            <li class="item" style="position: absolute; left: 380px; top: 1940px;">
-                <h2>Transforms</h2>
+        <!---------------------- TRANSFORMS ---------------------->
+      </li>
+      <li class="item" style="position: absolute; left: 380px; top: 1940px;">
+        <h2>Transforms</h2>
 
-                <h3>Translate</h3>
-                <pre class="prettyprint">context.translate(x, y);
+        <h3>Translate</h3>
+        <pre class="prettyprint">context.translate(x, y);
 </pre>
 
-                <h3>Scale</h3>
-                <pre class="prettyprint">context.scale(x, y);
+        <h3>Scale</h3>
+        <pre class="prettyprint">context.scale(x, y);
 </pre>
 
-                <h3>Rotate</h3>
-                <pre class="prettyprint">context.rotate(radians);
+        <h3>Rotate</h3>
+        <pre class="prettyprint">context.rotate(radians);
 </pre>
 
-                <h3>Flip Horizontally</h3>
-                <pre class="prettyprint">context.scale(-1, 1);
+        <h3>Flip Horizontally</h3>
+        <pre class="prettyprint">context.scale(-1, 1);
 </pre>
 
-                <h3>Flip Vertically</h3>
-                <pre class="prettyprint">context.scale(1, -1);
+        <h3>Flip Vertically</h3>
+        <pre class="prettyprint">context.scale(1, -1);
 </pre>
 
-                <h3>Custom Transform</h3>
-                <pre class="prettyprint">context.transform(a, b, c, d ,e, f);
+        <h3>Custom Transform</h3>
+        <pre class="prettyprint">context.transform(a, b, c, d ,e, f);
 </pre>
 
-                <h3>Set Transform</h3>
-                <pre class="prettyprint">context.setTransform(a, b, c, d ,e, f);
+        <h3>Set Transform</h3>
+        <pre class="prettyprint">context.setTransform(a, b, c, d ,e, f);
 </pre>
 
-                <h3>Shear</h3>
-                <pre class="prettyprint">context.transform(1, sy, sx, 1, 0, 0);
+        <h3>Shear</h3>
+        <pre class="prettyprint">context.transform(1, sy, sx, 1, 0, 0);
 </pre>
 
-                <h3>Reset</h3>
-                <pre class="prettyprint">context.setTransform(1, 0, 0, 1, 0, 0);
+        <h3>Reset</h3>
+        <pre class="prettyprint">context.setTransform(1, 0, 0, 1, 0, 0);
 </pre>
-            </li>
+      </li>
 
-            <!---------------------- STATE STACK ---------------------->
-            <li class="item" style="position: absolute; left: 0px; top: 2242px;">
-                <h2>State Stack</h2>
+      <!---------------------- STATE STACK ---------------------->
+      <li class="item" style="position: absolute; left: 0px; top: 2242px;">
+        <h2>State Stack</h2>
 
-                <h3>Push State onto Stack</h3>
-                <pre class="prettyprint">context.save();
-</pre>
-
-                <h3>Pop State off of Stack</h3>
-                <pre class="prettyprint">context.restore();
+        <h3>Push State onto Stack</h3>
+        <pre class="prettyprint">context.save();
 </pre>
 
-            </li>
+        <h3>Pop State off of Stack</h3>
+        <pre class="prettyprint">context.restore();
+</pre>
 
-            <!---------------------- CLIPPING ---------------------->
-            <li class="item" style="position: absolute; left: 0px; top: 2452px;">
-                <h2>Clipping</h2>
+      </li>
 
-                <h3>Clip</h3>
-                <pre class="prettyprint">// draw path here
+      <!---------------------- CLIPPING ---------------------->
+      <li class="item" style="position: absolute; left: 0px; top: 2452px;">
+        <h2>Clipping</h2>
+
+        <h3>Clip</h3>
+        <pre class="prettyprint">// draw path here
 context.clip();
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- IMAGE DATA ---------------------->
-            <li class="item" style="position: absolute; left: 0px; top: 2606px;">
-                <h2>Image Data</h2>
+      <!---------------------- IMAGE DATA ---------------------->
+      <li class="item" style="position: absolute; left: 0px; top: 2606px;">
+        <h2>Image Data</h2>
 
-                <h3>Get Image Data</h3>
-                <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
+        <h3>Get Image Data</h3>
+        <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
 var data = imageData.data;
 </pre>
 
-                <h3>Loop Through Image Pixels</h3>
-                <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
+        <h3>Loop Through Image Pixels</h3>
+        <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
 var data = imageData.data;
 var len = data.length;
 var i, red, green, blue, alpha;
@@ -342,8 +1360,8 @@ for(i = 0; i &lt; len; i += 4) {
 }
 </pre>
 
-                <h3>Loop Through Image Pixels With Coordinates</h3>
-                <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
+        <h3>Loop Through Image Pixels With Coordinates</h3>
+        <pre class="prettyprint">var imageData = context.getImageData(x, y, width, height);
 var data = imageData.data;
 var x, y, red, green, blue, alpha;
 
@@ -357,22 +1375,22 @@ for(y = 0; y &lt; imageHeight; y++) {
 }
 </pre>
 
-                <h3>Set Image Data</h3>
-                <pre class="prettyprint">context.putImageData(imageData, x, y);
+        <h3>Set Image Data</h3>
+        <pre class="prettyprint">context.putImageData(imageData, x, y);
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- DATA URLS ---------------------->
-            <li class="item" style="position: absolute; left: 380px; top: 2668px;">
-                <h2>Data URLs</h2>
+      <!---------------------- DATA URLS ---------------------->
+      <li class="item" style="position: absolute; left: 380px; top: 2668px;">
+        <h2>Data URLs</h2>
 
-                <h3>Get Data URL</h3>
-                <pre class="prettyprint">var dataURL = canvas.toDataURL();
+        <h3>Get Data URL</h3>
+        <pre class="prettyprint">var dataURL = canvas.toDataURL();
 </pre>
 
-                <h3>Render Canvas with Data URL</h3>
-                <pre class="prettyprint">var imageObj = new Image();
+        <h3>Render Canvas with Data URL</h3>
+        <pre class="prettyprint">var imageObj = new Image();
 imageObj.onload = function() {
   context.drawImage(imageObj, 0, 0);
 };
@@ -380,21 +1398,40 @@ imageObj.onload = function() {
 imageObj.src = dataURL;
 </pre>
 
-            </li>
+      </li>
 
-            <!---------------------- COMPOSITES ---------------------->
-            <li class="item" style="position: absolute; left: 380px; top: 2968px;">
-                <h2>Composites</h2>
+      <!---------------------- COMPOSITES ---------------------->
+      <li class="item" style="position: absolute; left: 380px; top: 2968px;">
+        <h2>Composites</h2>
 
-                <h3>Composite Operations</h3>
-                <pre class="prettyprint">context.globalCompositeOperation = 'source-atop|source-in|source-out|source-over|destination-atop|destination-in|destination-out|destination-over|lighter|xor|copy';
+        <h3>Composite Operations</h3>
+        <pre class="prettyprint">context.globalCompositeOperation = 'source-atop|source-in|source-out|source-over|destination-atop|destination-in|destination-out|destination-over|lighter|xor|copy';
 </pre>
-            </li>
-        </ul>
+      </li>
+    </ul>
 
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
-        <script src="http://cheatsheetworld.com/js/main.js" gapi_processed="true"></script>
-    </div>
+    <script src="https://resonova.github.io/cdn/js/masonry.js"></script>
+    <script>
+      (function () {
+        var msnry;
+
+        window.onload = function () {
+          msnry.layout();
+
+          setTimeout(function () {
+            document.getElementById('socialContainer').style.opacity = 0;
+          }, 500);
+        };
+
+        msnry = new Masonry('#items', {
+          // options
+          columnWidth: 360,
+          itemSelector: '.item',
+          gutter: 20
+        });
+      })();
+    </script>
+  </div>
 
 </body>
 
