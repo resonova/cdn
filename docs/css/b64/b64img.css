@@ -231,7 +231,7 @@
 }
 
 .ui-gauge .meterText {
-    color: #575757;
+    color: red;
     font-size: 10px;
     left: 50px;
     line-height: 1.1;
