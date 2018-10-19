@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>chart.js | DEMO</title>
+  <link rel="stylesheet" href="https://resonova.github.io/cdn/css/bootstrap/min-4.1.3.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <style>
+    canvas {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+    }
+  </style>
+  <script type="text/javascript" src="https://resonova.github.io/cdn/js/chartjs/moment-min.js"></script>
+  <script type="text/javascript" src="https://resonova.github.io/cdn/js/chartjs/chart-min.js"></script>
+  <script type="text/javascript" src="https://resonova.github.io/cdn/js/chartjs/chartjs-plugin-streaming.js"></script>
+  <script type="text/javascript" src="https://resonova.github.io/cdn/js/chartjs/chartjs-plugin-financial.js"></script>
+</head>
+
+<body>
+  <canvas id="chart1" class="chartjs-render-monitor"></canvas>
+  <!--<canvas id="chart2" class="chartjs-render-monitor"></canvas>-->
+  <script>
+    var ctx = document.getElementById('chart1').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [{
+            label: 'Core Blue Data',
+            borderColor: 'rgba(22, 110, 183, 0.8)',
+            backgroundColor: 'rgba(22, 110, 183, 0.2)',
+            // lineTension: 0,
+            // borderDash: [8, 4]
+          },
+          {
+            label: 'Core Green Data',
+            borderColor: 'rgba(22, 183, 63, 0.8)',
+            backgroundColor: 'rgba(22, 183, 63, 0.2)'
+          }
+        ]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'realtime',
+            realtime: {
+              delay: 2000,
+              onRefresh: function (chart) {
+                chart.data.datasets.forEach(function (dataset) {
+                  dataset.data.push({
+                    x: Date.now(),
+                    y: Math.random()
+                  });
+                });
+              }
+            }
+          }]
+        }
+      }
+    });
+    /*
+    var ctx = document.getElementById('chart2').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [{
+          data: []
+        }, {
+          data: []
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'realtime',
+            realtime: {
+              delay: 2000,
+              onRefresh: function (chart) {
+                chart.data.datasets.forEach(function (dataset) {
+                  dataset.data.push({
+                    x: Date.now(),
+                    y: Math.random()
+                  });
+                });
+              }
+            }
+          }]
+        }
+      }
+    });
+    */
+  </script>
+  <!-- Financial Charting Example -->
+  <!--<script>
+    var data = getRandomData('April 01 2017', 60);
+
+    // Candlestick
+    var ctx = document.getElementById("chart1").getContext("2d");
+    ctx.canvas.width = 1000;
+    ctx.canvas.height = 250;
+    new Chart(ctx, {
+      type: 'candlestick',
+      data: {
+        datasets: [{
+          label: "CHRT - Chart.js Corporation",
+          data: data,
+          fractionalDigitsCount: 2,
+        }]
+      },
+      options: {
+        tooltips: {
+          position: 'nearest',
+          mode: 'index',
+        },
+      },
+    });
+
+    // Custom Candlestick
+    var ctx2 = document.getElementById("chart2").getContext("2d");
+    ctx2.canvas.width = 1000;
+    ctx2.canvas.height = 250;
+    new Chart(ctx2, {
+      type: 'candlestick',
+      data: {
+        datasets: [{
+          color: {
+            up: '#11f4',
+            down: '#fb84',
+            unchanged: '#999',
+          },
+          borderColor: '#000',
+          borderWidth: 2,
+          label: "CHRT - Chart.js Corporation",
+          data: data
+        }]
+      }
+    });
+
+    // Longer tooltip
+    var ctx3 = document.getElementById("chart3").getContext("2d");
+    ctx3.canvas.width = 1000;
+    ctx3.canvas.height = 250;
+    new Chart(ctx3, {
+      type: 'candlestick',
+      data: {
+        datasets: [{
+          label: "CHRT - Chart.js Corporation",
+          data: data,
+          fractionalDigitsCount: 5,
+        }]
+      },
+      options: {
+        tooltips: {
+          position: 'nearest',
+          mode: 'index',
+        },
+      },
+    });
+  </script>-->
+</body>
+
+</html>
