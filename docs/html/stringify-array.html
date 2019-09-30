@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JSON.stringify(array)</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://glitchpad.com/manifest.json">
+    <meta name="msapplication-TileColor" content="#033f00">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#033f00">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#033f00">
+    <meta name="apple-mobile-web-app-title" content="stringify">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <style>
+        body {
+            background-color: #000;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: red;
+        }
+
+        hr {
+            background-color: green;
+        }
+
+        pre {
+            background-color: #000d03;
+            color: #edd415;
+            margin: 5px;
+            padding: 5px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            border: 0px solid green;
+            font-family: Ubuntu Mono, monospace;
+        }
+
+        input {
+            background-color: #000d03;
+            color: #28a745;
+            margin: 5px;
+            padding: 5px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            border: 1px solid green;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 8px;
+            font-family: Ubuntu Mono, monospace;
+            font-size: 0.9em;
+            font-weight: 500;
+            line-height: 1em;
+            color: green;
+            background-color: black;
+            border-left: 4px solid rgba(5, 53, 4, 0.815);
+            border-right: 4px solid rgba(5, 53, 4, 0.815);
+            border-top: 4px solid rgba(5, 53, 4, 0.815);
+            border-bottom: 4px solid rgba(5, 53, 4, 0.815);
+            -webkit-transition-property: border-left, border-right, border-top, border-bottom;
+            -webkit-transition-duration: 0.5s;
+            -o-transition-property: border-left, border-right, border-top, border-bottom;
+            -o-transition-duration: 0.5s;
+            -moz-transition-property: border-left, border-right, border-top, border-bottom;
+            -moz-transition-duration: 0.5s;
+            transition-property: border-left, border-right, border-top, border-bottom;
+            transition-duration: 0.5s;
+        }
+
+        .card {
+            background-color: #000;
+            color: green;
+            border: 2px solid green;
+            padding: 5px;
+        }
+
+        .card-body,
+        .card-text {
+            background-color: #000;
+            color: green;
+            padding: 5px;
+        }
+
+        .btn {
+            transition: color .55s
+        }
+
+        .btn-success {
+            color: red;
+            background-color: #000;
+            border-color: red;
+        }
+
+        .btn-success:hover {
+            color: green;
+            background-color: #000;
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="card animated fadeIn">
+            <div class="card-body">
+                <div class="card-title">
+                    <h2>JSON.stringify(array)</h2>
+                    <p>&nbsp;</p>
+                </div>
+                <div class="card-text">
+                    <p>This page uses JavaScript to generate a user-defined JSON array. Enter some content into the boxes below and press the "SUBMIT" button.</p>
+                    <br>
+                    <textarea type="text" id="areaA" class="animated fadeInLeft">INPUT 1</textarea>
+                    <p>&nbsp;</p>
+                    <textarea type="text" id="areaB" class="animated fadeInRight">INPUT 2</textarea>
+                    <p>&nbsp;</p>
+                    <textarea type="text" id="areaC" class="animated fadeInLeft">INPUT 3</textarea>
+                    <br>
+                    <p>&nbsp;</p>
+                    <button class="btn btn-success" onclick="arrFunction()">SUBMIT</button>
+                    <br>
+                    <p>&nbsp;</p>
+                </div>
+                <hr>
+                <div class="card-title">
+                    <h4>OUTPUT</h4>
+                </div>
+                <div class="card-text">
+                    <pre><code id="resultOut">&nbsp;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function arrFunction() {
+            var x = document.getElementById("areaA").value;
+            var y = document.getElementById("areaB").value;
+            var z = document.getElementById("areaC").value;
+            var array = [];
+            array[0] = x;
+            array[1] = y;
+            array[2] = z;
+            alert(JSON.stringify(array));
+            document.getElementById("resultOut").innerHTML = JSON.stringify(array);
+        }
+    </script>
+</body>
+
+</html>
