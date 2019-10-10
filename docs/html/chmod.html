@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chmod Calculator</title>
+    <meta name="description" content="Interactively convert Linux file permissions between different formats with Chmod Calculator">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://glitchpad.com/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://glitchpad.com/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://glitchpad.com/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://glitchpad.com/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://glitchpad.com/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://glitchpad.com/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://glitchpad.com/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://glitchpad.com/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://glitchpad.com/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://glitchpad.com/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://glitchpad.com/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://glitchpad.com/assets/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="https://glitchpad.com/assets/favicons/android-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="Chmod">
+    <link rel="apple-touch-icon-precomposed" href="https://glitchpad.com/assets/favicons/apple-icon-precomposed.png">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="https://glitchpad.com/assets/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <link rel="shortcut icon" href="https://glitchpad.com/assets/favicons/favicon.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .line {
+            border-color: #ddd;
+            border-radius: 4px 4px 0 0;
+            border-width: 0 0 2px;
+            border-style: solid;
+            box-shadow: none;
+            margin-bottom: 15px
+        }
+
+        .line label {
+            min-height: 40px;
+            padding-top: 10px
+        }
+
+        label {
+            font-size: 21px
+        }
+
+        @media(max-width:768px) {
+            label {
+                font-size: 16px
+            }
+        }
+
+        .ad1 {
+            margin-top: 20px
+        }
+
+        .ad2 {
+            margin-top: 40px
+        }
+
+        .padding-top {
+            padding-top: 10px
+        }
+
+        .instruction {
+            padding-top: 40px
+        }
+
+        .instruction dt {
+            padding-top: 20px
+        }
+
+        .permission {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #eee
+        }
+
+        .permission label {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+            .permission label {
+                font-size: 20px;
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 10px
+            }
+        }
+
+        @media(max-width:767px) {
+            .permission label {
+                font-size: 19px;
+                font-weight: 700
+            }
+        }
+
+        .options-form {
+            background-color: #eee;
+            margin-top: 20px;
+            padding-top: 8px;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 700
+        }
+
+        @media(max-width:767px) {
+            h1 {
+                font-size: 40px;
+                font-weight: 700
+            }
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+            h1 {
+                font-size: 50px;
+                font-weight: 700
+            }
+        }
+
+        .caption-text {
+            font-size: 20px;
+            color: #777;
+            padding-top: 20px;
+            padding-bottom: 20px
+        }
+
+        @media(max-width:767px) {
+            .caption-text {
+                font-size: 17px;
+                color: #777;
+                padding-top: 20px;
+                padding-bottom: 20px
+            }
+        }
+
+        .chmod h3 {
+            font-size: 33px;
+            font-weight: 700
+        }
+
+        @media(max-width:768px) {
+            .chmod h3 {
+                font-size: 24px;
+                font-weight: 700
+            }
+        }
+
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center padding-top">Chmod Calculator</h1>
+                <p class="text-center caption-text">Interactively convert Linux file permissions between different formats.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form chmod">
+                    <div class="row options-form">
+                        <div class="hidden-xs col-md-1"></div>
+                        <div class="col-xs-4 col-md-3 text-right">
+                            <div class="form-group">
+                                <h3>Owner</h3>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Read <input class="m" id="c-o-r" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Write <input class="m" id="c-o-w" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Execute <input class="m" id="c-o-x"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-md-3 text-right">
+                            <div class="form-group">
+                                <h3>Group</h3>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Read <input class="m" id="c-g-r" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Write <input class="m" id="c-g-w" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Execute <input class="m" id="c-g-x"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-md-3 text-right">
+                            <div class="form-group">
+                                <h3>Public</h3>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Read <input class="m" id="c-p-r" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Write <input class="m" id="c-p-w" type="checkbox"></label>
+                            </div>
+                            <div class="form-group form-group-lg">
+                                <label class="control-label">Execute <input class="m" id="c-p-x"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                        <div class="hidden-xs col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 permission">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="c-oct" class="col-lg-12 control-label">Linux Permissions:</label>
+                                    <div class="col-lg-12 padding-top">
+                                        <pre><input type="text" class="form-control input-lg m" id="c-oct" placeholder="0666"></pre>
+                                    </div>
+                                    <div class="col-lg-12 padding-top">
+                                        <pre><input type="text" class="form-control input-lg m" id="c-sym" placeholder="-rw-rw-rw-"></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row instruction">
+                                <div class="col-lg-12">
+                                    <dl>
+                                        <dt>Chmod Calculator</dt>
+                                        <dd>Chmod Calculator is a free utility to calculate the numeric (octal) or
+                                            symbolic value for a set of file or folder permissions in Linux servers.
+                                        </dd>
+                                        <dt>How to use</dt>
+                                        <dd>Check the desired boxes or directly enter a valid numeric value (e.g.
+                                            <samp>777</samp>) or symbolic notation (e.g. <samp>rwxrwxrwx</samp>) to see
+                                            its value in other formats.</dd>
+                                        <dt>File Permissions</dt>
+                                        <dd>File permissions in Linux file system are managed in three distinct user
+                                            classes: user/owner, group and others/public. Each class can have read,
+                                            write and execute permissions. File permission can be represented in a
+                                            symbolic or numeric (octal) format.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        (function ($) {
+            $("input[type='checkbox']").prop({
+                checked: false
+            });
+            $("#c-sym").val("");
+            $("#c-oct").val("");
+            $(".m").change(function (e) {
+                var target = $(e.target);
+                switch (true) {
+                    case (target.is("#c-oct")):
+                        $("input[type='checkbox']").prop({
+                            checked: false
+                        });
+                        $("#c-sym").val("");
+                        var chmod = $.trim(target.val());
+                        var chmodLength = chmod.length;
+
+                        var chmodsym = '';
+                        var valid = true;
+
+                        target.parent().removeClass("has-error");
+                        $("#c-sym").parent().removeClass("has-error");
+
+                        if (!isNumber(chmod)) {
+                            valid = false;
+                        }
+                        if (chmodLength == 3) {
+                            if (chmod.charAt(0) < 0 || chmod.charAt(0) > 7) {
+                                valid = false;
+                            }
+                            if (chmod.charAt(1) < 0 || chmod.charAt(1) > 7) {
+                                valid = false;
+                            }
+                            if (chmod.charAt(2) < 0 || chmod.charAt(2) > 7) {
+                                valid = false;
+                            }
+                        } else {
+                            valid = false;
+                        }
+
+                        if (valid) {
+                            if (chmod >= 400) {
+                                $("#c-o-r").prop("checked", true);
+                                chmod -= 400;
+                                chmodsym += 'r';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 200) {
+                                $("#c-o-w").prop("checked", true);
+                                chmod -= 200;
+                                chmodsym += 'w';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 100) {
+                                $("#c-o-x").prop("checked", true);
+                                chmod -= 100;
+                                chmodsym += 'x';
+                            } else {
+                                chmodsym += '-';
+                            }
+
+                            if (chmod >= 40) {
+                                $("#c-g-r").prop("checked", true);
+                                chmod -= 40;
+                                chmodsym += 'r';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 20) {
+                                $("#c-g-w").prop("checked", true);
+                                chmod -= 20;
+                                chmodsym += 'w';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 10) {
+                                $("#c-g-x").prop("checked", true);
+                                chmod -= 10;
+                                chmodsym += 'x';
+                            } else {
+                                chmodsym += '-';
+                            }
+
+                            if (chmod >= 4) {
+                                $("#c-p-r").prop("checked", true);
+                                chmod -= 4;
+                                chmodsym += 'r';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 2) {
+                                $("#c-p-w").prop("checked", true);
+                                chmod -= 2;
+                                chmodsym += 'w';
+                            } else {
+                                chmodsym += '-';
+                            }
+                            if (chmod >= 1) {
+                                $("#c-p-x").prop("checked", true);
+                                chmod -= 1;
+                                chmodsym += 'x';
+                            } else {
+                                chmodsym += '-';
+                            }
+                        } else {
+                            target.parent().addClass("has-error");
+                            $("#c-sym").val("");
+                        }
+
+                        break;
+
+                    case (target.is("input[type='checkbox']")):
+                        var chmodsym = '';
+                        var chmod = 0;
+                        $("#c-sym").parent().removeClass("has-error");
+                        $("#c-oct").parent().removeClass("has-error");
+
+                        if ($("#c-o-r").prop("checked")) {
+                            chmod += 400;
+                            chmodsym += 'r';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-o-w").prop("checked")) {
+                            chmod += 200;
+                            chmodsym += 'w';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-o-x").prop("checked")) {
+                            chmod += 100;
+                            chmodsym += 'x';
+                        } else {
+                            chmodsym += '-';
+                        }
+
+                        if ($("#c-g-r").prop("checked")) {
+                            chmod += 40;
+                            chmodsym += 'r';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-g-w").prop("checked")) {
+                            chmod += 20;
+                            chmodsym += 'w';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-g-x").prop("checked")) {
+                            chmod += 10;
+                            chmodsym += 'x';
+                        } else {
+                            chmodsym += '-';
+                        }
+
+                        if ($("#c-p-r").prop("checked")) {
+                            chmod += 4;
+                            chmodsym += 'r';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-p-w").prop("checked")) {
+                            chmod += 2;
+                            chmodsym += 'w';
+                        } else {
+                            chmodsym += '-';
+                        }
+                        if ($("#c-p-x").prop("checked")) {
+                            chmod += 1;
+                            chmodsym += 'x';
+                        } else {
+                            chmodsym += '-';
+                        }
+
+                        if (chmod < 10) {
+                            chmod = '00' + '' + chmod;
+                        } else if (chmod < 100) {
+                            chmod = '0' + '' + chmod;
+                        }
+                        $("#c-oct").val(chmod);
+                        $("#c-sym").val(chmodsym);
+
+                        break;
+
+                    case (target.is("#c-sym")):
+                        $("input[type='checkbox']").prop({
+                            checked: false
+                        });
+                        var chmod = 0;
+                        var chmodsym = $.trim(target.val());
+                        var chmodsymLength = chmodsym.length;
+                        var valid = true;
+
+                        target.parent().removeClass("has-error");
+                        $("#c-oct").parent().removeClass("has-error");
+
+                        if (chmodsymLength == 10) {
+                            if (chmodsym.charAt(0) == 'd') {
+                                chmodsym = chmodsym.substring(1);
+                                chmodsymLength = chmodsym.length;
+                            } else if (chmodsym.charAt(0) == '-') {
+                                chmodsym = chmodsym.substring(1);
+                                chmodsymLength = chmodsym.length;
+                            } else {
+                                valid = false;
+                            }
+                        }
+                        if (chmodsymLength == 9) {
+                            if (chmodsym.charAt(0) == 'r') {
+                                $("#c-o-r").prop("checked", true);
+                                chmod += 400;
+                            } else if (chmodsym.charAt(0) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(1) == 'w') {
+                                $("#c-o-w").prop("checked", true);
+                                chmod += 200;
+                            } else if (chmodsym.charAt(1) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(2) == 'x') {
+                                $("#c-o-x").prop("checked", true);
+                                chmod += 100;
+                            } else if (chmodsym.charAt(2) != '-') {
+                                valid = false;
+                            }
+
+                            if (chmodsym.charAt(3) == 'r') {
+                                $("#c-g-r").prop("checked", true);
+                                chmod += 40;
+                            } else if (chmodsym.charAt(3) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(4) == 'w') {
+                                $("#c-g-w").prop("checked", true);
+                                chmod += 20;
+                            } else if (chmodsym.charAt(4) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(5) == 'x') {
+                                $("#c-g-x").prop("checked", true);
+                                chmod += 10;
+                            } else if (chmodsym.charAt(5) != '-') {
+                                valid = false;
+                            }
+
+                            if (chmodsym.charAt(6) == 'r') {
+                                $("#c-p-r").prop("checked", true);
+                                chmod += 4;
+                            } else if (chmodsym.charAt(6) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(7) == 'w') {
+                                $("#c-p-w").prop("checked", true);
+                                chmod += 2;
+                            } else if (chmodsym.charAt(7) != '-') {
+                                valid = false;
+                            }
+                            if (chmodsym.charAt(8) == 'x') {
+                                $("#c-p-x").prop("checked", true);
+                                chmod += 1;
+                            } else if (chmodsym.charAt(8) != '-') {
+                                valid = false;
+                            }
+                        } else {
+                            valid = false;
+                        }
+                        if (valid) {
+                            $("#c-oct").val(chmod);
+                        } else {
+                            target.parent().addClass("has-error");
+                            $("#c-oct").val("");
+                        }
+                        break;
+                }
+            });
+
+            function isNumber(n) {
+                return !isNaN(parseFloat(n)) && isFinite(n);
+            }
+        })(jQuery);
+    </script>
+
+</body>
+
+</html>
