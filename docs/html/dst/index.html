@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Daylight Saving Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Adapted from http://www.webexhibits.org/daylightsaving/b.html -->
+</head>
+
+<body>
+
+    <div class="container">
+        <form name="dates">
+            <table class="dsR1" border="0" cellspacing="0" cellpadding="3">
+                <tbody>
+                    <tr>
+                        <td colspan="12" valign="top">
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" valign="top">&nbsp;</td>
+                        <td class="dsR4" colspan="2" align="center" valign="top"><img class="flag dsR9"
+                                src="data:image/gif;base64,R0lGODlhNQA1AOYAANjk8i6F3e6hmxdqw5W64fx5ZrXM6ers+uRWVv7q7PuGdNnZ2dPT0xRjvcnJycjc8wpXtfHw8TFnsCZ71e7u7vtsXSR2zPX19eUhAesiAQJTreHi4jGK4Ory9WmZz/bx6/7+//r79Hul1/T6+9kfAc9bXvHt8fn5+RRdt+vMy/rY2PQkBEGJ1tUuKoSXucciHOn17v3y8ESFyN8gAe9ZWQlNln6t4AJMp1eU2FKKyff39/nm4fX+9+np6SFtw9IkGu7u60GT5S96yvj+/enRzSBRm0l5r/37/f7++v35+ApevPr8+825tfn4/9Hc4/smGChepfPy8+B8b/70+fHy8tjCwg5aruDV00iR2+/q7QBAiN7r9NzS0u3p6l+NyEB8wglPrvX28+vr7Onu8fXT0Pbv+Ojr6+Pl8vH1+NXTzvUkDmGe4DOA0hE3e+/OzTFxvM/UzuRpXcs9QeXl5dDU2N7d3eM2MB5yzyV/0uwjB8/Pz9bQ2FyM1OAhEVGCu/NJQiH5BAAAAAAALAAAAAA1ADUAAAf/gCcnYi5GRUVGUIqJfooSfhKPb0Zfb285ll9eXx4yMl9xoaJSpFICXD0UFyc6c3oSNzcoKAA+EhBKsw0+HgRCPgM+dz5CbFssLHgTeAHNLBXQFQXTCtWkTHB1c2JzUDVgGl8AOhE5KLgoDQQ8JwYWwcI4Zidja3h4bAEcAc/R09TVBEjRMyfCCRc3wMTSIMKMAQi4rKBQMkDMARnw7mgksMXAvQDM9MnwJ61AtZMKmNSJsATKjTcQNEDwosQLBCtKZOT6IuMNjl057gwQsmaCiAlsJqxpxiFIgg8JEkxJECPGhw9VP3BZ0ENHESsE/FjRMFZDLh8PBjRooGStDwsG/7AI0TihbgAcDzjoDXLkxBEkPECAGDIECWAkG/TUoQDFwJEkNiCCsQLBQxkdZ2SsbTCAzYMkJwjcsWBhGQE0Oras4YCF8JElIJDAPkIbxJINDhjMKfJlzBYwEMBBOGcggoh0nAcM8JBli0bSpfE86GBjXxAQr//SLiwbxAncDCgUkQHliwQN4WKi8KDEA3LNA3AIwcFmNI66HKrb0BcEyZAjgh0xBGyCwVaHYhEUcQN6MqHwQDpmNTDRAHwQEIxyo/mABwABJJUPU0HsIGJUCexQ4lMx7MDEAiu5lNANMhxwQhRe4NSAFQMQsEQTDwgBjw9rdKDDGDZ8pE8AOZBkkv9JJ9nxwgJzXFCEBgtSKcIBD0U0UQNjZIHRAMOMdppHEwRQpj4s0OAPNUz+QcKTdUh5w3kagOGBFXfiJEQ6bMgwXzD1DSMCHjYsgwcWTPUDzT8nxdHHm3pwNaUNb9QJHEQSGWDjWsrlKANdpSHFggF6caBoASUpMM2jkC4ghgQGXJAFATHJBIEIW5wAgDmcNeDZFDAQMIGGd+BBwAEjALDUSGsuyeqbDMSJyBFngHMpRAaEIUJbnMbXxBZvjWYoACNUx5oA6KaLrhQItItACQ5I6sUbHtD5xlgoEGCBDVasxYZyIuRgAwujYVEaGwQEQQB/hiEhmGAhiJGKGTDA4YD/A3UoiN6CEBgwkRKTpaOEwLtgCKYFDxhaJhvWjUAYErRRMQYFFJjQgxl0RNoDLAlpkAMAYXThwXBKtGXAGDo88K8PTK8BQAgHFMnGh03VFpsJNFMgRhZZUAAHlFJujJ4IRxDwMU5tCfmlRgNYsI4Bd4DEVFMwj3AEECaYQAUFM49hxlYbyEknGCL4EJkSELwhIScyrBHMFxrdQQDCdmGxT9VDJEFFFEB03rkYQHTx9UoKElBpcGRB1IABRaejHGcEsGCBMBNEN+qRLAigQLt/uOv7uwxACSsFBxAw1qW4JvFADmxxJsMDF3Sgb2kWIHwAGsqa+scM3JNAAvczeO/9/wsXL4BIEr+RJRMYKGQrgoSbxRcCABbcMYH9pZFrLhTcY9C9+AAknx56UIR51Wt9N7ECpbYVvwGIQAY2YEP9LHAPFiTMFzVoA/g22L3wvWkBgdNYndBDGbK0bi1tUQuYNPIWH9iFGQ3QghbagIEaZuB7HgwgCOUEBuH0ECKImwVyVAgMYWhECLULgA9qIMMZ4tB7G/ze+EAYBQcA4IobuOIWALDFM2zxi1zcghe3QMYybtEJD1iAE5ywACKkgAhkcAMR5khHNzKBDnWIwgaaAJsTLGFHS0jCEXRQGEHQpm6DSQJohtAEKkSgDDHAWxlM8AEqfMAMXcta1sywh2hFYP8DYZhCE3jQBEEuYQohAEETQuCXJZwgBE2wDQ8EeYQsXMCSHTABDD7QgQh8QAxlKEMHNMm1LHQhZwzoQR0UuQRY/hFAIwjkEl6TylQ+ZggxQEMEYFAGSx6Ac7qMABAOQIEudI4CnuucGdIQLzHUgZWgSYIrX7OEAf1xmtNkxS2pwM8oRMGREQBoBCKgyYLSTAxiYEC0KFAFFZBBBRCNqEQlSoaKxtENGM1oCtyQgo569KMg/SgTFtqHFZh0BWpIaUqfwFKWqiEPGMiADWNaw5rWlINRBKD4nrSBKLTgpCZV6RPUsII8ZOCoMZXpTG3qvxk0Fac43ekOS3pSopr0qEj/rSlWkapUpt40qjqd4gYi8IMMrMCsW01rBvIAU696FapwDaADCPKDq571qmpNK01n2lWmOrV/HNzpXDcQBxoY9rCITaxiDYsAxtKgsb+LbGRLUILgiWEBOtiRIE4wAh14VgcX0EEYLrBPNPDztP/05z9P60iAUoCg6QRdFzq5mDroQBCf9WwYRBuG3l4gDKoNbkBPO9zh8pOgBp2Z1uCwUNve9rOkDS1oSRvc6kZgtQJ97UBfa9CsITQNYLMtKzw73tBG17znVe3mVHvdgX6AoMhFZ9Y6lwUgiCFnropTbqEbXTRcwL8XiAIaTGtaR642oAPdbncPSrN1XqwOjV2s+IQRG+F2Pfaxks2w70qgGAq0wKx2zStXaTpimzr1qXEFoBzwGIESHPWuIBbxiPvqVxQHVqcC0NkVWoABo6LVxzJO6l7dClUMfM/I4ZMDExxAhznMgQkffnGQ20rkuP7vWd6Tw1zpsAGJbaAKJWjBD8ZM5jKb+QVkRvOY1YzmF7TZzXCGsxwEwOQ6zMM7VJjDAhhwsT77+c9zZYAe9DDXQA960AodNKD9rAfdROG5F4iAOxfAojpYug6UpvQG6rCBTXu605imdPD2nOlSZ5oBdKC0NnqQiigkWAxZ2y6sBwpQVx80ApHWGqwNHOB+Uve8AY7CKkirg0AAADs=" 
+                                alt=""
+                                height="53" align="left" border="0">&nbsp;<br>
+                            <b>United<br>
+                                States</b></td>
+                        <td class="dsR4" align="center" valign="top"></td>
+                        <td class="dsR4" colspan="2" align="center" valign="top"><img class="flag"
+                                src="data:image/gif;base64,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" 
+                                alt=""
+                                width="53" height="53" align="left" border="0">&nbsp;<br>
+                            <b>European<br>
+                                Union</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" valign="top">
+                            <hr noshade="" size="1">
+                        </td>
+                        <td valign="top"></td>
+                        <td colspan="2" valign="top">
+                            <hr noshade="" size="1">
+                        </td>
+                    </tr>
+                    <tr valign="bottom">
+                        <td><b>&nbsp;Year&nbsp;</b></td>
+                        <td><b>DST Begins<br>
+                                at 2 a.m.&nbsp;</b></td>
+                        <td><b>DST Ends&nbsp;&nbsp;<br>
+                                at 2 a.m.&nbsp;</b></td>
+                        <td><img class="dsR7 dsR18"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td><b>Summertime<br>
+                                period begins<br>
+                                at 1 a.m.&nbsp;UTC</b></td>
+                        <td><b>Summertime<br>
+                                period ends<br>
+                                at 1 a.m.&nbsp;UTC</b></td>
+                    </tr>
+                    <tr bgcolor="#d3dcd7">
+                        <td valign="top">2015</td>
+                        <td valign="top">March 8</td>
+                        <td valign="top">November 1</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 29</td>
+                        <td valign="top">October 25</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">2016</td>
+                        <td valign="top">March 13</td>
+                        <td valign="top">November 6</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 27</td>
+                        <td valign="top">October 30</td>
+                    </tr>
+                    <tr bgcolor="#d3dcd7">
+                        <td valign="top">2017</td>
+                        <td valign="top">March 12</td>
+                        <td valign="top">November 5</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 26</td>
+                        <td valign="top">October 29</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">2018</td>
+                        <td valign="top">March 11</td>
+                        <td valign="top">November 4</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 25</td>
+                        <td valign="top">October 28</td>
+                    </tr>
+                    <tr bgcolor="#acecc0">
+                        <td valign="top">2019</td>
+                        <td valign="top"><b>March 10</b></td>
+                        <td valign="top"><b>November 3</b></td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top"><b>March 31</b></td>
+                        <td valign="top"><b>October 27</b></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">2020</td>
+                        <td valign="top">March 8</td>
+                        <td valign="top">November 1</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 29</td>
+                        <td valign="top">October 25</td>
+                    </tr>
+                    <tr bgcolor="#d3dcd7">
+                        <td valign="top">2021</td>
+                        <td valign="top">March 14</td>
+                        <td valign="top">November 7</td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">March 28</td>
+                        <td valign="top">October 31</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <script language="JavaScript1.2">
+                                <!--
+                                // this version (JavaScript1.1+) does NOT display NaN.
+                                function WhatDates() {
+                                    var thisYear, AprilDate, OctoberDate, MarchDateEU, OctoberDateEU, MarchDate,NovemberDate;
+                                    thisYear = Math.round(parseInt(document.getElementById("yearBox").value));
+                                    AprilDate = (2 + 6 * thisYear - Math.floor(thisYear / 4)) % 7 + 1;
+                                    OctoberDate = (31 - (Math.floor(thisYear * 5 / 4) + 1) % 7);
+                                    MarchDate = 14 - (Math.floor(1 + thisYear * 5 / 4) % 7);
+                                    NovemberDate = 7 - (Math.floor(1 + thisYear * 5 / 4) % 7);
+                                    MarchDateEU = (31 - (Math.floor(thisYear * 5 / 4) + 4) % 7);
+                                    OctoberDateEU = (31 - (Math.floor(thisYear * 5 / 4) + 1) % 7);
+                                    document.getElementById("startu").innerHTML = thisYear > 2006 ? ("March " +
+                                        MarchDate) : ("April " + AprilDate);
+                                    document.getElementById("stopu").innerHTML = thisYear > 2006 ? ("November " +
+                                        NovemberDate) : ("October " + OctoberDate);
+                                    document.getElementById("starte").innerHTML = "March " + MarchDateEU;
+                                    document.getElementById("stope").innerHTML = "October " + OctoberDateEU;
+                                }
+                                function checkArrows(field, evt) {
+                                    var keyCode =
+                                        document.layers ? evt.which :
+                                        document.all ? event.keyCode :
+                                        document.getElementById ? evt.keyCode : 0;
+                                    if (keyCode == 40) {
+                                        // 'arrow down';
+                                        document.getElementById("yearBox").value = Math.round(parseInt(document.getElementById("yearBox").value)) - 1;
+                                        return false;
+                                    } else if (keyCode == 38) {
+                                        // 'arrow up';
+                                        document.getElementById("yearBox").value = Math.round(parseInt(document.getElementById("yearBox").value)) + 1;
+                                        return false;
+                                    }
+                                    return;
+                                }
+                                // 
+                                -->
+                            </script>
+                            <script language="JavaScript1.2">
+                                document.writeln(
+                                    '<input type=text id=yearBox name=yearBox size=5 maxlength=4 value=2022 onkeyup="WhatDates();" onblur="WhatDates();" ONKEYDOWN="return checkArrows(this, event);">'
+                                    );
+                            </script>
+                            <!--
+                                <input 
+                                    type="text" 
+                                    id="yearBox" 
+                                    name="yearBox" 
+                                    size="5" 
+                                    maxlength="4" 
+                                    value="2022"
+                                    onkeyup="WhatDates();" 
+                                    onblur="WhatDates();"
+                                    onkeydown="return checkArrows(this, event);"
+                                >
+                            -->
+                        </td>
+                        <td valign="top">
+                            <div id="startu">March 9</div>
+                        </td>
+                        <td valign="top">
+                            <div id="stopu">November 2</div>
+                        </td>
+                        <td valign="top"><img class="dsR7 dsR8"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+                                border="0"></td>
+                        <td valign="top">
+                            <div id="starte">March 30</div>
+                        </td>
+                        <td valign="top">
+                            <div id="stope">October 26</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <hr>
+                            <script language="JavaScript1.2">
+                                <!--
+                                document.writeln('<font size=-1>US calculator valid 1976-2099; EU 1996-2099. Change with up/down key.</font>');
+                                //
+                                -->
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
